@@ -21,7 +21,7 @@ I googled this error online. There are some discussion on stack overflow as foll
 
 Here is a work around, which I use it to resolve the issue
 
-![fix](https://github.com/wenleicao/wenleicao.github.io/blob/master/images/already_an_object_fix.JPG)
+<img src="/images/already_an_object_fix.JPG" alt="error fix">
 
 I later found this solution is similar to what SharpC offered.  But the first step which we copy the table shell is different. 
 
