@@ -13,7 +13,7 @@ This typically require us to use branch logic (if else). After I wrote the scrip
 
 Here I use adventureworks database to replicate the error.
 
-![error info](https://github.com/wenleicao/wenleicao.github.io/blob/master/images/already_an_object_error.JPG)
+<img src="/images/already_an_object_error.JPG" alt="error info">
 
 I googled this error online. There are some discussion on stack overflow as follows. Some indicated this is a SQL Server parser error.  
 
