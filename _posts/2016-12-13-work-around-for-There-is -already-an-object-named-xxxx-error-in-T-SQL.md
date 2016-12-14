@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: work around for There is already an object named xxxx error in T-SQL
