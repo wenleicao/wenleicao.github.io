@@ -13,7 +13,7 @@ This typically require us to use branch logic (if else). After I wrote the scrip
 
 Here I use adventureworks database to replicate the error.
 
-![error info] (http://github.com/wenleicao/wenleicao.github.io/blob/master/images/already_an_object_error.JPG)
+![error info](../blob/master/images/already_an_object_error.JPG?raw=true)
 
 I googled this error online. There are some discussion on stack overflow as follows. Some indicated this is a SQL Server parser error.  
 
@@ -21,7 +21,7 @@ I googled this error online. There are some discussion on stack overflow as foll
 
 Here is a work around, which I use it to resolve the issue
 
-![fix] (http://github.com/wenleicao/wenleicao.github.io/blob/master/images/already_an_object_fix.JPG)
+![fix](../blob/master/images/already_an_object_fix.JPG?raw=true)
 
 I later found this solution is similar to what SharpC offered.  But the first step which we copy the table shell is different. 
 
