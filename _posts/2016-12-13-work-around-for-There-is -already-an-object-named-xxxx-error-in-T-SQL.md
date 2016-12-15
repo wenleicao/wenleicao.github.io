@@ -1,6 +1,6 @@
 ---
 layout: post
-title: workaround for There is already an object named xxxx error in T-SQL
+title: Workaround for "There is already an object named xxxx error" in T-SQL
 ---
 
 
