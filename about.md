@@ -7,7 +7,7 @@ permalink: /about/
 
 ### More Information
 
-A place to share tricks and solutions to some real prolbems which I came across in the business intellignece journey.
+A place to share tricks and solutions to some real problems which I came across in the business intellignece journey.
 Hope this can help others
 
 ### Contact me
