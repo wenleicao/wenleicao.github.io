@@ -30,5 +30,5 @@ Next time, when you came across this, you might try it out.
 Happy coding.
 
 
-<a href="https://github.com/wenleicao/wenleicao.github.io/blob/master/Files/blog1.zip">download code here</a>
+<a href="Files/blog1.zip">download code here</a>
 
