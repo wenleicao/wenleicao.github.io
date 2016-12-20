@@ -30,7 +30,7 @@ first design a keyword parameter, configure the parameter property like the foll
 
 We want to use the keyword to search the provider list, we then get a list provider only related with that keyword.  In regular database, this can be done by using wild card 
 Select provider_name from database where provider_name like '%Keyword%' 
-However, our data source is tabular model, we can only use MDX not SQL. Unfortunately, there is no "like" in MDX. There is a string function called "instr".  You can use instr to locate the keyword if a keyword in a string. For e.g., instr ("abcde", "bc") =2.  instr ("abcde", "xy") =0. Then we can use filter function to filter in the value >=1, which means it contains the keyword.
+However, our data source is tabular model, we can only use MDX not SQL. Unfortunately, there is no "like" in MDX. There is a string function called "instr".  You can use instr to locate the keyword if a keyword in a string. For e.g., instr ("abcde", "bc", 1) =2.  instr ("abcde", "xy",1) =0. Then we can use filter function to filter in the value >=1, which means it contains the keyword.
 
 First, write the test query in SSMS, pretent you use "arbour" as the keyword that user type in. you can see the result all contain keywords "arbour".
 <img src="/images/blog2/test_query_in_ssms.PNG" alt="ssms test">
