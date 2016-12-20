@@ -44,8 +44,8 @@ Click the query parameter button, to map the parameter to the keyword, click OK 
 Now that, we have the provider dataset, we can create the 2nd parameter - provider 
 Configure the parameter like the follows
 <img src="/images/blog2/provider1.PNG" alt="provider1">
-<img src="/images/blog2/provider2.PNG" alt="provider2">
-<img src="/images/blog2/provider3.PNG" alt="provider3">
+<img src="/images/blog2/Provider2.PNG" alt="provider2">
+<img src="/images/blog2/Provider3.PNG" alt="provider3">
 
 This is how I use the @Keyword to take the input value from user, then use that to filter @provider.  I have other parameter in this report, but they are not related with this topic.
 
