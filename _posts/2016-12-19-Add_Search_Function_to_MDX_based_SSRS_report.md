@@ -38,8 +38,27 @@ First, write the test query in SSMS, pretent you use "arbour" as the keyword tha
 Now let us create a provider dataset, connect the tabular model, use query designer, put in the script but replace the "arbour" with @Keyword. 
 <img src="/images/blog2/SSRS_query_designer.PNG" alt="ssms query designer">
 
-click the query parameter button, to map the paraeter to the keyword, click OK to create provider dataset
+Click the query parameter button, to map the parameter to the keyword, click OK to create provider dataset
 <img src="/images/blog2/SSRS_query_designer_parameter.PNG" alt="parameter mapping">
+
+Now that, we have the provider dataset, we can create the 2nd parameter - provider 
+Configure the parameter like the follows
+<img src="/images/blog2/provider1.PNG" alt="provider1">
+<img src="/images/blog2/provider2.PNG" alt="provider2">
+<img src="/images/blog2/provider3.PNG" alt="provider3">
+
+This is how I use the @Keyword to take the input value from user, then use that to filter @provider.  I have other parameter in this report, but they are not related with this topic.
+
+Let us take a look at the report interface. We choose arbour as default keyword so it pop up the list containing arbour in the provider
+<img src="/images/blog2/report_interface.PNG" alt="report interface">
+
+But if we change it to boston, the provider list changed.
+<img src="/images/blog2/report_interface2.PNG" alt="report interface2">
+
+Now the dropdown list become shorter and manageable.  :)
+
+
+
 
 
 
