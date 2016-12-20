@@ -11,4 +11,14 @@ Have you ever run into a scenario that the list of value for a parameter is so l
 
 I was working on a project, sourcing data from a SSAS tabular model and need to list providers for client to select. The problem is the provider number is huge. The total provider is about 4000, it is not doable using regular ways.  
 
+<img src="/images/blog2/provider_count.PNG" alt="provider count">
 
+My business analyst spoke to me if only we had an autofill function, which he types something, the rest will pop up. 
+
+That is a good wish, but as far as I know, there is no such function in the SSRS.  However we can imitate it by combining cascading parameter and using wild card.
+
+first design a keyword parameter, configure the parameter property like the follows.
+
+1. define prompts as Search Provider so that client get a hint. 
+2. don't specify value for this parameter, client will input
+3. give a common default value, in my case, I put in arbour as an example
