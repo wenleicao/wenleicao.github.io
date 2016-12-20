@@ -21,7 +21,29 @@ first design a keyword parameter, configure the parameter property like the foll
 
 1. define prompts as Search Provider so that client get a hint.
 <img src="/images/blog2/Keyword1.PNG" alt="keyword1">
+
 2. don't specify value for this parameter, client will input
 <img src="/images/blog2/Keyword2.PNG" alt="keyword2">
+
 3. give a common default value, in my case, I put in arbour as an example
 <img src="/images/blog2/Keyword3.PNG" alt="keyword3">
+
+We want to use the keyword to search the provider list, we then get a list provider only related with that keyword.  In regular database, this can be done by using wild card 
+Select provider_name from database where provider_name like '%Keyword%' 
+However, our data source is tabular model, we can only use MDX not SQL. Unfortunately, there is no "like" in MDX. There is a string function called "instr".  You can use instr to locate the keyword if a keyword in a string. For e.g., instr ("abcde", "bc") =2.  instr ("abcde", "xy") =0. Then we can use filter function to filter in the value >=1, which means it contains the keyword.
+
+First, write the test query in SSMS, pretent you use "arbour" as the keyword that user type in. you can see the result all contain keywords "arbour".
+<img src="/images/blog2/test_query_in_ssms.PNG" alt="ssms test">
+
+Now let us create a provider dataset, connect the tabular model, use query designer, put in the script but replace the "arbour" with @Keyword. 
+<img src="/images/blog2/SSRS_query_designer.PNG" alt="ssms query designer">
+
+click the query parameter button, to map the paraeter to the keyword, click OK to create provider dataset
+<img src="/images/blog2/SSRS_query_designer_parameter.PNG" alt="parameter mapping">
+
+
+
+
+
+
+
