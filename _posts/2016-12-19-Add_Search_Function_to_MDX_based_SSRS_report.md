@@ -19,6 +19,9 @@ That is a good wish, but as far as I know, there is no such function in the SSRS
 
 first design a keyword parameter, configure the parameter property like the follows.
 
-1. define prompts as Search Provider so that client get a hint. 
+1. define prompts as Search Provider so that client get a hint.
+<img src="/images/blog2/Keyword1.PNG" alt="keyword1">
 2. don't specify value for this parameter, client will input
+<img src="/images/blog2/Keyword2.PNG" alt="keyword2">
 3. give a common default value, in my case, I put in arbour as an example
+<img src="/images/blog2/Keyword3.PNG" alt="keyword3">
