@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to solve long dropdown list issue in MDX based SSRS report
+title: How to solve long drop-down list issue in MDX based SSRS report
 ---
 
 While working with SSRS, it is very common that you are asked to create a parameterized report. The advantage of this kind of report is flexibility, i.e., client can control the parameter value they want to pass to the report.
