@@ -12,4 +12,4 @@ Hope this can also help others
 
 ### Contact me
 
-[wenleicao@hotmail.com](mailto:wenleicao@hotmail.com)
+[wenleicao at hotmail.com](mailto:wenleicao@hotmail.com)
