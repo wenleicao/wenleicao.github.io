@@ -41,7 +41,20 @@ If you look at the dimension usage of this tiny cube, you will notice the relati
 
 <img src="/images/blog3/dimensionusage.PNG" alt="dimensionusage">
 
-click the 
+click the many to many relation, you can see the detail 
+
+<img src="/images/blog3/manytomany.PNG" alt="manytomany">
+
+now we build the cube, deploy and process the data to the cube.
+
+check the data through cube browser.
+
+<img src="/images/blog3/cube1.PNG" alt="cube result">
+
+the number match what we did with the SQL query previous.  After this small experiment, we should be able to implemnt some more complicate logic.
+
+
+
 
 
 
