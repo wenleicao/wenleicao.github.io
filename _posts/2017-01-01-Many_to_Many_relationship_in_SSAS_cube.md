@@ -41,7 +41,7 @@ If you look at the dimension usage of this tiny cube, you will notice the relati
 
 <img src="/images/blog3/dimensionusage.PNG" alt="dimensionusage">
 
-Click the many to many relation, you can see the detail 
+Click the many to many relation, you can see the detail. This two table is connected by mapping table. 
 
 <img src="/images/blog3/manytomany.PNG" alt="manytomany">
 
