@@ -10,7 +10,7 @@ In relational database, there are a few relationships between tables, One to One
 When we build multi-dimensional cube on top of the data warehouse, often time, we cannot avoid many to many relationship. I tried to model this at the cube level, but I failed to find step by step tutorial online.  I decide to do some digging on this and start building a proof of concept. 
 
 Here I use student class as an example. Each student could attend multiple classes, at the same time, each class could have multiple students. Besides that, we want to do some calculation at data warehouse level, and see if we can also accomplish that at the cube level.
-Let us first create tables and define the relationship between them with T SQL  (source code can be download, see link at the end).
+Let us first create tables and define the relationship between them with T SQL  (source code can be downloaded, see link at the end).
 
 I inserted some fake data, so that we have a source to build cube from. Here is what I get 
 
