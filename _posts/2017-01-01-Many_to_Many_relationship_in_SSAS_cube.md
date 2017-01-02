@@ -37,8 +37,13 @@ click next, it will automatically list student and class table as dimension tabl
 
 <img src="/images/blog3/create_cube3.PNG" alt="step3">
 
+If you look at the dimension usage of this tiny cube, you will notice the relationship between student and class is automatically set as many to many relation 
 
-<img src="/images/blog3/create_cube2.PNG" alt="step2">
+<img src="/images/blog3/dimensionusage.PNG" alt="dimensionusage">
+
+click the 
+
+
 
 
 
