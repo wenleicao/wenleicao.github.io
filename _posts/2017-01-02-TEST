@@ -1,6 +1,12 @@
+---
+layout: post
+title: test youtube with markdown
+---
+
+
 <iframe 
   width="560" 
-  height="315" 
+  height="315"
   src="http://www.youtube.com/embed/prX3--rtqXk" 
   frameborder="0" 
   allowfullscreen>
