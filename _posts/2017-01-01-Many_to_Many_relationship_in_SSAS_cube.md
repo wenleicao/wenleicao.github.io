@@ -51,15 +51,8 @@ check the data through cube browser.
 
 <img src="/images/blog3/cube1.PNG" alt="cube result">
 
-the number match what we did with the SQL query previous.  After this small experiment, we should be able to implemnt some more complicate logic.
+The number match what we did with the SQL query previous.  After this small experiment, we should be able to implemnt some more complicate logic.
 
 
-
-
-
-
-
-
-
-
+<a href="/Files/student_class_table_script.sql">download code here</a>
 
