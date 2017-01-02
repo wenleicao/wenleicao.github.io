@@ -13,3 +13,5 @@ Here I use student class as an example. Each student could attend multiple class
 Let us first create tables and define the relationship between them with T SQL  (source code can be download, see link at the end).
 
 I inserted some fake data, so that we have a source to build cube from. Here is what I get 
+
+<img src="/images/blog2/provider_count.PNG" alt="provider count">
