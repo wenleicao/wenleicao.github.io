@@ -14,4 +14,23 @@ Let us first create tables and define the relationship between them with T SQL  
 
 I inserted some fake data, so that we have a source to build cube from. Here is what I get 
 
-<img src="/images/blog2/provider_count.PNG" alt="provider count">
+<img src="/images/blog3/data_in_table.PNG" alt="sample data">
+
+let us do a calculation across the bridge, here I calculate the class fee based on student name. 
+
+<img src="/images/blog3/DW_calculation.PNG" alt="calcuation at dw">
+
+Now, we have this small many to many sample, let us see if we can make the calculation work at multi-demension cube
+
+create a data source, connect to the server and database where your table created 
+create a data source view
+
+<img src="/images/blog3/dsv.PNG" alt="dsv">
+
+right click the cube and creat a new cube, cube wizard appear, then choose the data source view just create and choose the mapping table
+
+<img src="/images/blog3/create_cube1.PNG" alt="step1">
+
+
+
+
