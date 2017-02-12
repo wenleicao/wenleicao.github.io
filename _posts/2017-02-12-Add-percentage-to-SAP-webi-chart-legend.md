@@ -10,9 +10,12 @@ I have been using SAP BI Webi to some annual reports for a client. I am impresse
 | :-------------|:-------------:|:---------:|
 | ETL           | SSIS | Data Service |
 | Data Model     |SSAS Mutlidimensional or Tabular     |  Universe |
-| Reporting |SSRS, powerBI      |  Webi, SAP dashboard,design studio |
+| Reporting |SSRS, PowerBI      |  Webi, SAP dashboard,Design Studio |
 
 I received one request from a client, that need to show calcuation in the legend. like what the chart shows below 
-As you might now, legend is where you show series label. Those are not measure, how do I make measure into legend.
+
+
+
+As you might now, legend is where you show series label. Those are not measure, how do I make measure into legend? I was struggled for a while, one of my colleage give me a hint. I finally make this happen.
 
 
