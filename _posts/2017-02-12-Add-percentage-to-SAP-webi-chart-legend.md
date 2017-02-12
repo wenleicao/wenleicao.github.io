@@ -14,8 +14,12 @@ I have been using SAP BI Webi to some annual reports for a client. I am impresse
 
 I received one request from a client, that need to show calcuation in the legend. like what the chart shows below 
 
+<img src="/images/blog4/original_pie_chart.PNG" alt="original">
 
+what they want 
 
-As you might now, legend is where you show series label. Those are not measure, how do I make measure into legend? I was struggled for a while, one of my colleage give me a hint. I finally make this happen.
+<img src="/images/blog4/final_pie_chart.PNG" alt="final">
+
+As you might know, legend is where you show series label. Those are not measure, how do I make measure into legend? I was struggled for a while, one of my colleage give me a hint. I finally make this happen.
 
 
