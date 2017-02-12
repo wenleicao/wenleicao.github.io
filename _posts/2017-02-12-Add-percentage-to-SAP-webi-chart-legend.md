@@ -20,6 +20,16 @@ what they want
 
 <img src="/images/blog4/final_pie_chart.PNG" alt="final">
 
-As you might know, legend is where you show series label. Those are not measure, how do I make measure into legend? I was struggled for a while, one of my colleage give me a hint. I finally make this happen.
+As you might know, legend is where you show series label. Those are not measures, how do I make measure into legend? I was struggled for a while, one of my colleage give me a hint. I finally make this happen. This is how.
+
+first create a percentage measure varible in the report variable section. set the variable like this.  pay attention to the webi syntax for percentage.
+
+<img src="/images/blog4/measure_percentage_setting.PNG" alt="varible measure setting">
+
+next, we create a dimension varible  to use this measure 
+
+<img src="/images/blog4/dimension_percentage_setting.PNG" alt="varible measure setting">
+
+
 
 
