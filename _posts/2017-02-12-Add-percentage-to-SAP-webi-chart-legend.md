@@ -11,6 +11,6 @@ data model:               SSAS
 
 | Function      | Microsoft     | SAP  |
 | :-------------|:-------------:|:---------:|
-| ETL           | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| ETL           | SSIS | Data Service |
+| Data Model     |SSAS Mutlidimensional or Tabular     |  Universe |
+| Reporting |SSRS, powerBI      |  Webi, SAP dashboard,design studio |
