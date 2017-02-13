@@ -12,33 +12,37 @@ I have been using SAP BI Webi to some annual reports for a client. I am impresse
 | Data Model     |SSAS Mutlidimensional or Tabular     |  Universe |
 | Reporting |SSRS, PowerBI      |  Webi, SAP dashboard,Design Studio |
 
-I received one request from a client, that need to show calcuation in the legend. like what the chart shows below 
+I received one request from a client, which needs to show calculation in the legend. Like what the chart shows below 
 
 <img src="/images/blog4/original_pie_chart.PNG" alt="original">
 
-what they want 
+What they want 
 
 <img src="/images/blog4/final_pie_chart.PNG" alt="final">
 
-As you might know, legend is where you show series label. Those are not measures, how do I make measure into legend? I was struggled for a while, one of my colleage give me a hint. I finally make this happen. This is how.
+As you might know, legend is where you show series label. Those are not measures, how do I make measure into legend? I was struggled for a while, one of my colleague gave me a hint. I finally make this happen. This is how.
 
-first create a percentage measure varible in the report variable section. set the variable like this.  pay attention to the webi syntax for percentage. Also, you want to use in block so that you can compare part to total.
+First, create a percentage measure variable in the report variable section. Set the variable like this.  Pay attention to the webi syntax for percentage. Also, you want to use "in block" so that you can compare part to total.
 
 <img src="/images/blog4/measure_percentage_setting.PNG" alt="varible measure setting">
 
-next, we create a dimension varible to use this measure. Here you set percentage and series label side by side  
+Next, we create a dimension variable to use this measure. Here you set percentage and series label side by side  
 
 <img src="/images/blog4/dimension_percentage_setting.PNG" alt="varible measure setting">
 
-Finally, right click the chart, in teh assign data section, you originally see like this. you can see call was divided by time interval category
+Finally, right click the chart, in the assign data section, you originally see like this. You can see calls were divided by time interval category
 
 <img src="/images/blog4/original_chart_data_assignment.PNG" alt="original assign data setting">
 
-you need to add your new dimension variable in like this, but hide the original one 
+You need to add your new dimension variable in like this, but hide the original one. Otherwise, you will show extra label, but don't try to delete the oringinal one. Deleting the one will cause issues. 
 
 <img src="/images/blog4/final_setting.PNG" alt="original assign data setting">
 
+Now you have it. 
 
+thanks.
+
+Wenlei
 
 
 
