@@ -18,7 +18,7 @@ I received one request from a client, which needs to show calculation in the leg
 
 What they want 
 
-<img src="/images/blog4/final_pie_chart.PNG" alt="final">
+Legend shows percentage i.e.  20% Business Hours 
 
 As you might know, legend is where you show series label. Those are not measures, how do I make measure into legend? I was struggled for a while, one of my colleague gave me a hint. I finally make this happen. This is how.
 
@@ -39,6 +39,8 @@ You need to add your new dimension variable in like this, but hide the original 
 <img src="/images/blog4/final_setting.PNG" alt="original assign data setting">
 
 Now you have it. 
+
+<img src="/images/blog4/final_pie_chart.PNG" alt="final">
 
 thanks.
 
