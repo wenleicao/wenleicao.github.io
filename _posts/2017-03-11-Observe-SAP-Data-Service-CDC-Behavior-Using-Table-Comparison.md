@@ -56,8 +56,10 @@ after
 Notice that we expect kevin will be updated with Chelsa, but it did not. Check what actually recorded in the map operation.
 insert 
 <img src="/images/blog5/cdc_5_insert.PNG" >
+
 update
 <img src="/images/blog5/cdc_5_update.PNG" >
+
 delete
 <img src="/images/blog5/cdc_5_delete.PNG" >
 
@@ -65,7 +67,10 @@ You notice in update, Kevin does have two updates, but also in delete, you found
 
 in summary, SAP table comparison transform is very robust tool. it can handle duplicate key issue in incoming data by turn on duplicate key options. for multiple key in both incoming and existing table, it has some unexpected result. Maybe I missed something here. Someone could point it out for me. I will appreciate.
 
-As always, I have the SQL source code here. Please note my backend system is oracle, so the syntax is orcal SQL. Also you might need to adjust the column length because table is create by dummy data. The length is defined by the longest one in the dummy. If your new insert is longer than that, you will come across error. 
+As always, I have the SQL source code here. 
+<a href="/Files/cdc_test_code.sql">download code here</a>
+
+Please note my backend system is oracle, so the syntax is orcal SQL. Also you might need to adjust the column length because table is create by dummy data. The length is defined by the longest one in the dummy. If your new insert is longer than that, you will come across error. 
 
 
 
