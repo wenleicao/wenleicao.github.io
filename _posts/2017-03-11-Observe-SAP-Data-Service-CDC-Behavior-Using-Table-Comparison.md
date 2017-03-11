@@ -24,7 +24,7 @@ After the job is run, we can see test_cdc_1 table data has changed as we expecte
 In the real life, things are not always simple as that. Let us say, the same customer show multiple times in the incoming data.  For e.g., Kevin has to move twice because he did not pay the rent. Mary is new customer, she also moved twice. Their names show twice in the table.  How table comparison transform handles that?
 <img src="/images/blog5/cdc_2.PNG" >
 
-this is happened after I ran the data service job.  
+This is happened after I ran the data service job.  
 <img src="/images/blog5/cdc_2_after.PNG" >
 
 Kevin only get updated once, but it is not latest address.  Mary has been inserted twice. This is not correct. 
@@ -32,7 +32,7 @@ Fortunately, Table comparison has an option we can choose.
 
 <img src="/images/blog5/cdc3_incoming_dup.PNG" >
 
-if we check this option, that means our incoming data could have mulitiple records for one customer. Let us see what happens if we redo the previous step with this option on.
+If we check this option, that means our incoming data could have mulitiple records for one customer. Let us see what happens if we redo the previous step with this option on.
 <img src="/images/blog5/cdc3_after.PNG" >
 
 You can see on the left side, the existing table has been updated with the most updated info. That is good.
@@ -40,6 +40,10 @@ You can see on the left side, the existing table has been updated with the most 
 Another senario, what if your existing table has duplicate records for one customer. When you do incremental loading, what is going to happen?
 
 <img src="/images/blog5/cdc4before.PNG" >
+
+In this case, Kevin shows twice in the existing table.  The incoming data only has one record for each custmomer.
+
+
 
 
 
