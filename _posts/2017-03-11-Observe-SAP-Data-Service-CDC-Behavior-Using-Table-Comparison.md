@@ -41,7 +41,16 @@ Another senario, what if your existing table has duplicate records for one custo
 
 <img src="/images/blog5/cdc4before.PNG" >
 
-In this case, Kevin shows twice in the existing table.  The incoming data only has one record for each custmomer.
+In this case, Kevin shows twice in the existing table.  The incoming data only has one record for each custmomer. this is after the job is run.
+
+<img src="/images/blog5/cdc4after.PNG" >
+
+Notice, the dupilcate one is replaced by only one record.
+
+what if both side has duplications
+
+
+
 
 
 
