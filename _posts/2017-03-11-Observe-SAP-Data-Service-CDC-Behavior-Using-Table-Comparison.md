@@ -48,9 +48,13 @@ In this case, Kevin shows twice in the existing table.  The incoming data only h
 Notice, the duplicated one is replaced by only one record.
 
 What if both side has duplications
+
 Before
+
 <img src="/images/blog5/cdc_5_before.PNG" >
+
 After
+
 <img src="/images/blog5/cdc_5_after.PNG" >
 
 Notice that we expect kevin will be updated with Chelsa, but it did not. Check what actually recorded in the map operation.
