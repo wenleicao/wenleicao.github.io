@@ -13,7 +13,7 @@ In this table, you can see John keeps the same location, Kevin changed location 
 I created data service job like the follows, what is displayed is data flow part. 
 <img src="/images/blog5/DS_Dataflow.PNG" >
 
-In this data flow, you can see the data before the job is run. I included three map operation transform to collect the records, which defined by table comparison as insert, update and delete. 
+In this data flow, you can see the data before the job is run. I included three map operation transforms to collect the records, which defined by table comparison as insert, update and delete. 
 
 Double click the table comparison, we can see the configuations. You can see we are comparing two tables based on their customernumber and monitor the change of customername and address. Please note, I checked "Detected deleted row" options because I want to monitor what in deleted in existing table. If you don't need, you can leave it unchecked.  
 <img src="/images/blog5/table_comparison_config1.PNG" >
@@ -21,8 +21,21 @@ Double click the table comparison, we can see the configuations. You can see we 
 After the job is run, we can see test_cdc_1 table data has changed as we expected.
 <img src="/images/blog5/cdc_1.PNG" >
 
-In the real life, things is not always simple as that. let us say, the same customer show multiple times in the incoming data.  For e.g., Kevin has to move twice because he did not pay the rent. His name show twice in the table.  How table comparison transform handles that?
+In the real life, things are not always simple as that. Let us say, the same customer show multiple times in the incoming data.  For e.g., Kevin has to move twice because he did not pay the rent. Mary is new customer, she also moved twice. Their names show twice in the table.  How table comparison transform handles that?
 <img src="/images/blog5/cdc_2.PNG" >
-this is happened after I ran the data service job
+
+this is happened after I ran the data service job.  
 <img src="/images/blog5/cdc_2_after.PNG" >
+
+Kevin only get updated once, but it is not latest address.  Mary has been inserted twice. This is not correct. 
+Fortunately, Table comparison has an option we can choose. 
+
+<img src="/images/blog5/cdc3_incoming_dup.PNG" >
+
+if we check this option, that means our incoming data could have mulitiple records for one customer. Let us see what happens if we redo the previous step with this option on.
+<img src="/images/blog5/cdc3_after.PNG" >
+
+
+
+
 
