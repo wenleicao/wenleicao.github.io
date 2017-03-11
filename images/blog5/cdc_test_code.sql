@@ -71,3 +71,27 @@ select 2, 'Kevin', 'Cambridge' from dual   --Kevin move to cambridge, this is up
 union all
 select 4, 'Mary', 'Shrewsbury' from dual
 
+
+--both side have duplications
+
+create table test_cdc_1 as
+select 1 as Customernumber , 'John' as CustomerName, 'NewTon' as CustomerAddress from dual
+union all
+select 2, 'Kevin', 'Boston' from dual
+union all
+select 2, 'Kevin', 'Lexinton' from dual
+union all
+select 3, 'Lisa', 'Natik' from dual
+
+create table test_cdc_2 as
+select 1 as Customernumber , 'John' as CustomerName, 'NewTon' as CustomerAddress from dual   --this record no change
+union all
+select 2, 'Kevin', 'Cambridge' from dual   --Kevin move to cambridge, this is update
+union all
+select 2, 'Kevin', 'Chelsa' from dual   --Kevin moved again, this is update
+union all
+select 4, 'Mary', 'Shrewsbury' from dual  --this insert
+union all
+select 4, 'Mary', 'Northboro' from dual   --Mary moved again
+
+
