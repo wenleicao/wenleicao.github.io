@@ -76,7 +76,7 @@ As always, I have the SQL source code here for download.
 
 Please note my backend system is oracle, so the syntax is orcal SQL. Also you might need to adjust the column length because table is create by dummy data. The length is defined by the longest one in the dummy table. If your new insert is longer than that, you will come across error. 
 
-thanks for staying with me for this long experiment.
+thanks for staying with me for this long experiment.  :)
 
 Wenlei
 
