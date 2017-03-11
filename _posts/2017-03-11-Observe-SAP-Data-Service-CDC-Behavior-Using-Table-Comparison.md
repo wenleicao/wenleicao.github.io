@@ -35,6 +35,11 @@ Fortunately, Table comparison has an option we can choose.
 if we check this option, that means our incoming data could have mulitiple records for one customer. Let us see what happens if we redo the previous step with this option on.
 <img src="/images/blog5/cdc3_after.PNG" >
 
+You can see on the left side, the existing table has been updated with the most updated info. That is good.
+
+Another senario, what if your existing table has duplicate records for one customer. When you do incremental loading, what is going to happen?
+
+<img src="/images/blog5/cdc4before.PNG" >
 
 
 
