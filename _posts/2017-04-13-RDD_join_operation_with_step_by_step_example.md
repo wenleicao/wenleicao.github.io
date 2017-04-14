@@ -51,7 +51,9 @@ studentcourse1.collect().foreach(println)
 <img src="/images/blog6/studentcourse.PNG">
 
 Since we found data is correct, we proceed to first join student with studentcourse
+
 val join1 =student1.join(studentcourse1) 
+
 join1.collect().foreach(println)
 
 <img src="/images/blog6/join1.PNG">
@@ -73,6 +75,7 @@ course1b.collect().foreach(println)
 <img src="/images/blog6/course1b.PNG">
 
 Now we can join join1remap and course1b RDD. Both of them has courseID as key
+
 val join2 = join1Remap.join(course1b)
 
 join2.collect().foreach(println)
@@ -80,6 +83,7 @@ join2.collect().foreach(println)
 <img src="/images/blog6/join2.PNG">
 
 We only need student name and course cost
+
 val join2b = join2.map (rec=>(rec._2._1, rec._2._2)) 
 
 join2b.collect().foreach(println)
@@ -87,6 +91,7 @@ join2b.collect().foreach(println)
 <img src="/images/blog6/join2b.PNG">
 
 aggreagation by reducebykey function
+
 val result = join2b.reduceByKey ((acc, value) => acc+value)
 
 result.collect().foreach(println)
