@@ -21,13 +21,17 @@ How this will happen when you use RDD?
 Let us import student, course, studentcouse data into RDD. If you want to repeat, I have files download link below, make sure you change the file path to your file location
 
 val student = sc.textFile("file:///home/mqp/Documents/test_data/Student.txt")
+
 val course = sc.textFile("file:///home/mqp/Documents/test_data/Course.txt")
+
 val studentcourse = sc.textFile("file:///home/mqp/Documents/test_data/StudentCourse.txt")
 
 Since imported data a line of string,  we need to tokenize it to break it into studentID and name... Here I convert string to int for ID and cost. Notice string array start from 0, deliminator is tab
 
 val student1 = student.map(rec => (rec.split("\t")(0).toInt, rec.split("\t")(1)))
+
 val course1 = course.map(rec => (rec.split("\t")(0), rec.split("\t")(1),rec.split("\t")(2).toInt))
+
 val studentcourse1 = studentcourse.map(rec => (rec.split("\t")(0).toInt, rec.split("\t")(1)))
 
 let us make sure RDDs contain what it is supposed to
@@ -55,6 +59,7 @@ join1.collect().foreach(println)
 RDD join can only be done in the form of key value pair. Once it is joined, the value of both RDD are nested. Becasue we need courseID to further join with course RDD. we need name for final result. we need to remap the postion of join result. Notice the syntax how to get the nested value. the second element of the result is rec._2. 
 
 val join1Remap = join1.map (rec =>(rec._2._2, rec._2._1))
+
 join1Remap.collect().foreach(println)
 
 <img src="/images/blog6/join1remap.PNG">
@@ -62,24 +67,28 @@ join1Remap.collect().foreach(println)
 On the course RDD side, we only need course RDD  CourseID and cost field. Therefore, we map that 
 
 val course1b = course1.map (rec=>(rec._1, rec._3))
+
 course1b.collect().foreach(println)
 
 <img src="/images/blog6/course1b.PNG">
 
 Now we can join join1remap and course1b RDD. Both of them has courseID as key
 val join2 = join1Remap.join(course1b)
+
 join2.collect().foreach(println)
 
 <img src="/images/blog6/join2.PNG">
 
 We only need student name and course cost
 val join2b = join2.map (rec=>(rec._2._1, rec._2._2)) 
+
 join2b.collect().foreach(println)
 
 <img src="/images/blog6/join2b.PNG">
 
 aggreagation by reducebykey function
 val result = join2b.reduceByKey ((acc, value) => acc+value)
+
 result.collect().foreach(println)
 
 <img src="/images/blog6/result.PNG">
