@@ -30,7 +30,7 @@ val student1 = student.map(rec => (rec.split("\t")(0).toInt, rec.split("\t")(1))
 val course1 = course.map(rec => (rec.split("\t")(0), rec.split("\t")(1),rec.split("\t")(2).toInt))
 val studentcourse1 = studentcourse.map(rec => (rec.split("\t")(0).toInt, rec.split("\t")(1)))
 
-let us make sure RDD contain what it is supposed to
+let us make sure RDDs contain what it is supposed to
 
 student1.collect().foreach(println)
 
@@ -45,5 +45,47 @@ course1.collect().foreach(println)
 studentcourse1.collect().foreach(println)
 
 <img src="/images/blog6/studentcourse.PNG">
+
+Since we found data is correct, we proceed to first join student with studentcourse
+val join1 =student1.join(studentcourse1) 
+join1.collect().foreach(println)
+
+<img src="/images/blog6/join1.PNG">
+
+RDD join can only be done in the form of key value pair. Once it is joined, the value of both RDD are nested. Becasue we need courseID to further join with course RDD. we need name for final result. we need to remap the postion of join result. Notice the syntax how to get the nested value. the second element of the result is rec._2. 
+
+val join1Remap = join1.map (rec =>(rec._2._2, rec._2._1))
+join1Remap.collect().foreach(println)
+
+<img src="/images/blog6/join1remap.PNG">
+
+On the course RDD side, we only need course RDD  CourseID and cost field. Therefore, we map that 
+
+val course1b = course1.map (rec=>(rec._1, rec._3))
+course1b.collect().foreach(println)
+
+<img src="/images/blog6/course1b.PNG">
+
+Now we can join join1remap and course1b RDD. Both of them has courseID as key
+val join2 = join1Remap.join(course1b)
+join2.collect().foreach(println)
+
+<img src="/images/blog6/join2.PNG">
+
+We only need student name and course cost
+val join2b = join2.map (rec=>(rec._2._1, rec._2._2)) 
+join2b.collect().foreach(println)
+
+<img src="/images/blog6/join2b.PNG">
+
+aggreagation by reducebykey function
+val result = join2b.reduceByKey ((acc, value) => acc+value)
+result.collect().foreach(println)
+
+<img src="/images/blog6/result.PNG">
+
+
+
+
 
 
