@@ -98,8 +98,10 @@ result.collect().foreach(println)
 
 <img src="/images/blog6/result.PNG">
 
+you can see the result are summed correctly. 
 
+<a href="/Files/Student.scala">download code here</a>
 
-
+<a href="/Files/DataFile.zip">download data file here</a>
 
 
