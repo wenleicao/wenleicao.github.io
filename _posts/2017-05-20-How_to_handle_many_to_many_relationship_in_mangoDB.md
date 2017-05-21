@@ -14,9 +14,9 @@ MongoDB can set up relationship between collections (tables) through reference o
 First we set up 3 collection using student course data.
 
 var coursedata = [  
-{_id:"a", coursename:"English", cost: 200 },
-{_id:"b", coursename:"Big Data", cost: 600 },
-{_id:"c", coursename:"Business", cost: 400 },
-{_id:"d", coursename:"Biology", cost: 300 }
-]; 
-db.course.insert (coursedata);
+{_id:"a", coursename:"English", cost: 200 },  
+{_id:"b", coursename:"Big Data", cost: 600 },  
+{_id:"c", coursename:"Business", cost: 400 },  
+{_id:"d", coursename:"Biology", cost: 300 }  
+];   
+db.course.insert (coursedata);  
