@@ -114,7 +114,7 @@ while (studentcoursedocs.hasNext() == true) {
 		studentIDs.push(studentcoursedoc.studentcourse_docs.sid);  
 }  
 studentIDs;  
-
+<img src="/images/blog7/join.PNG">
 
 3. same as last method
 
