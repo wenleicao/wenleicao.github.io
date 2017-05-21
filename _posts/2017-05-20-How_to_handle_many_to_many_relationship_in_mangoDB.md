@@ -63,7 +63,7 @@ Unlike RDBMS, there is no one step solution, we have to use variable in MongoDB
 
 //1. get course big data info, this is one to one relation, use findOne, notice courseid = 'b'  
 var course_BigData = db.course.findOne({coursename:"Big Data"});  
-course_BigData
+course_BigData  
 <img src="/images/blog7/bigdata_info.PNG">
 
 //2. get studentid  because this is one to many relation, need to use loop to put all sid into one array for later use (this step identify studentid is 1 and 4)  
@@ -75,3 +75,12 @@ while (StudentCourses.hasNext() == true) {
 }  
 studentIDs  
 <img src="/images/blog7/SID_info.PNG">
+
+//3. get studentname list, so John and Terry take the big data course  
+db.student.find({_id:{$in:studentIDs}}, {studentname:1, _id:0});  
+<img src="/images/blog7/studentlist.PNG">
+
+
+
+
+
