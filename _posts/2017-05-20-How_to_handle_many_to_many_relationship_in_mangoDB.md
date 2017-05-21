@@ -51,13 +51,24 @@ db.student.insert (studentdata);
 
 Now, we have a question such as "who take course of big data?" 
 
-In RDBMS, you would use join or subquery to solve the issue. Since MongoDB did not support multiple collection join yet, I would try the subquery approcach first. 
+In RDBMS, you would use join or subquery to solve the issue. Since MongoDB did not support multiple collection join yet, I would try the subquery approach first. 
 
-let us write the SQL to show the logic
+Let us write SQL to show the logic
 
 select studentname  
 from student   
-where _id in (select sid from studentcourse where cid in (select _id from course where coursename = "Big Data" ) )  
+where _id in (select sid from studentcourse where cid in (select _id from course where coursename = "Big Data" ))  
 
+Unlike RDBMS, there is no one step solution, we have to use variable in MongoDB
 
+//1. get course big data info, this is one to one relation, use findOne  
+var course_BigData = db.course.findOne({coursename:"Big Data"});  
 
+//2. get studentid  because this is one to many relation, need to use loop to put all sid into one array for later use
+var StudentCourses = db.studentcourse.find({cid:course_BigData._id});  
+var studentIDs = [];  
+while (StudentCourses.hasNext() == true) {  
+		var StudentCourse = StudentCourses.next();  
+		studentIDs.push(StudentCourse.sid);  
+}  
+studentIDs  
