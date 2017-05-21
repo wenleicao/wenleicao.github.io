@@ -1,0 +1,49 @@
+db.test1.insert( { _id: "MongoDB", parent: "Databases" } )
+db.test1.insert( { _id: "dbm", parent: "Databases" } )
+db.test1.insert( { _id: "Databases", parent: "Programming" } )
+db.test1.insert( { _id: "Languages", parent: "Programming" } )
+db.test1.insert( { _id: "Programming", parent: "Books" } )
+db.test1.insert( { _id: "Books", parent: null } )
+
+
+var coursedata = [
+{_id:"a", coursename:"English", cost: 200 },
+{_id:"b", coursename:"Big Data", cost: 600 },
+{_id:"c", coursename:"Business", cost: 400 },
+{_id:"d", coursename:"Biology", cost: 300 }
+]; 
+db.course.insert (coursedata);
+
+
+var studentdata =[
+{_id:1, studentname:"John" },
+{_id:2, studentname:"Mary" },
+{_id:3, studentname:"Adam" },
+{_id:4, studentname:"Terry" }
+];
+db.student.insert (studentdata);
+
+var studentcoursedata =[
+{sid:1, cid : "a"}, 
+{sid:1, cid : "b"},
+{sid:2, cid : "d"},
+{sid:3, cid : "a"},
+{sid:3, cid : "c"},
+{sid:4, cid : "b"},
+{sid:4, cid : "c"},
+];
+db.studentcourse.insert(studentcoursedata)
+
+if I want to know who take course of big data 
+in SQL, I would either use join or subquery
+
+select studentname
+from student 
+where _id in (select sid from studentcourse where cid in (select _id from course where coursename = "Big Data" ) )
+
+var course_BigData = db.course.findOne({coursename:"Big Data"});
+var StudentID = db.studentcourse.find({cid:course_BigData._id});
+db.student.find({studentname:StudentID.sid})
+
+
+
