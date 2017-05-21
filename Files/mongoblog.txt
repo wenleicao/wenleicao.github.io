@@ -1,10 +1,3 @@
-db.test1.insert( { _id: "MongoDB", parent: "Databases" } )
-db.test1.insert( { _id: "dbm", parent: "Databases" } )
-db.test1.insert( { _id: "Databases", parent: "Programming" } )
-db.test1.insert( { _id: "Languages", parent: "Programming" } )
-db.test1.insert( { _id: "Programming", parent: "Books" } )
-db.test1.insert( { _id: "Books", parent: null } )
-
 
 var coursedata = [
 {_id:"a", coursename:"English", cost: 200 },
@@ -35,15 +28,100 @@ var studentcoursedata =[
 db.studentcourse.insert(studentcoursedata)
 
 if I want to know who take course of big data 
+
 in SQL, I would either use join or subquery
 
+method 1: subquery logic
+
+//I would write sql like this
 select studentname
 from student 
 where _id in (select sid from studentcourse where cid in (select _id from course where coursename = "Big Data" ) )
 
+// in mongodb, I would do like this
+//1. get course big data info, this is one to one relation, use findOne
 var course_BigData = db.course.findOne({coursename:"Big Data"});
-var StudentID = db.studentcourse.find({cid:course_BigData._id});
-db.student.find({studentname:StudentID.sid})
+
+
+//2. get studentid  because this is one to many relation, need to use loop to put all sid into one array for later use
+var StudentCourses = db.studentcourse.find({cid:course_BigData._id});
+var studentIDs = [];
+while (StudentCourses.hasNext() == true) {
+		var StudentCourse = StudentCourses.next();
+		studentIDs.push(StudentCourse.sid);
+}
+studentIDs
+
+//3. get studentname list
+db.student.find({_id:{$in:studentIDs}}, {studentname:1, _id:0});
+
+
+//Method 2   use join
+in SQL, I would write SQL like this
+select studentname
+from student s
+inner join studentcourse sc on s._id = sc.sid
+inner join course c on sc.cid = c._id
+
+in mongodb, I would like do
+
+
+
+
+
+var studentcoursedocs = db.course.aggregate([
+   {$match: { coursename: "Big Data" }} ,
+   {
+      $lookup:
+        {
+          from: "studentcourse",
+          localField: "_id",
+          foreignField: "cid",
+          as: "studentcourse_docs"
+        }
+   }, 
+   { $project : { _id: 0, "studentcourse_docs.sid" : 1 } },
+   { $unwind : "$studentcourse_docs"}
+]);
+var studentIDs = [];
+while (studentcoursedocs.hasNext() == true) {
+		var studentcoursedoc = studentcoursedocs.next();
+		studentIDs.push(studentcoursedoc.studentcourse_docs.sid);
+}
+studentIDs
+
+
+//1
+var studentcoursedocs = db.course.aggregate([
+   {$match: { coursename: "Big Data" }} ,
+   {
+      $lookup:
+        {
+          from: "studentcourse",
+          localField: "_id",
+          foreignField: "cid",
+          as: "studentcourse_docs"
+        }
+   }, 
+   { $project : { _id: 0, "studentcourse_docs.sid" : 1 } },
+   { $unwind : "$studentcourse_docs"}
+]);
+//2
+var studentIDs = [];
+while (studentcoursedocs.hasNext() == true) {
+		var studentcoursedoc = studentcoursedocs.next();
+		studentIDs.push(studentcoursedoc.studentcourse_docs.sid);
+}
+studentIDs;
+
+
+
+
+
+
+
+
+
 
 
 
