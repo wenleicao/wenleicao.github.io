@@ -80,6 +80,10 @@ studentIDs
 db.student.find({_id:{$in:studentIDs}}, {studentname:1, _id:0});  
 <img src="/images/blog7/studentlist.PNG">
 
+Hope this post can help someone, :)
+
+Wenlei
+
 
 
 
