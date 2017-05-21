@@ -53,7 +53,7 @@ Now, we have a question such as "who take course of big data?"
 
 In RDBMS, you would use join or subquery to solve the issue. Since MongoDB did not support multiple collection join yet, I would try the subquery approach first. 
 
-* method 1  subquery
+* method 1  subquery  
 Let us write SQL to show the logic
 
 select studentname  
@@ -81,15 +81,18 @@ studentIDs
 db.student.find({_id:{$in:studentIDs}}, {studentname:1, _id:0});  
 <img src="/images/blog7/studentlist.PNG">
 
-* Method 2  join
-Again let us write SQL to show logic  
+* Method 2  join  
+Again let us write SQL to show logic    
 select studentname  
 from student s  
 inner join studentcourse sc on s._id = sc.sid  
 inner join course c on sc.cid = c._id
 where c.coursename = 'Big Data'
 
-//1. From MongoDB 3.2, it starts to support join using aggregation $lookup. it works like pipeline. In brief, $match fiter course collection with coursename = 'Big Data', $lookup join course and studentcourse collection with _id and cid and embed the join result as studentcourse_docs. Since I only need sid, I $project this filed. Because it is in the array format, I use $unwind to unwind the array     
+1. From MongoDB 3.2, it starts to support join using aggregation $lookup. it works like pipeline. In brief, $match fiter course collection with coursename = 'Big Data', $lookup join course and studentcourse collection with _id and cid and embed the join result as studentcourse_docs. Since I only need sid, I $project this filed. Because it is in the array format, I use $unwind to unwind the array     
+2. extract the sid as an array for later use, this is similar to previous method
+
+//1
 var studentcoursedocs = db.course.aggregate([  
    {$match: { coursename: "Big Data" }} ,  
    {  
@@ -104,17 +107,16 @@ var studentcoursedocs = db.course.aggregate([
    { $project : { _id: 0, "studentcourse_docs.sid" : 1 } },  
    { $unwind : "$studentcourse_docs"}  
 ]);  
-studentcoursedocs  
-
-//2. extract the sid as an array for later use, this is similar to previous method
+//2  
 var studentIDs = [];  
 while (studentcoursedocs.hasNext() == true) {  
 		var studentcoursedoc = studentcoursedocs.next();  
 		studentIDs.push(studentcoursedoc.studentcourse_docs.sid);  
-}
-studentIDs  
+}  
+studentIDs;  
 
-//3. same as last method
+
+3. same as last method
 
 
 Hope this post can help someone, :)
