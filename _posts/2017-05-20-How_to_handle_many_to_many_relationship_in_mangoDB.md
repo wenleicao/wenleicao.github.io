@@ -47,5 +47,7 @@ var studentdata =[
 ];  
 db.student.insert (studentdata);  
 
-<img src="images/blog7/student.PNG">
+<img src="/images/blog7/student.PNG">
+
+Now, we have a question such as "who take course of big data?" 
 
