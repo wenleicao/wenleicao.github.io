@@ -92,6 +92,8 @@ where c.coursename = 'Big Data'
 1. From MongoDB 3.2, it starts to support join using aggregation $lookup. it works like pipeline. In brief, $match fiter course collection with coursename = 'Big Data', $lookup join course and studentcourse collection with _id and cid and embed the join result as studentcourse_docs. Since I only need sid, I $project this filed. Because it is in the array format, I use $unwind to unwind the array     
 2. extract the sid as an array for later use, this is similar to previous method
 
+3. same as last method
+
 //1
 var studentcoursedocs = db.course.aggregate([  
    {$match: { coursename: "Big Data" }} ,  
@@ -116,7 +118,6 @@ while (studentcoursedocs.hasNext() == true) {
 studentIDs;  
 <img src="/images/blog7/join.PNG">
 
-3. same as last method
 
 
 Hope this post can help someone, :)
