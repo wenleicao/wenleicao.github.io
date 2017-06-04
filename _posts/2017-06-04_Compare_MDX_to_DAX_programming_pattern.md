@@ -7,9 +7,15 @@ SQL is used in relational database (OLTP) for query purpose. For analytical purp
 
 <img src="/images/blog8/mdxvsdax.PNG">
 
-It takes some efforts to learn both language. A lot of people (including me) who knew one language feels it is harder to learn the other, probably because the way it programs is quite different. I tried to have both MDX and DAX to achieve the same task so that we can take a peek at what the difference is. 
+It takes some efforts to learn both language. A lot of people (including me) who knew one language feels it is even harder to learn the other, probably because the way it programs is quite different. I tried to have both MDX and DAX to achieve the same task so that we can take a peek at what the difference is. 
 
+I am going to use Adventureworks sample tabular model as the target database to query against. 
+if you don't have this sample database,  you can use the following link to set it up. 
 
+<http://msftdbprodsamples.codeplex.com/releases/view/55330>
+ 
+
+ 
 
 
 
