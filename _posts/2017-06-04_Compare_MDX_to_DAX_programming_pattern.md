@@ -13,6 +13,11 @@ I am going to use Adventureworks sample tabular model as the target database to 
 if you don't have this sample database,  you can use the following link to set it up. 
 
 <http://msftdbprodsamples.codeplex.com/releases/view/55330>
+
+Now, I first wrote DAX code to get product info and create a measure to calculate child-parent ratio
+
+<img src="/images/blog8/dax.PNG">
+
  
 
  
