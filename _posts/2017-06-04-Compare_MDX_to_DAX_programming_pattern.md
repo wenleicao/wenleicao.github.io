@@ -23,14 +23,31 @@ To achieve the same query in MDX is not that straightforward. The calculation of
 
 <img src="/images/blog8/hiearchy.PNG">
 
-Noitce that product category is three level above the leaf level of product name. 
+Noitce that product category is three level above the leaf level of product name. Thus, I used 3 parents in my MDX code to get product category.  Also, notice that I need to make model name and product category name as a measure to be able to show them side by side product name and ratio.
+
+<img src="/images/blog8/mdx1.PNG">
+
+Because the column dimension uses product category hierarchy, to achieve some layout as DAX, I need to filter out first column level <> product name and ratio is null, then order product name ascendingly across the product category hierarchy (BASC). The result show as follows. The result is the same as DAX results.
+
+<img src="/images/blog8/mdx2.PNG">
 
 
+Through this exercise,  what I learned.
 
-
++ DAX can use Calculate or Calculatable to change filter function, MDX does not have such function
++ To list hierarchy column side by side with measure,  MDX need to create "helper" measure
  
+In this particular setting, I use MDX to replicate DAX query, it took extra steps. But it does not mean MDX inferior to DAX. It depends on the requirements. If I am use DAX to replicate MDX, it will DAX extra step to achieve too.
 
+Hope this is helpful.
 
+please download DAX code here and MDX code here. 
+
+thanks.
+
+Wenlei
+
+<a href="/Files/mdx_dax_code.zip">Please download DAX and MDX here</a>
 
 
 
