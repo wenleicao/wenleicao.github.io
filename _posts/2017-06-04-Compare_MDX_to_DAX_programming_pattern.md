@@ -9,16 +9,24 @@ SQL is used in relational database (OLTP) for query purpose. For analytical purp
 
 It takes some efforts to learn both language. A lot of people (including me) who knew one language feels it is even harder to learn the other, probably because the way it programs is quite different. I tried to have both MDX and DAX to achieve the same task so that we can take a peek at what the difference is. 
 
-I am going to use Adventureworks sample tabular model as the target database to query against. 
+I am going to use Adventureworks sample tabular model as the target database to query against (because both MDX and DAX can be used). 
 if you don't have this sample database,  you can use the following link to set it up. 
 
 <http://msftdbprodsamples.codeplex.com/releases/view/55330>
 
-Now, I first wrote DAX code to get product info and create a measure to calculate child-parent ratio
+Now, I first wrote DAX code to get product info and create a measure to calculate child-parent ratio. First, I use summarize function to sum total sale amount group by product name, model name and product category.  Next, I use calculate function to alter the current filter context to sum at product category level. Last, I get the child and parent ratio use divide function from above two. 
 
 <img src="/images/blog8/dax.PNG">
 
  
+To achieve the same query in MDX is not that straightforward. The calculation of child-parent ratio relies on hierachy. We have a user defined hierachy in Adventureworks tabular model as follows.
+
+<img src="/images/blog8/hiearchy.PNG">
+
+Noitce that product category is three level above the leaf level of product name. 
+
+
+
 
  
 
