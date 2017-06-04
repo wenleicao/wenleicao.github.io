@@ -3,7 +3,7 @@ layout: post
 title: Compare MDX to DAX programming pattern
 ---
 
-SQL is used in relational database (OLTP) for query purpose. For analytical purpose, OLAP cube is built on top of data warehouse. A new type of language called MultiDimensional eXpressions (MDX) was introduced in 1997 by Microsoft to quey the OLAP cube.  Thereafter, MDX is widely adopted by major OLAP vendors such as Microsoft SSAS, Oralce Essbase et al. In 2009, Microsoft pushed out Data Analysis Expressions (DAX) and use it in powerpivot, powerBI desktop and SSAS tabular model. As of now, I am not aware of other major vendor adopted DAX yet.  It seems to me that Microsoft will continue to promote application of DAX. But I don't believe DAX will eventally replace MDX, since MDX is still the only language used in multi-dimensional model (see table below). In fact, DAX is translated into MDX at the backend to query tabular model. Therefore, you can query tabular model with MDX, but not vice versa.
+SQL is used in relational database (OLTP) for query purpose. For analytical purpose, OLAP cube is built on top of data warehouse. A new type of language called MultiDimensional eXpressions (MDX) was introduced in 1997 by Microsoft to query the OLAP cube.  Thereafter, MDX is widely adopted by major OLAP vendors such as Microsoft SSAS, Oralce Essbase et al. In 2009, Microsoft pushed out Data Analysis Expressions (DAX) and use it in powerpivot, powerBI desktop and SSAS tabular model. As of now, I am not aware of other major vendor adopted DAX yet.  It seems to me that Microsoft will continue to promote application of DAX. But I don't believe DAX will eventually replace MDX, since MDX is still the only language used in multi-dimensional model (see table below). In fact, DAX is translated into MDX at the backend to query tabular model. Therefore, you can query tabular model with MDX, but not vice versa.
 
 <img src="/images/blog8/mdxvsdax.PNG">
 
@@ -19,29 +19,28 @@ Now, I first wrote DAX code to get product info and create a measure to calculat
 <img src="/images/blog8/dax.PNG">
 
  
-To achieve the same query in MDX is not that straightforward. The calculation of child-parent ratio relies on hierachy. We have a user defined hierachy in Adventureworks tabular model as follows.
+To achieve the same query in MDX is not that straightforward. The calculation of child-parent ratio relies on hierarchy. We have a user defined hierarchy in Adventureworks tabular model as follows.
 
 <img src="/images/blog8/hiearchy.PNG">
 
-Noitce that product category is three level above the leaf level of product name. Thus, I used 3 parents in my MDX code to get product category.  Also, notice that I need to make model name and product category name as a measure to be able to show them side by side product name and ratio.
+Notice that product category is three level above the leaf level of product name. Thus, I used 3 parents in my MDX code to get product category.  Also, notice that I need to make model name and product category name as a measure to be able to show them side by side product name and ratio.
 
 <img src="/images/blog8/mdx1.PNG">
 
-Because the column dimension uses product category hierarchy, to achieve some layout as DAX, I need to filter out first column level <> product name and ratio is null, then order product name ascendingly across the product category hierarchy (BASC). The result show as follows. The result is the same as DAX results.
+Because the column dimension uses product category hierarchy, to achieve some layout as DAX, I need to filter out first column level <> product name and ratio is null, then sort product name in ascending order across the product category hierarchy (BASC). The result show as follows. The result is the same as DAX results.
 
 <img src="/images/blog8/mdx2.PNG">
 
 
-Through this exercise,  what I learned.
+what I have learned:
 
 + DAX can use Calculate or Calculatable to change filter function, MDX does not have such function
-+ To list hierarchy column side by side with measure,  MDX need to create "helper" measure
++ To list hierarchy column side by side with measure, MDX need to create "helper" measure
++ MDX need hierarchy to calculate child parent ratio
  
-In this particular setting, I use MDX to replicate DAX query, it took extra steps. But it does not mean MDX inferior to DAX. It depends on the requirements. If I am use DAX to replicate MDX, it will DAX extra step to achieve too.
+In this particular setting, I use MDX to replicate DAX query. it did take extra steps. But it does not mean MDX is inferior to DAX. It depends on the requirements. If I am using DAX to replicate MDX, it will take DAX extra step to achieve the same too.
 
-Hope this is helpful.
-
-please download DAX code here and MDX code here. 
+Hope this comparison is helpful for you to understand MDX and DAX.
 
 thanks.
 
