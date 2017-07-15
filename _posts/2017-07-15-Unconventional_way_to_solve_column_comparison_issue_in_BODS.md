@@ -46,13 +46,13 @@ If you hook up with a template table now with the query transform. you will see 
 
 Magic actually happened in the validation step, where we created two rules
 It is hard for me to understand initially, over the time, I understand that rules set up in the validation step is "AND" relationship. Any of them gets voilated, the record will be sent to fail path.  Here, we set rule as c_CITY =1 and c_NAME =1. Only the record meets all rules will send pass path.
+<img src="/images/blog9/validation.PNG" >
 
 
 We linked the success path and fail path to two template tables. let us run the job and see what happened.
 <img src="/images/blog9/result1.PNG" >
 
 On the left, it is success path which only contain customer 1 because he has no changes. The rest customer who has changes is in the fail path. Insteresting part is BODS generates a DI_ERRORCOLUMNS in the fail path. If you take a look at this system generate column, it actually contains the info we wanted (Yes, we need some string operation on it, but the components are there). 
-<img src="/images/blog9/validation.PNG" >
 
 
 The last step is we add a query transform behand the validation step and use replace_substr function to replace "Validation failed rules(s):" with "", replace prefix "c_" with "" for the column name,  replace ":" with ",". 
