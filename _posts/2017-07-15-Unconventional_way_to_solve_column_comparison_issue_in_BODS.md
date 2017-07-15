@@ -3,7 +3,8 @@ layout: post
 title: Unconventional way to solve column comparison issue in BODS
 ---
 
-We had a request from an internal customer that they need to compare two tables to see what records are inserted, deleted and updated.  These tables contain thousands of records, therefore it is not manageable for a person to do this work. For this purpose, Business Object Data Service (BODS) table comparison transform and Map operation transform can identify table level change (please check my previous blog ).  Customer also want to detail what particular columns were changed in the format like   
+We had a request from an internal customer that they need to compare two tables to see what records are inserted, deleted and updated.  These tables contain thousands of records, therefore it is not manageable for a person to do this work. For this purpose, Business Object Data Service (BODS) table comparison transform and Map operation transform can identify table level change (please check my previous blog ).  Customer also want to detail what particular columns were changed in the format like
+
 | Primary Key | column changed |
 | --- | --- |
 | 1 | column A, column C |  
