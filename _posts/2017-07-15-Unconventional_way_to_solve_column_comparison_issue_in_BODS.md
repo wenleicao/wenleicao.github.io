@@ -34,12 +34,16 @@ Based on info, we know customer 1 did not changed, we used it as negative contro
 This is the first data flow I built.  you will see it contained a query transform and validation transform and a couple of template table. This gives you an overview. 
 <img src="/images/blog9/data_flow.PNG" >
 
-We first join this two table using query transform with inner join and join with the customerID
+We first join this two table using query transform (q_join) with inner join and join with the customerID
 <img src="/images/blog9/join_condition.PNG" >
 
 We brought in customerID, this can be from either previous or current table, they are the same. 
 Now, we add two columns to show the comparison result of name and city. In the image below, I use c_NAME and c_CITY. The function I used is decode, ie, if both tables have the same value in the same column, I will assign value 1, otherwises, I will assign value 0.  
 <img src="/images/blog9/column_def.PNG" >
+
+if you hook up with a template table now with the query transform. you will see the followings.  
+<img src="/images/blog9/middle change.PNG" >
+
 
 
 
