@@ -41,8 +41,15 @@ We brought in customerID, this can be from either previous or current table, the
 Now, we add two columns to show the comparison result of name and city. In the image below, I use c_NAME and c_CITY. The function I used is decode, ie, if both tables have the same value in the same column, I will assign value 1, otherwises, I will assign value 0.  
 <img src="/images/blog9/column_def.PNG" >
 
-if you hook up with a template table now with the query transform. you will see the followings.  
+If you hook up with a template table now with the query transform. you will see the followings.  
 <img src="/images/blog9/middle change.PNG" >
+
+Magic actually happened in the validation step, where we created two rules
+It is hard for me to understand initially, over the time, I understand that rules set up in the validation step is "AND" relationship. Any of them gets voilated, the record will be sent to fail path.  Here, we set rule as c_CITY =1 and c_NAME =1. Only the record meets all rules will send pass path.
+
+
+We linked the success path and fail path to two template tables. let us run the job and see what happened.
+<img src="/images/blog9/result1.PNG" >
 
 
 
