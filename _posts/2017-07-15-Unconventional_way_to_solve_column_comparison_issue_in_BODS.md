@@ -28,3 +28,8 @@ create previous customer table
 
 create curent customer table  
 <img src="/images/blog9/customer_after.PNG" >
+
+Based on info, we know customer 1 did not changed, we used it as negative control; Customer 2 changed name from Jenny to Jennifer; customer 3 changed City from Philly to Seattle; customer 4 changed both name and city info. Now, let us see how we identify those to the request of customer.  
+
+We first join this two table using query transform with inner join and join with the customerID
+<img src="/images/blog9/join_condition.PNG" >
