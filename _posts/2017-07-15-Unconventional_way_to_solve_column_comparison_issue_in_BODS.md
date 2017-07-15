@@ -20,6 +20,11 @@ The original method I can think is to join two table together and use decode fun
 
 Plan is to either use BODS pivot transform or SQL transform to pivot the column changed to format customer requested  
 My colleague shared me a smart yet unconventional way to solve this multi-step processes just in one transform. I think this trick is really good and worth time to record there.   
-Here I use two example tables to show what happened  
 
+Here I use two example customer tables to show what happened  
 
+create previous customer table
+<img src="images/blog9/customer_before.PNG" >
+
+create curent customer table
+<img src="images/blog9/customer_after.PNG" >
