@@ -24,7 +24,7 @@ My colleague shared me a smart yet unconventional way to solve this multi-step p
 Here I use two example customer tables to show what happened  
 
 create previous customer table
-<img src="images/blog9/customer_before.PNG" >
+<img src="/images/blog9/customer_before.PNG" >
 
 create curent customer table
-<img src="images/blog9/customer_after.PNG" >
+<img src="/images/blog9/customer_after.PNG" >
