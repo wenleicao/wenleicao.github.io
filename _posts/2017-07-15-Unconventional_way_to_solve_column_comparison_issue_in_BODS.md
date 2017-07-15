@@ -15,8 +15,8 @@ The original method I can think is to join two table together and use decode fun
 |RowID|column changed|
 | --- | --- |
 |1|column A|  
-1	           column C  
-2	           column B
+|1|column C|  
+|2|column B|
 
 Plan is to either use BODS pivot transform or SQL transform to pivot the column changed to format customer requested  
 My colleague shared me a smart yet unconventional way to solve this multi-step processes just in one transform. I think this trick is really good and worth time to record there.   
