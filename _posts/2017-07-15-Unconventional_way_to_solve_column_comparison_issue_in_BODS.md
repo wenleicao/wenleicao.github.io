@@ -8,7 +8,8 @@ We had a request from an internal customer that they need to compare two tables 
 |Primary Key|column changed|
 | --- | --- |
 | 1 | column A, column C |  
-| 2 | column B |  
+| 2 | column B | 
+
 The original method I can think is to join two table together and use decode function to identify the column with difference, then use case transform to isolate those columns, followed by merge transform to collect the info.  We ended up with this  
 RowID    	   column changed  
 1	           column A  
