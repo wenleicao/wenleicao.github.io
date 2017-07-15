@@ -33,3 +33,10 @@ Based on info, we know customer 1 did not changed, we used it as negative contro
 
 We first join this two table using query transform with inner join and join with the customerID
 <img src="/images/blog9/join_condition.PNG" >
+
+We brought in customerID, this can be from either previous or current table, they are the same. 
+Now, we add two columns to show the comparison result of name and city. In the image below, I use c_NAME and c_CITY. The function I used is decode, ie, if both tables have the same value in the same column, I will assign value 1, otherwises, I will assign value 0.  
+<img src="/images/blog9/column_def.PNG" >
+
+
+
