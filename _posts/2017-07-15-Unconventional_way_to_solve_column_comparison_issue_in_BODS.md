@@ -16,39 +16,39 @@ My colleague shared me a smart yet unconventional way to solve this multi-step p
 
 Here I use two example customer tables to show what happened  
 
-create previous customer table  
+Create previous customer table  
 <img src="/images/blog9/customer_before.PNG" >
 
-create curent customer table  
+Create current customer table  
 <img src="/images/blog9/customer_after.PNG" >
 
 Based on info, we know customer 1 did not changed, we used it as negative control; Customer 2 changed name from Jenny to Jennifer; customer 3 changed City from Philly to Seattle; customer 4 changed both name and city info. Now, let us see how we identify those to the request of customer.  
 
-This is the first data flow I built.  you will see it contained a query transform and validation transform and a couple of template table. This gives you an overview. 
+This is the first data flow I built.  You will see it contained a query transform and validation transform and a couple of template table. This gives you an overview. 
 <img src="/images/blog9/data_flow.PNG" >
 
 We first join this two table using query transform (q_join) with inner join and join with the customerID
 <img src="/images/blog9/join_condition.PNG" >
 
 We brought in customerID, this can be from either previous or current table, they are the same. 
-Now, we add two columns to show the comparison result of name and city. In the image below, I use c_NAME and c_CITY. The function I used is decode, ie, if both tables have the same value in the same column, I will assign value 1, otherwises, I will assign value 0.  
+Now, we add two columns to show the comparison result of name and city. In the image below, I use c_NAME and c_CITY. The function I used is decode, ie, if both tables have the same value in the same column, I will assign value 1, otherwise, I will assign value 0.  
 <img src="/images/blog9/column_def.PNG" >
 
 If you hook up with a template table now with the query transform. you will see the followings.  
 <img src="/images/blog9/middle change.PNG" >
 
 Magic actually happened in the validation step, where we created two rules
-It is hard for me to understand initially, over the time, I understand that rules set up in the validation step is "AND" relationship. Any of them gets voilated, the record will be sent to fail path.  Here, we set rule as c_CITY =1 and c_NAME =1. Only the record meets all rules will send pass path.
+It is hard for me to understand initially, over the time, I understand that rules set up in the validation step is "AND" relationship. Any of them gets violated, the record will be sent to fail path.  Here, we set rule as c_CITY =1 and c_NAME =1. Only the record meets all rules will send pass path.
 <img src="/images/blog9/validation.PNG" >
 
 
-We linked the success path and fail path to two template tables. let us run the job and see what happened.
+We linked the success path and fail path to two template tables. Let us run the job and see what happened.
 <img src="/images/blog9/result1.PNG" >
 
-On the left, it is success path which only contain customer 1 because he has no changes. The rest customer who has changes is in the fail path. Insteresting part is BODS generates a DI_ERRORCOLUMNS in the fail path. If you take a look at this system generate column, it actually contains the info we wanted (Yes, we need some string operation on it, but the components are there). 
+On the left, it is success path which only contain customer 1 because he has no changes. The rest customer who has changes is in the fail path. Interesting part is BODS generates a DI_ERRORCOLUMNS in the fail path. If you take a look at this system generate column, it actually contains the info we wanted (Yes, we need some string operation on it, but the components are there). 
 
 
-The last step is we add a query transform behand the validation step and use replace_substr function to replace "Validation failed rules(s):" with "", replace prefix "c_" with "" for the column name,  replace ":" with ",". 
+The last step is we add a query transform behind the validation step and use replace_substr function to replace "Validation failed rules(s):" with "", replace prefix "c_" with "" for the column name,  replace ":" with ",". 
 <img src="/images/blog9/reformat_di_errorcolumns.PNG" >
 
 The final data flow looks like this  
@@ -64,6 +64,6 @@ Hope you enjoy this post.
 Wenlei  
 
 
-The code to generate the dummy data can be downloaded <a href="/Files/blog9_code.sql">here</a> .  You might need to make slight modification if you use database other than Oracle.
+The code to generate the dummy data can be downloaded <a href="/Files/blog9_code.sql">here</a>.  You might need to make slight modification if you use database other than Oracle.
 
 
