@@ -13,3 +13,5 @@ Hope this can also help others
 ### Contact me
 
 [wenleicao at hotmail.com](mailto:wenleicao@hotmail.com)
+
+<https://www.linkedin.com/in/wenleicao>
