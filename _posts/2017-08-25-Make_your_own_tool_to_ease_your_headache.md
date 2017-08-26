@@ -17,7 +17,7 @@ The update step is completed by OLE DB command task. This requires you pass in e
 
 In this case, it only has 5 variables,  what if this is a big fact table that you have 100 columns there. Are you going to manually create 100 variables? 
 
-2. The other example, calling stored procedure in OLE DB source can often confuse SSIS. One way to solve it is to use with result sets clause. There you have to provide the column name and data type.  In my case, query is from a variable. Therefore, it also has SSIS expression, such as double quotation and "\n" for line change.
+2. The other example, calling stored procedure in OLE DB source can often confuse SSIS. One way to solve it is to use with result sets clause. There you have to provide the column name and data type.  In my case, query is from a variable. Therefore, it also has SSIS expression, such as double quotation and "\n" for line change. Part of store procedure name is blacked out for privacy.
 
 <img src="/images/blog10/exampl2.PNG" >  
 
@@ -43,6 +43,12 @@ I put the original code before conversion in the comment out block, so you can c
 
 <img src="/images/blog10/code_section3.PNG" >
 
-if databaseName is tempdb. it use a join logic to query different set of table.
+if databaseName is tempdb. it uses a join logic to query different set of table. Notice, we use case when to handle char, varchar, nvarchar differently with other data type. 
+
+Let us see if this procedure can help us to solve the two scenario I mentioned earlier  
+
+Here we use adventureworksDW tables as target tables,   I will call stored procedure and pass in table path and string pattern.  The database where stored procedure reside is blacked out for privacy. Let us see what happen. 
+
+
 
 
