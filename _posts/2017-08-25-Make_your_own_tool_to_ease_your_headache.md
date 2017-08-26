@@ -49,6 +49,21 @@ Let us see if this procedure can help us to solve the two scenario I mentioned e
 
 Here we use adventureworksDW tables as target tables,   I will call stored procedure and pass in table path and string pattern.  The database where stored procedure reside is blacked out for privacy. Let us see what happen. 
 
+<img src="/images/blog10/string_build_sample1.PNG" >
+
+<img src="/images/blog10/string_build_sample2.PNG" >
+
+we pass a string pattern, sandwitch the column and data type with "*" and "#". you have your string built.
+
+let us work on the 2nd scenario
+
+<img src="/images/blog10/string_build_sample3.PNG" >
+
+We can also quickly build the string.
+
+What about temp table?  we created a temp table. it also return result we expect. 
+<img src="/images/blog10/string_build_sample4.PNG" >
+
 
 
 
