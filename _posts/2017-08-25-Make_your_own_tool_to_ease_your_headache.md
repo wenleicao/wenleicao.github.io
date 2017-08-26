@@ -38,3 +38,11 @@ Next, I declare some variables I need to use during the process. Using string fu
 
 <img src="/images/blog10/code_section2.PNG" > 
 
+If databaseName is not tempdb, we will use information_schema. But if we call this procedure to use for other database, you have to specify that database name and add that in front of information_schema. This can only be done through dynamic SQL. The good thing of dynamic SQL is flexibility, the flip side is hard to understand. 
+I put the original code before conversion in the comment out block, so you can compare.
+
+<img src="/images/blog10/code_section3.PNG" >
+
+if databaseName is tempdb. it use a join logic to query different set of table.
+
+
