@@ -1,6 +1,6 @@
 ---
 layout: post
-title: String builder for BI developer
+title: Create String Builder for Yourself
 ---
 
 People create tool to make their job easier. Carpenters make wood jig.  Farmers are using spinning wheel for making cloth. 
