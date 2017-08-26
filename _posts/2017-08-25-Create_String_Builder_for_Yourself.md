@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create String Builder for Yourself
+title: Create a String Builder for Youreself
 ---
 
 People create tool to make their job easier. Carpenters make wood jig.  Farmers are using spinning wheel for making cloth. 
