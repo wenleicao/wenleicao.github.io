@@ -64,7 +64,7 @@ We can also quickly build the string.
 What about temp table?  we created a temp table. it also returns result we expected. 
 <img src="/images/blog10/string_build_sample4.PNG" >
 
-The last step is easy. copy the result to your script, but be careful, since it is mass production, the last of string also contain a coma, you need to remove it, otherwise, you will have syntax error.
+The last step is easy. copy the result to your script, but be careful, since it is mass production, the last line of string also contain a coma, you need to remove it, otherwise, you will have syntax error.
 
 Next time, be lazy but be creative :‑P . 
 
