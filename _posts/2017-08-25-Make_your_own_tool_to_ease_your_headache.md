@@ -15,6 +15,13 @@ The update step is completed by OLE DB command task. This requires you pass in e
 
 <img src="/images/blog10/example1.PNG" >
 
+In this case, it only has 5 variables,  what if this is a big fact table that you have 100 columns there. Are you going to manually create 100 variables? 
+
+2. The other example, calling stored procedure in OLE DB source can often confuse SSIS. One way to solve it is to use with result sets clause. There you have to provide the column name and data type.  In my case, query is from a variable. Therefore, it also has SSIS expression, such as double quotation and "\n" for line change.
+
+<img src="/images/blog10/exampl2.PNG" >  
+
+
 
 
 
