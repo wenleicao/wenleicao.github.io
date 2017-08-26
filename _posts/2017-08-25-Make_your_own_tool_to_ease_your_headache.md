@@ -27,12 +27,14 @@ Manually doing this is painful. Most people know to use INFORMATION_SCHEMA.COLUM
 
 Since I am doing ETL quite often, I am also lazy to remember those system table column name. I would like something either procedure or function, I can passing in the table path and sample string, so that based on the table’s  metadata, it will automatically yield the string I want.
 
-Here I walk through the procedure I created
+Here I walk through the procedure I created.  Procedure code can be download at the bottom of this page.
 
 <img src="/images/blog10/code_section1.PNG" > 
 
+First, this procedure need to pass in full table path, I mean DatabaseName.SchemaName.TableName and string example.   Here the stored procedure need to know the string pattern so that it can replace the column and data type with metadata. So you need to let stored procedure know where column and data type starts and ends.  I sandwich the column name with "*", data type with "#". It is probably not the best choice, but you can select the one you like. In order to avoid confusion, if your example string has single quotation mark, I replace it with "`". 
+
+Next, I declare some variables I need to use during the process. Using string function, I can get databasename and tablename value from table path.  Using substring function, I can  isolate columnname and datatype that will be replaced by table metadata.
 
 
-
-
+<img src="/images/blog10/code_section2.PNG" > 
 
