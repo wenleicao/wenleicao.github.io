@@ -16,6 +16,25 @@ Notice, there are 90 errors. Most are connecting errors. The reason why this hap
 
 If you only have limited components in your package, you can go through each component and reconfigure the connection. But there are 90 errors, it won't be a pleasant job.
 
+There are better ways to handle this situation. First, we need to collect the connection id for both package  
+<img src="/images/blog11/FindAW_connection_id.PNG" >
+
+right click the connection and select property and copy the id value to notepad, like the following
+<img src="/images/blog11/connectionID.PNG" >
+
+Now, we need to switch package2 connection to the package1 connection, ie project1 connection.
+right click package2, choose view code, it will open a xml code page 
+<img src="/images/blog11/view_code.PNG" >
+
+Now that you are at the xml code page, press ctr + F, replace the existing package2 connection with package1 connection.
+<img src="/images/blog11/replaceID.PNG" >
+
+
+
+
+
+
+
 
 
 
