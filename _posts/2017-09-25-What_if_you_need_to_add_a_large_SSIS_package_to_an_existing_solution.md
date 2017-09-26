@@ -27,7 +27,8 @@ Now, we need to switch package2 connection to the package1 connection, ie projec
 Right click package2, choose view code, it will open a xml code page 
 <img src="/images/blog11/view_code.PNG" >
 
-Now that you are at the xml code page, press ctr + F, replace the existing package2 connection with package1 connection.
+Now that you are at the xml code page, press ctr + F, replace the existing package2 connection with package1 connection.  
+
 <img src="/images/blog11/replaceID.PNG" >
 
 Save the xml changes. Repeat the process until you replacing all the corresponding connections.  
