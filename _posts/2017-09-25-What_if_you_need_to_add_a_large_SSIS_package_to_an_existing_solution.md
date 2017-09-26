@@ -56,21 +56,3 @@ Hope this makes your SSIS work a bit easier.
 Wenlei
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
