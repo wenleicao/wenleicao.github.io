@@ -12,6 +12,11 @@ Now, I need to add a developped package into this project, package2 contains man
 
 <img src="/images/blog11/Error_list.PNG" >
 
+Notice, there are 90 errors. Most are connecting errors. The reason why this happens is because when you create a connection in SSIS, it will assign a unique GUID to the connection even though they have same definition. When you add one package into new project, SSIS sometimes detect the same connection, so it will not copy the connection in (as in this case). Or it will copy in connection, making it a redundant connecitons. 
+
+If you only have limited components in your package, you can go through each component and reconfigure the connection. But there are 90 errors, it won't be a pleasant job.
+
+
 
 
 
