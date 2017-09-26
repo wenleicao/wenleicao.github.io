@@ -17,6 +17,7 @@ Notice, there are 90 errors. Most are connecting errors. The reason why this hap
 If you only have limited components in your package, you can go through each component and reconfigure the connection. But there are 90 errors, it won't be a pleasant job.
 
 There are better ways to handle this situation. First, we need to collect the connection id for both package  
+
 <img src="/images/blog11/FindAW_connection_id.PNG" >
 
 Right click the connection and select property and copy the id value to notepad, like the following
