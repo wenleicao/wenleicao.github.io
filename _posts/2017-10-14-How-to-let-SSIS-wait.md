@@ -17,9 +17,34 @@ The goal is  even if it pass the midnight, it can still handle it correctly. The
 If current time is already pass "package start day": 10PM, we don’t wait and go ahead to load it.  
 Else  we wait certain amount time until 10PM to load  
 
-We first write this logic in SQL Server Managment Studio. 
+We first write this logic in SQL Server Managment Studio (SSMS). 
 
 As you can see, I have created some variables. we need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the logic. I ran part of script, so that you can see the variable value. 
+
+I tested the script in SSMS. it works. Now, let us move it into SSIS Package.  
+
+A string SSIS variable is created to hold the T SQL script.  Please note, I replaced the first getdate() with system varialbe [system::start time]. That way, even if we ran package through the midnight, it alway gives you correct time calculation. Keep the second getdate(), it will give you current time. Please also double check by click the evaluate expression,  you may need to add additional single quotation to date, since in SSIS it pass date variable without single quotation. You need to make the expression is exact the same as in the SSMS.
+
+Next step, you can drag in an excute SQL task and in SQL source type, choose variable type and in source variable, choose variable we just created in the last step. 
+
+Now you can do a test.  let you say you are 9AM now, you can change varialbe part
+set @delaydatetime = convert(datetime, @date + ' 23:00:00', 101)
+to 
+set @delaydatetime = convert(datetime, @date + ' 08:58:00', 101)
+run it, it should have no wait
+
+then change it to 
+set @delaydatetime = convert(datetime, @date + ' 09:05:00', 101)
+it should wait until 09:05
+
+Once everything is tested,
+you can change it to the time point you desired. 
+
+
+
+
+
+
 
 
 
