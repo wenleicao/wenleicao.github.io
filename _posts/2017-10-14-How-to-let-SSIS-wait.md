@@ -13,32 +13,32 @@ Most SSIS developer has T-SQL background.  Therefore, it is familiar for them to
 In my case, things are slightly different.  I need to delay to night load, it is likely, if something happen in the day, and the real loading time could be likely happening past midnight.  Since Sherry only compare the time portion, I will have to modify it. 
 
 Let us say, we want the loading happens at 10PM
-The goal is  even if it pass the midnight, it can still handle it correctly. The following is the logic.  
+The goal is even if it pass the midnight, it can still handle it correctly. The following is the logic.  
 If current time is already pass "package start day": 10PM, we don’t wait and go ahead to load it.  
-Else  we wait certain amount time until 10PM to load  
+Else we wait certain amount time until 10PM to load  
 
-We first write this logic in SQL Server Managment Studio (SSMS). 
+We first write this logic in SQL Server Management Studio (SSMS). 
 
-As you can see, I have created some variables. we need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the logic. I ran part of script, so that you can see the variable value. 
+As you can see, I have created some variables. We need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the logic. I ran part of script, so that you can see the variable value. 
 
 I tested the script in SSMS. it works. Now, let us move it into SSIS Package.  
 
-A string SSIS variable is created to hold the T SQL script.  Please note, I replaced the first getdate() with system varialbe [system::start time]. That way, even if we ran package through the midnight, it alway gives you correct time calculation. Keep the second getdate(), it will give you current time. Please also double check by click the evaluate expression,  you may need to add additional single quotation to date, since in SSIS it pass date variable without single quotation. You need to make the expression is exact the same as in the SSMS.
+A string SSIS variable is created to hold the T SQL script.  Please note, I replaced the first getdate() with system variable [system::start time]. That way, even if we ran package through the midnight, it always gives you correct time calculation. Keep the second getdate(), it will give you current time. Please also double check by click the evaluate expression, you may need to add additional single quotation mark to date, since in SSIS it pass date variable without single quotation mark. You need to make sure the expression is exact the same as in the SSMS.
 
-Next step, you can drag in an excute SQL task and in SQL source type, choose variable type and in source variable, choose variable we just created in the last step. 
+Next step, you can drag in an execute SQL task and in SQL source type, choose variable type and in source variable, choose variable we just created in the last step. 
 
-Now you can do a test.  let you say you are 9AM now, you can change varialbe part
-set @delaydatetime = convert(datetime, @date + ' 23:00:00', 101)
-to 
-set @delaydatetime = convert(datetime, @date + ' 08:58:00', 101)
-run it, it should have no wait
+Now you can do a test.  let you say you are 9AM now, you can change variable part
+set @delaydatetime = convert(datetime, @date + ' 23:00:00', 101)  
+to   
+set @delaydatetime = convert(datetime, @date + ' 08:58:00', 101)  
+run it, it should have no wait  
 
-then change it to 
-set @delaydatetime = convert(datetime, @date + ' 09:05:00', 101)
-it should wait until 09:05
+then change it to   
+set @delaydatetime = convert(datetime, @date + ' 09:05:00', 101)  
+it should wait until 09:05  
 
-Once everything is tested,
-you can change it to the time point you desired. 
+Once everything is tested,  
+you can change it to the time point you desired.   
 
 
 
