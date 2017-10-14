@@ -13,8 +13,18 @@ Most SSIS developer has T-SQL background.  Therefore, it is familiar for them to
 In my case, things are slightly different.  I need to delay to night load, it is likely, if something happen in the day, and the real loading time could be likely happening past midnight.  Since Sherry only compare the time portion, I will have to modify it. 
 
 Let us say, we want the loading happens at 10PM
-The goal is  even if it is pass the midnight, it can still handle it correctly. The following is the logic.
-If current time is already pass "package start day": 10PM, we don’t wait and go ahead to load it.
-Else  we wait certain amount time until 10PM to load
+The goal is  even if it pass the midnight, it can still handle it correctly. The following is the logic.  
+If current time is already pass "package start day": 10PM, we don’t wait and go ahead to load it.  
+Else  we wait certain amount time until 10PM to load  
+
+We first write this logic in SQL Server Managment Studio. 
+
+As you can see, I have created some variables. we need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the logic. I ran part of script, so that you can see the variable value. 
+
+
+
+
+
+
 
 
