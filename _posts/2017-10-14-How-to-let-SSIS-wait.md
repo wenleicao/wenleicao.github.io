@@ -32,18 +32,27 @@ A string SSIS variable is created to hold the T SQL script.  Please note, I repl
 
 Next step, you can drag in an execute SQL task and in SQL source type, choose variable type and in source variable, choose variable we just created in the last step. 
 
-Now you can do a test.  let you say you are 9AM now, you can change variable part
-set @delaydatetime = convert(datetime, @date + ' 23:00:00', 101)  
+<img src="/images/blog12/delay_loading_setting.PNG" >
+
+Now you can do a test.  let you say you are 2:08PM now (14:08), you can change variable part
+set @delaydatetime = convert(datetime, @date + ' 22:00:00', 101)  
 to   
-set @delaydatetime = convert(datetime, @date + ' 08:58:00', 101)  
+set @delaydatetime = convert(datetime, @date + ' 14:00:00', 101)  
 run it, it should have no wait  
 
 then change it to   
-set @delaydatetime = convert(datetime, @date + ' 09:05:00', 101)  
-it should wait until 09:05  
+set @delaydatetime = convert(datetime, @date + ' 14:10:00', 101)  
+it should wait until 14:10
+
+<img src="/images/blog12/waiting.PNG" >  
+
+<img src="/images/blog12/process_result.PNG" >  
 
 Once everything is tested,  
-you can change it to the time point you desired.   
+you can change it to the time point you desired, then add it to the place in your package. 
+
+<img src="/images/blog12/ssis component.PNG" >   
+
 
 
 
