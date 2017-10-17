@@ -22,11 +22,13 @@ We first write this logic in SQL Server Management Studio (SSMS).
 
 <img src="/images/blog12/script1.PNG" >
 
-As you can see, I have created some variables. We need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the logic. I ran part of script, so that you can see the variable value. 
+As you can see, I have created some variables. We need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the delay loading logic. I ran part of script, so that you can see the variable value. 
 
 I tested the script in SSMS. it works. Now, let us move it into SSIS Package.  
 
-A string SSIS variable is created to hold the T SQL script.  Please note, I replaced the first getdate() with system variable [system::start time]. That way, even if we ran package through the midnight, it always gives you correct time calculation. Keep the second getdate(), it will give you current time. Please also double check by click the evaluate expression, you may need to add additional single quotation mark to date, since in SSIS it pass date variable without single quotation mark. You need to make sure the expression is exact the same as in the SSMS.
+A string SSIS variable is created to hold the T SQL script.  Please note, I replaced the first getdate() with system variable [system::start time]. That way, even if we ran package through the midnight, it always gives you correct time calculation. Keep the second getdate(), it will give you current time. Please also double check by click the evaluate expression, you need to add additional single quotation mark to date, since in SSIS it pass date variable without single quotation mark. you can see I highlighted in the SSIS expression the single quotation mark I added. Also, it thought what I passed in is string, so I need to cast it to datetime.
+
+<img src="/images/blog12/edit_ssis_expression.PNG" >
 
 Next step, you can drag in an execute SQL task and in SQL source type, choose variable type and in source variable, choose variable we just created in the last step. 
 
