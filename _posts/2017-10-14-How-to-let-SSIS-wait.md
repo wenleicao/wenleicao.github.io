@@ -3,14 +3,15 @@ layout: post
 title: How to let SSIS wait to certain time point 
 ---
 
-We had a SSIS ETL package which populates the report and dashboard for daily EDI status monitoring. This ETL process runs daily.  Since it loads thousands and millions record, the final load to fact table need truncate a fact table and load about 30 min to 1 hour. This could take report offline for this amount of time and therefore interfere report user experience. The request is to delay loading till night. 
-If you have used BO Data service, there is a built-in function, called sleep function.  But in SSIS, there are no such tasks. I did a little research online.  You can do it through execute sql task, script task using VB.net or C#, or using for loop. 
+We had a SSIS ETL package which populates the report and dashboard for daily EDI status monitoring. This ETL process runs daily.  Since it loads thousands and millions record, the final load to fact table need truncate and load about 30 min to 1 hour. This could take report offline for this amount of time and therefore could interfere report user experience. The request is to delay loading till night. 
+If you have used BO Data service, there is a built-in function, called sleep function.  But in SSIS, there are no such tasks. I did a little research online.  You can do it through either execute sql task, or script task using VB.net or C#, or using for loop. 
 
 Sherry Li has a good blog on this topic   
 <https://bisherryli.com/2012/03/10/ssis-109-wait-for-data-with-for-loop-container/>
 
 Most SSIS developer has T-SQL background.  Therefore, it is familiar for them to use execute sql task to handle this scenario.  Sherry also had a T SQL script to let task wait for certain time point to process. 
-In my case, things are slightly different.  I need to delay to night load, it is likely, if something happen in the day, and the real loading time could be likely happening past midnight.  Since Sherry only compare the time portion, I will have to modify it. 
+
+In my case, however, things are slightly different.  I need to delay to night load, it is likely, if something happen in the day, and the real loading time could be likely happening past midnight.  Since Sherry only compare the time portion not day portion, I will need to take care of what if package run through midnight, therefore I have to modify it. 
 
 Let us say, we want the loading happens at 10PM
 The goal is even if it pass the midnight, it can still handle it correctly. The following is the logic.  
@@ -18,6 +19,8 @@ If current time is already pass "package start day": 10PM, we don’t wait and g
 Else we wait certain amount time until 10PM to load  
 
 We first write this logic in SQL Server Management Studio (SSMS). 
+
+<img src="/images/blog12/script1.PNG" >
 
 As you can see, I have created some variables. We need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the logic. I ran part of script, so that you can see the variable value. 
 
