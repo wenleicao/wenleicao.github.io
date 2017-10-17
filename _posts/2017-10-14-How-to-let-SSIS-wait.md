@@ -20,7 +20,7 @@ Else we wait certain amount time until 10PM to load
 
 We first write this logic in SQL Server Management Studio (SSMS). 
 
-<img src="/images/blog12/script1.PNG" >
+
 
 As you can see, I have created some variables. We need a variable to set the certain time point that you would like loading happens. Because the waitfor delay statement need time format as "hour:min:sec", we need to use another variable and convert function to convert time difference to this format. The last four line, implement the delay loading logic. I ran part of script, so that you can see the variable value. 
 
