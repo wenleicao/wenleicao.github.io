@@ -51,10 +51,13 @@ it should wait until 14:10
 Once everything is tested,  
 you can change it to the time point you desired, then add it to the place in your package. 
 
-<img src="/images/blog12/ssis component.PNG" >   
+<img src="/images/blog12/ssis component.PNG" >  
 
+Attached is the T-SQL code for delay loading
 
+<a href="/Files/delay_loading_script.sql">download code here</a>
 
+As always, happy coding!
 
 
 
