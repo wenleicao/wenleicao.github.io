@@ -13,7 +13,7 @@ Most SSIS developer has T-SQL background.  Therefore, it is familiar for them to
 
 In my case, however, things are slightly different.  I need to delay to night load, it is likely, if something happen in the day, and the real loading time could be likely happening past midnight.  Since Sherry only compare the time portion not day portion, I will need to take care of what if package run through midnight, therefore I have to modify it. 
 
-Let us say, we want the loading happens at 10PM
+Let us say, we want the loading happens at 10PM  
 The goal is even if it pass the midnight, it can still handle it correctly. The following is the logic.  
 If current time is already pass "package start day": 10PM, we don’t wait and go ahead to load it.  
 Else we wait certain amount time until 10PM to load  
@@ -26,7 +26,7 @@ As you can see, I have created some variables. We need a variable to set the cer
 
 I tested the script in SSMS. it worked. Now, let us move it into SSIS Package.  
 
-A string SSIS variable is created to hold the T SQL script.  Please note, I replaced the first getdate() with system variable [system::start time]. That way, even if we ran package through the midnight, it always gives you correct time calculation. Keep the second getdate(), it will give you current time. Please also double check by clicking the evaluate expression. you need to add additional single quotation mark to date, since in SSIS it pass date variable without single quotation mark. you can see I highlighted in the SSIS expression the single quotation mark I added. Also, system thought what I passed in is string, so I need to cast it to datetime explicitly.
+A string SSIS variable is created to hold the T SQL script.  Please note, I replaced the first getdate() with system variable [system::start time]. That way, even if we ran package through the midnight, it always gives you correct time calculation. Keep the second getdate(), it will give you current time. Please also double check by clicking the evaluate expression. You need to add additional single quotation mark to date, since in SSIS it pass date variable without single quotation mark. You can see I highlighted in the SSIS expression the single quotation mark I added. Also, system thought what I passed in is string, so I need to cast it to datetime explicitly.
 
 <img src="/images/blog12/edit_ssis_expression.PNG" >
 
@@ -34,7 +34,7 @@ Next step, you can drag in an execute SQL task and in SQL source type, choose va
 
 <img src="/images/blog12/delay_loading_setting.PNG" >
 
-Now you can do a test.  let you say you are 2:08PM now (14:08), you can change variable part
+Now you can do a test.  Let us say you are at 2:08PM now (14:08), you can change variable part
 set @delaydatetime = convert(datetime, @date + ' 22:00:00', 101)  
 to   
 set @delaydatetime = convert(datetime, @date + ' 14:00:00', 101)  
