@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Performance Tuning on an SSIS ETL package after migrating to SQL server 2014 
+title: Performance Tuning on an SSIS ETL package after Migrating to SQL Server 2014 
 ---
 
 We have an ETL process which was built and ran under SQL server 2012 environment. Recently, IT tried to update all SQL server version from 2012 to 2014. Since then, this ETL process has performed very badly. It used to only run about 5-6 hours; now it usually cannot complete on the same day. 
