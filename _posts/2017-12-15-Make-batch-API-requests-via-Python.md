@@ -31,6 +31,7 @@ To get the Zillow property link from API, you need to first pass street info and
 Now, we test if we can bring multiple record in at the same time.
 We can import csv module, use its reader method to read csv. Here we created a csv file, contain two line of info.  We can print row out in batch.  Please note, the csv contain header. In order to skip that, I used next ().   
 
+
     <img src="/images/blog13/address1.PNG" >  
 
     Record were read  
