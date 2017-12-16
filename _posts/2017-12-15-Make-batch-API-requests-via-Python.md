@@ -33,6 +33,8 @@ We can import csv module, use its reader method to read csv. Here we created a c
 
 <img src="/images/blog13/address1.PNG" >  
 
+Record were read  
+
 <img src="/images/blog13/read1.PNG" > 
 
 
@@ -56,17 +58,25 @@ What happen if you put in an invalid address?  I know 75 main blvd is a wrong ad
 Directly call API, turn out error  
 <img src="/images/blog13/error1.PNG" > 
 
-If our source csv contain this record  
+If our source csv contain this record   
 <img src="/images/blog13/address2.PNG" >  
 
-We reran code of fourth step, it will show error  
+We reran code of fourth step, it will show the same error  
 <img src="/images/blog13/error2.PNG" > 
 
-After add try catch block
+After add try catch block, code reran without error 
 <img src="/images/blog13/final.PNG" > 
 
-The record was written in new csv
+The record was written in new csv, show "data not available". This will help you identify which record is problematic  
 <img src="/images/blog13/result1.PNG" > 
+
+Python is very useful tool, combined with multiple modules, it can be very powerful and make some tedious stuff easy to deal with. 
+
+Hope you feel it is useful.
+
+You can download csv here 
+
+Wenlei 
 
 
 
