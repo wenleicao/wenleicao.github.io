@@ -1,6 +1,6 @@
 ---
 layout: post
-title: make batch API requests via Python 
+title: Make Batch API Requests via Python 
 ---
 
 Recently, I was working with Python on a project. A few features in the dataset are missing, which can be acquired from the third party via API calls.  The original dataset is a csv file.  Basically, I need to loop through each row of csv, pass the value to API, and get the result back.  It will be nice if we can call in batch, return in batch and export all result to csv.  
