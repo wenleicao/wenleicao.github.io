@@ -56,20 +56,20 @@ Of course, you don’t want the results just stay on the screen, you want to exp
 5.	handle exception
 What happen if you put in an invalid address?  I know 75 main blvd is a wrong address, when I put it in get_zillowinfo function, it will show error.  What if your csv file contain such error info, let us give a try.  We input the third address as 75 min blvd, 01545.  We reran code 4, we got same error.  It would be nice, we can handle these kind of exception elegantly, we can use try clause to see if there is an error, and in the catch clause, we can define “data is not available” if there is an error.
 
-Directly call API, turn out error  
-<img src="/images/blog13/error1.PNG" > 
+    Directly call API, turn out error  
+    <img src="/images/blog13/error1.PNG" > 
 
-If our source csv contain this record   
-<img src="/images/blog13/address2.PNG" >  
+    If our source csv contain this record   
+    <img src="/images/blog13/address2.PNG" >  
 
-We reran code of fourth step, it will show the same error  
-<img src="/images/blog13/error2.PNG" > 
+    We reran code of fourth step, it will show the same error  
+    <img src="/images/blog13/error2.PNG" > 
 
-After add try catch block, code reran without error 
-<img src="/images/blog13/final.PNG" > 
+    After add try catch block, code reran without error 
+    <img src="/images/blog13/final.PNG" > 
 
-The record was written in new csv, show "data not available". This will help you identify which record is problematic  
-<img src="/images/blog13/result1.PNG" > 
+    The record was written in new csv, show "data not available". This will help you identify which record is problematic  
+    <img src="/images/blog13/result1.PNG" > 
 
 Python is very useful tool, combined with multiple modules, it can be very powerful and make some tedious stuff easy to deal with. 
 
