@@ -13,12 +13,12 @@ Let us break this into pseudo code.  This will be a few manageable Python code s
 4.	Write batch info of 3  into csv
 5.	handle exception
 
-Preparation
-You need to install Pyzillow and apply for an API Key.  The following two links can help you if you are new to python.
-Install Pyzillow through pip  
+Preparation  
+You need to install Pyzillow and apply for an API Key.  The following two links can help you if you are new to python.  
+Install Pyzillow through pip    
 <https://stackoverflow.com/questions/43298789/install-module-with-pip-command-in-python/43298826>
 
-API key   
+API key     
 <https://mohitbagde.wordpress.com/2015/01/22/using-the-zillow-property-api-to-extract-property-listings/>
 
 
