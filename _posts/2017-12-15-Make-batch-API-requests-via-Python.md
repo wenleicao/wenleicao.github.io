@@ -69,7 +69,7 @@ What happen if you put in an invalid address?  I know 75 main blvd is a wrong ad
     <img src="/images/blog13/final.PNG" > 
 
     The record was written in new csv, show "data not available". This will help you identify which record is problematic  
-    <img src="/images/blog13/result1.PNG" > 
+    <img src="/images/blog13/result2.PNG" > 
 
 Python is very useful tool, combined with multiple modules, it can be very powerful and make some tedious stuff easy to deal with. 
 
