@@ -39,7 +39,7 @@ Run it, you will get
 If you want to calculate different A row value contribution to total, the second approach has advantage, you just use Value/total.
 The regular approach will have to join back to original dataset to do calculation.
 
-Now let us get to data service part.  Recently, my colleague hand me a project which contains script using Lead and lag analytical function. The backend database is oracle.  
+Now let us get to data service part.  Recently, my colleague hand me a project which contains script using Lead and lag analytical function. The backend database is Oracle.  
 
 Lead and lag function is used to retrieve the value from next row and previous row.
 
@@ -64,7 +64,7 @@ Question is how we can implement this on the fly with data service?
 
 1. First, let us try with embedded data service function
 
-This is the overview 
+This is the overview   
 <img src="/images/blog14/df_overview.PNG" >
 
 In the order query transform, I set data order by dept asc, salary asc,  so that I can use it for dept group and for set the sequence for previous_row_value
