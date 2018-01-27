@@ -45,10 +45,13 @@ lead and lag function is used to retrieve the value from next row and previous r
 
 find more about lead and lag function at here   <https://oracle-base.com/articles/misc/lag-lead-analytic-functions>
 
-I have not used Data service to try translating those function. As far as  my research goes, I know data service can create row number within group using gen_row_num_by_group. Also, it has is_group_changed function.  Maybe we can use those to address the problem.
+I have not used Data service to try translating those function. As far as  my research goes, I know data service can create row number within group using gen_row_num_by_group. Also, it has is_group_changed function. Somebody suggested online, we might give a try.  Maybe 
+
+<https://archive.sap.com/discussions/thread/3885872>
 
 let us set up the stage by creating a dataset that we want to experiment on
 
+using the following script, we create a dataset 
 
 
 
