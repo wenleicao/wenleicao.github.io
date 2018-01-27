@@ -95,26 +95,26 @@ Since this approach did not work as expected, I start work on an alternative sol
 
 2. Self join
 
-this is the setting overview, notice, I use the same table twice, also you need to create grouprecordid as the previous method in advance
+This is the setting overview, notice, I use the same table twice, also you need to create grouprecordid as the previous method in advance  
 <img src="/images/blog14/self_join_over_view.PNG" >
 
 Two table join setting in the self_join_lag as follows. I map one table's grouprecordid = another table's grouprecordid +1
 <img src="/images/blog14/self_join_join_settng.PNG" >
 
-In the field mapping part, I include one table's all field, also include another table's grouprecrodid, I call it map_record to see if it maps correctly 
+In the field mapping part, I include one table's all field, also include another table's grouprecrodid. I call it map_record to see if it maps correctly 
 <img src="/images/blog14/self_join_join_settng.PNG" >
 
 The most important thing is include another's table's salary as previous salary 
 <img src="/images/blog14/self_join_previous_salary.PNG" >
 
-After execution, the result is what we expected.
+After execution, the result is what we expected.  
 <img src="/images/blog14/self_join_result.PNG" >
 
-This is an example for solve Lag() analytical funciton. For lead(), you just need to change join funciton from +1 to -1. 
+This is an example for solving Lag() analytical funciton. For lead(), you just need to change join funciton from +1 to -1. 
 for sum(), avg(), count() etc. analytical function,  what I think, the easiest way is to create an ordinary aggregation table first and join back to orginal table using the group by column.
 
-Thank for visiting my site. 
-If you want to follow along, the code is <a href="/Files/analytic_sql.sql">here</a>. 
+Thank for visiting my site.   
+If you want to follow along, the code is <a href="/Files/analytic_sql.sql">here</a>.   
 Good luck!
 
 Wenlei
