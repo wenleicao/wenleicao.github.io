@@ -36,3 +36,8 @@ Run it, you will get
 | A           | 200 | 300 |
 | B           | 150 | 150 |
 
+if you want to calculate different A row value contribution to total, the second approach has advantage, you just use Value/total.
+The regular approach will have to join back to original dataset to do calculation.
+
+Now let us get to data service part.  Recently, my colleague hand me a project which contains script using 
+
