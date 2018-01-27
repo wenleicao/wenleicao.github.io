@@ -76,8 +76,27 @@ grouprecordid definition
 isgroupchanged definition  
 <img src="/images/blog14/isgroupchanged.PNG" >
 
-previous value defination
+previous_salary defination. when the group changes (is_group_changed("order".DEPT  ) =1), it indicate it is a new group, the first recrod should not have previous record, so I set is as null. Otherwise it use prevous row value  
 <img src="/images/blog14/df_overview_previous_salary.PNG" >
+
+After I excute the job, this is what I got
+<img src="/images/blog14/df_overview_result.PNG" >
+
+
+Notice 
+grouprecordid correctly identify there are 2 group and marked correctly
+isgroupchanged column also mark correctly where group changed
+the result in previous salary, however, is not what we expected. 
+for group finance, the second record should be 1000, but it mark as null (in yellow shade); for group IT, second line should be 2000, but mark as 3000 (in red line)
+The issue looks like the previous_row_value function did not notice there is order in data somehow.  Maybe some expert can find something not right in setting.
+
+Since this approach did not work as expected, I start work on an alternative solution, self join.
+
+
+
+
+
+
 
 
 
