@@ -79,7 +79,7 @@ isgroupchanged definition
 previous_salary defination. when the group changes (is_group_changed("order".DEPT  ) =1), it indicate it is a new group, the first recrod should not have previous record, so I set is as null. Otherwise it use prevous row value  
 <img src="/images/blog14/df_overview_previous_salary.PNG" >
 
-After I excute the job, this is what I got
+After I excute the job, this is what I got  
 <img src="/images/blog14/df_overview_result.PNG" >
 
 
@@ -88,9 +88,35 @@ grouprecordid correctly identify there are 2 group and marked correctly
 isgroupchanged column also mark correctly where group changed
 the result in previous salary, however, is not what we expected. 
 for group finance, the second record should be 1000, but it mark as null (in yellow shade); for group IT, second line should be 2000, but mark as 3000 (in red line)
-The issue looks like the previous_row_value function did not notice there is order in data somehow.  Maybe some expert can find something not right in setting.
+The issue looks like the previous_row_value function did not notice there is order in data somehow.  Maybe someone can find out something not right in setting.
 
 Since this approach did not work as expected, I start work on an alternative solution, self join.
+
+2. self join
+
+this is the setting overview, notice, I use the same talbe twice, also you need to create grouprecordid as the previous method in advance
+<img src="/images/blog14/self_join_over_view.PNG" >
+
+Two table join setting in the self_join_lag as follows. I map one table's grouprecordid = another table's grouprecordid +1
+<img src="/images/blog14/self_join_join_settng.PNG" >
+
+in the field mapping part, I include one table's all field, also include another table's grouprecrodid, I call it map_record to see if it map correctly 
+<img src="/images/blog14/self_join_join_settng.PNG" >
+
+the most important thing is include another's table's salary as previous salary 
+<img src="/images/blog14/self_join_previous_salary.PNG" >
+
+after execution, the result is what we expected.
+<img src="/images/blog14/self_join_result.PNG" >
+
+This is an example for solve Lag() analytical funciton. For lead(), you just need to change join funciton from +1 to -1. 
+for sum(), avg(), count() etc. analytical function,  what I think, the easiest way is to create a aggregation table first and join back to orginal table using the group by column.
+
+Thank for visiting my site. 
+if you want to follow along, the code is <a href="/Files/analytic_sql.sql">here</a>. 
+Good luck!
+
+Wenlei
 
 
 
