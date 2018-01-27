@@ -57,6 +57,10 @@ using the following script, we create a dataset
 now, I can use this table to try some analytical function  
 <img src="/images/blog14/partitionby_sql.PNG" >
 
+As you can see, I have use Lag, Lead and sum function to get some value. We use dept as group, we can get previous record, next record and sum of salary with in same dept.
+
+question is how we can implement this on the fly with data service?
+
 
 
 
