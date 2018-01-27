@@ -67,7 +67,7 @@ Question is how we can implement this on the fly with data service?
 This is the overview   
 <img src="/images/blog14/df_overview.PNG" >
 
-In the order query transform, I set data order by dept asc, salary asc,  so that I can use it for dept group and for set the sequence for previous_row_value
+In the order query transform, I set data order by dept asc, salary asc,  so that I can use it for dept group and for set the sequence for previous_row_value  
 <img src="/images/blog14/df_overview_order.PNG" >
 
 In the group query transform 
@@ -85,11 +85,11 @@ After I execute the job, this is what I got
 
 
 Notice 
-grouprecordid correctly identify there are 2 group and marked correctly
-isgroupchanged column also mark correctly where group changed
-The result in previous salary, however, is not what we expected. 
-For group finance, the second record should be 1000, but it mark as null (in yellow shade); for group IT, second line should be 2000, but mark as 3000 (in red line)
-The issue looks like the previous_row_value function did not notice there is order in data somehow.  Maybe someone can find out something not right in my setting.
+grouprecordid correctly identify there are 2 group and marked correctly.  
+isgroupchanged column also mark correctly where group changed.  
+The result in previous salary, however, is not what we expected.   
+For group finance, the second record should be 1000, but it mark as null (in yellow shade); for group IT, second line should be 2000, but mark as 3000 (in red line)  
+The issue looks like the previous_row_value function did not notice there is order in data somehow.  Maybe someone can find out something not right in my setting.  
 
 Since this approach did not work as expected, I start work on an alternative solution, self join.
 
