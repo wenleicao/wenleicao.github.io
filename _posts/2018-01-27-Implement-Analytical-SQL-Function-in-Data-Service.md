@@ -39,5 +39,19 @@ Run it, you will get
 if you want to calculate different A row value contribution to total, the second approach has advantage, you just use Value/total.
 The regular approach will have to join back to original dataset to do calculation.
 
-Now let us get to data service part.  Recently, my colleague hand me a project which contains script using 
+Now let us get to data service part.  Recently, my colleague hand me a project which contains script using Lead and lag analytial function. The backend database is oracle.  
+
+lead and lag function is used to retrieve the value from next row and previous row.
+
+find more about lead and lag function at here   <https://oracle-base.com/articles/misc/lag-lead-analytic-functions>
+
+I have not used Data service to try translating those function. As far as  my research goes, I know data service can create row number within group using gen_row_num_by_group. Also, it has is_group_changed function.  Maybe we can use those to address the problem.
+
+let us set up the stage by creating a dataset that we want to experiment on
+
+
+
+
+
+
 
