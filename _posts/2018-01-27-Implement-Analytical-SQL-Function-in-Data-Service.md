@@ -45,7 +45,7 @@ lead and lag function is used to retrieve the value from next row and previous r
 
 find more about lead and lag function at here   <https://oracle-base.com/articles/misc/lag-lead-analytic-functions>
 
-I have not used Data service to try translating those function. As far as  my research goes, I know data service can create row number within group using gen_row_num_by_group. Also, it has is_group_changed function. Somebody suggested online, but no examples. We might give a shot.   
+I have not used Data service to try translating those function. As far as  my research goes, I know data service can create row number within group using gen_row_num_by_group. Also, it has is_group_changed and previous_row_value function. Somebody suggested online, but no examples. We might give a shot.   
 
 <https://archive.sap.com/discussions/thread/3885872>
 
@@ -61,7 +61,23 @@ As you can see, I have use Lag, Lead and sum function to get some value. We use 
 
 question is how we can implement this on the fly with data service?
 
+1. first, let us try with embedded data service function
 
+this is the overview 
+<img src="/images/blog14/df_overview.PNG" >
+
+in the order query transform, I set data order by dept asc, salary asc,  so that I can use it for dept group and for set the sequence for previous_row_value
+<img src="images/blog14/df_overview_order.PNG" >
+
+in the group query transform 
+grouprecordid definition
+<img src="/images/blog14/group_id.PNG" >
+
+isgroupchanged definition  
+<img src="/images/blog14/isgroupchanged.PNG" >
+
+previous value defination
+<img src="/images/blog14/df_overview_previous_salary.PNG" >
 
 
 
