@@ -13,7 +13,7 @@ For example, you have data like this
 | A           | 200 |
 | B           | 150 |
 
-When you run the aggregation like the follows
+When you run the aggregation like the follows  
 select name, sum(value) as total from data group by name
 you will get
 
