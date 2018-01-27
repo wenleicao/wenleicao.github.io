@@ -68,7 +68,7 @@ This is the overview
 <img src="/images/blog14/df_overview.PNG" >
 
 In the order query transform, I set data order by dept asc, salary asc,  so that I can use it for dept group and for set the sequence for previous_row_value
-<img src="images/blog14/df_overview_order.PNG" >
+<img src="/images/blog14/df_overview_order.PNG" >
 
 In the group query transform 
 grouprecordid definition
