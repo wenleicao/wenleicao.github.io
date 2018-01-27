@@ -29,6 +29,7 @@ sum(value) over (partition by name, order by name) as Total
 from data 
 
 Run it, you will get
+
 | Name     | Value     | Total     |
 | :-------------|:-------------:|:-------------:|
 | A           | 100 | 300 | 
