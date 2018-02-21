@@ -9,82 +9,87 @@
 
 <url>
   <loc>https://wenleicao.github.io/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://wenleicao.github.io/Use-Temp-Table-in-SSIS/</loc>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://wenleicao.github.io/Implement-Analytical-SQL-Function-in-Data-Service/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Make-batch-API-requests-via-Python/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Performance-Tuning-on-a-SSIS-ETL-package-after-migrating-to-SQL-Server-2014/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/How-to-let-SSIS-wait/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/What_if_you_need_to_add_a_large_SSIS_package_to_an_existing_solution/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Create_a_String_Builder_for_Yourself/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Unconventional_way_to_solve_column_comparison_issue_in_BODS/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Observe-SAP-Data-Service-CDC-Behavior-Using-Table-Comparison/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Compare_MDX_to_DAX_programming_pattern/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/How_to_handle_many_to_many_relationship_in_mongoDB/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/RDD_join_operation_with_step_by_step_example/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Add-percentage-to-SAP-webi-chart-legend/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Many_to_Many_relationship_in_SSAS_cube/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/Add_Search_Function_to_MDX_based_SSRS_report/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://wenleicao.github.io/work-around-for-There-is-already-an-object-named-xxxx-error-in-T-SQL/</loc>
-  <lastmod>2018-01-27T19:42:25+00:00</lastmod>
+  <lastmod>2018-02-21T23:07:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
