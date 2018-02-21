@@ -34,7 +34,7 @@ In OLE DB destination
 Run the same create temp table script from task1 in SSMS first, so you can map the column. 
 Please also note here we use variable to represent table because you are not going to find temp table in the drop downlist.  
 <img src="/images/blog15/populate_temp_destination.PNG" >   
-Variable setting 
+Variable setting   
 <img src="/images/blog15/variable setting.PNG" > 
 
 3rd task 
@@ -66,37 +66,37 @@ Now if you drop global temp table in SSMS, it should still work fine
 
 *Example 2
 Let us change it to local temp table because global temp table can be accessed from different users, it might cause some issues unexpected. 
-What we have to do is change all global temp table ##test to #test including the variable value.  Then run it.
+What we have to do is change all global temp table ##test to #test including the variable value for table name.  Then run it.
 The first time, it works.  I was thrilled.
-After a few days, I tried it again using Adventureworks database, it did not work. 
+After a few days, I tried it again using different database, it did not work. 
 I have tried two different databases as sometimes I get this working but I did not the other times.
-This puzzled me for quite some time, then I realize it is related with database.  Now as a test, I put both adventrureworks and the other database side by side. You can see that adventureworks did not work, while the other one works.  So, it must be related with the database setting. 
+This puzzled me for quite some time, I am not sure if this is related with database setting. Now as a test, I put both adventrureworks and the other database side by side. You can see that adventureworks did not work, while the other one works.  
 
-Two database fail1
+<img src="/images/blog15/twodatabasefail1.PNG" >
   
-Use sys.databases to check the setting for these two database, copy the comparison of setting to exce, I found the difference of databse are list below
+Use sys.databases to check the setting for these two database, copy the comparison of setting to excel, I found the difference of databse are list below  
 
+<img src="/images/blog15/database_setting_difference.PNG" >
 
-I tweaks the setting of adventureworks database to be the same as the working database. 
+I tweaks the setting of adventureworks database to be the same as the working database except the one log_reuse_wait. 
 Rerun the package, It seems not working either.  
-
 
 The error shows that 
 An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80040E37  Description: "Invalid object name '#test'.".
 
 But it did not make sense to me since the working dataflow also need to open this #test
-Something mysterious!
+
+Something mysterious to me.  I might not find the real difference between two databases correctly.
 
 Conclusion:
- 	1. First Create the globe tmp table separately so that you can pass the validation
-	2. Use this tmp table in 2nd task need to  connection    (Remain same connection as true)
-	3. Need to insert the table, cannot find table, need to set temp table as variable
-	4. Also when use temp table, it cannot find in the ssis source, you need to create in ssms, make it error free, then disable the ValidateExternalMetadata,  in data source or data destination, which use the tmp table, next time, will not have validate error
-	5. Both globe temp table should work, local temp table will depends on database setting, I have not figure out which one affect this. But alternative way is to create physical table and drop it after use.
+ 	1. Keep database connection open   (Remain same connection as true)
+	2. when use temp table, you cannot find it in dropdown list, use variable instead
+	3. Also when use temp table, it cannot find in the ssis source, you need to first create in ssms, pass the column mapping validation, then disable the ValidateExternalMetadata,  in data source or data destination whichever use the tmp table
+	4. globe temp table should work, local temp table will depends on database setting, I have not figured out which one affect this. But alternative way is to create physical table and drop it after use.
 
+thanks
 
-
-
+Wenlei
 
 
 
