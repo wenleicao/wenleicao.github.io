@@ -52,7 +52,7 @@ SSIS designed in a way that close connection whenever an individual task is comp
 <img src="/images/blog15/retain_same_connection.PNG" >
 
 Also you need to set validate external metadata to false in any dataflow component which use temp table    
-<img src="/images/blog15/validation disable.PNG" >
+<img src="/images/blog15/validation disable.PNG" >  
 Some people also set delayvalidation True at data flow level. I did not do this, it still work fine.
  
 
@@ -94,7 +94,7 @@ Conclusion:
  	1. Keep database connection open   (Remain same connection as true)  
 	2. when use temp table, you cannot find it in dropdown list, use variable instead  
 	3. Also when use temp table, it cannot find in the ssis source, you need to first create in ssms, pass the column mapping validation, then disable the ValidateExternalMetadata,  in data source or data destination whichever use the tmp table  
-	4. globe temp table should work, local temp table will depends on database setting, I have not figured out which one affect this. But alternative way is to create physical table and drop it after use.  
+	4. globe temp table should work, local temp table will depend, I have not figured out which one affect this though. But alternative way is to create physical table and drop it after use.  
 
 thanks
 
