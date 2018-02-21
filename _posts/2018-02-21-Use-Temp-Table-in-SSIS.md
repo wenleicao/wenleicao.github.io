@@ -10,11 +10,11 @@ If you have used SSIS for some time, you must have used merge join, which is equ
 I was thinking whether we can save the update row in a local temp table. This way, we can boost the upsert performance.  In addition, we have less physical table to maintain and keep our footprint small.  Since working with temp table in SSIS is not easy, someone will argue, can you create physical table and use it, then drop it afterwards?  I would say that this is definitely an option, but footprint are bigger (create and drop table).
 
 
-*How?
+* How?
 SSIS is not designed natively working with temp table, there are a few property need changing to be able to work.  
 Let us take a look at the following example. We will go over the setting later.  
 
-1. example1
+1. Example 1
 <img src="/images/blog15/overall.PNG" >
 I have 4 components here. The first execute SQL Task is used to create temp table, just like what you would do in SSMS.  The second data flow task is populate the temp table created. The third execute SQL task is to test if we can do some DML on the temp table. The last data flow task is to test if we can use temp table to populate another physical table in data flow. This covers most possible usage of temp table.
 
@@ -64,7 +64,7 @@ You see the final physical table also show data correctly, because we updated 2n
 
 Now if you drop global temp table in SSMS, it should still work fine
 
-*Example 2
+2. Example 2
 Let us change it to local temp table because global temp table can be accessed from different users, it might cause some issues unexpected. 
 What we have to do is change all global temp table ##test to #test including the variable value for table name.  Then run it.
 The first time, it works.  I was thrilled.
@@ -78,7 +78,7 @@ Use sys.databases to check the setting for these two database, copy the comparis
 
 <img src="/images/blog15/database_setting_difference.PNG" >
 
-I tweaks the setting of adventureworks database to be the same as the working database except the one log_reuse_wait. 
+I tweaked the setting of adventureworks database to be the same as the working database except the one log_reuse_wait. 
 Rerun the package, It seems not working either.  
 
 The error shows that 
@@ -88,11 +88,11 @@ But it did not make sense to me since the working dataflow also need to open thi
 
 Something mysterious to me.  I might not find the real difference between two databases correctly.
 
-Conclusion:
- 	1. Keep database connection open   (Remain same connection as true)
-	2. when use temp table, you cannot find it in dropdown list, use variable instead
-	3. Also when use temp table, it cannot find in the ssis source, you need to first create in ssms, pass the column mapping validation, then disable the ValidateExternalMetadata,  in data source or data destination whichever use the tmp table
-	4. globe temp table should work, local temp table will depends on database setting, I have not figured out which one affect this. But alternative way is to create physical table and drop it after use.
+Conclusion:  
+ 	1. Keep database connection open   (Remain same connection as true)  
+	2. when use temp table, you cannot find it in dropdown list, use variable instead  
+	3. Also when use temp table, it cannot find in the ssis source, you need to first create in ssms, pass the column mapping validation, then disable the ValidateExternalMetadata,  in data source or data destination whichever use the tmp table  
+	4. globe temp table should work, local temp table will depends on database setting, I have not figured out which one affect this. But alternative way is to create physical table and drop it after use.  
 
 thanks
 
