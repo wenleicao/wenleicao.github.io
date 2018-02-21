@@ -33,7 +33,7 @@ Populate temp source
 In OLE DB destination
 Run the same create temp table script from task1 in SSMS first, so you can map the column. 
 Please also note here we use variable to represent table because you are not going to find temp table in the drop downlist.  
-<img src="/images/blog15/populate_temp_destination.PNG" > 
+<img src="/images/blog15/populate_temp_destination.PNG" >   
 Variable setting 
 <img src="/images/blog15/variable setting.PNG" > 
 
@@ -42,16 +42,16 @@ let us do a update on the temp table. Here we update the second record only
 <img src="/images/blog15/globle_update.PNG" > 
 
 4th task 
-OLE DB source: use the temp table in data flow
-<img src="/images/blog15/dataflow_populate_physical_table_source.PNG" > 
+OLE DB source: use the temp table in data flow  
+<img src="/images/blog15/dataflow_populate_physical_table_source.PNG" >   
 OLE DB destination
 <img src="/images/blog15/populate_physical_table_destination.PNG" >
 
 before running this, you need to know, 
-SSIS designed in a way that close connection whenever an individual task is completed. We need to keep it open so that the temp table created will be able to be used by downstream steps. Right click the database connection and set like the following
+SSIS designed in a way that close connection whenever an individual task is completed. We need to keep it open so that the temp table created will be able to be used by downstream steps. Right click the database connection and set like the following  
 <img src="/images/blog15/retain_same_connection.PNG" >
 
-Also you need to set validate external metadata to false in any dataflow component which use temp table  
+Also you need to set validate external metadata to false in any dataflow component which use temp table    
 <img src="/images/blog15/validation disable.PNG" >
 Some people also set delayvalidation True at data flow level. I did not do this, it still work fine.
  
@@ -59,7 +59,7 @@ Some people also set delayvalidation True at data flow level. I did not do this,
 Run the package  
 <img src="/images/blog15/process_successfully.PNG" >
 
-You see the final physical table also show data correctly, because we updated 2nd record and it reflect that.  
+You see the final physical table also show data correctly, because we updated 2nd record and it reflect that.    
 <img src="/images/blog15/result.PNG" >
 
 Now if you drop global temp table in SSMS, it should still work fine
