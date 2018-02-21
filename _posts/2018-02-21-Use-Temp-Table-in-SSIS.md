@@ -64,7 +64,7 @@ You see the final physical table also show data correctly, because we updated 2n
 
 Now if you drop global temp table in SSMS, it should still work fine
 
-2. Example 2
+2. Example 2  
 Let us change it to local temp table because global temp table can be accessed from different users, it might cause some issues unexpected. 
 What we have to do is change all global temp table ##test to #test including the variable value for table name.  Then run it.
 The first time, it works.  I was thrilled.
@@ -73,6 +73,8 @@ I have tried two different databases as sometimes I get this working but I did n
 This puzzled me for quite some time, I am not sure if this is related with database setting. Now as a test, I put both adventrureworks and the other database side by side. You can see that adventureworks did not work, while the other one works.  
 
 <img src="/images/blog15/twodatabasefail1.PNG" >
+
+* Why?
   
 Use sys.databases to check the setting for these two database, copy the comparison of setting to excel, I found the difference of databse are list below  
 
@@ -86,7 +88,7 @@ An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0
 
 But it did not make sense to me since the working dataflow also need to open this #test
 
-Something mysterious to me.  I might not find the real difference between two databases correctly.
+Something still mysterious to me.  I might not find the real differences between two databases correctly.
 
 Conclusion:  
  	1. Keep database connection open   (Remain same connection as true)  
