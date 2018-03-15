@@ -37,7 +37,7 @@ Since blank line could interfere the later logic, I create a list f1, add non-bl
 
 <img src="/images/blog16/handle_comment_block1.PNG" >  
  
-Create Boolean variable isBegin and isCommentBegin, use as switch for indicating normal SQL code begin and block comment begin.  Check each line if "//*" in the line, also it is not parallel SQL indicator. If so, swtich isCommentBegin to True, add DS comment sign "#" to the line. If in the same line, it has "*//", it indicate the comment block has ended. We need to flag the isCommentBegin to False. Since the line is already add "#", we will print the line and skip the rest of code to next line using continue keyword 
+Create Boolean variable isBegin and isCommentBegin, use as switch for indicating normal SQL code begin and block comment begin.  Check each line if "/*" in the line, also it is not parallel SQL indicator. If so, swtich isCommentBegin to True, add DS comment sign "#" to the line. If in the same line, it has "*/", it indicate the comment block has ended. We need to flag the isCommentBegin to False. Since the line is already add "#", we will print the line and skip the rest of code to next line using continue keyword 
 
 <img src="/images/blog16/handle_comment_block2.PNG" >  
  
