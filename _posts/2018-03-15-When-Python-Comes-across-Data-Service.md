@@ -10,11 +10,15 @@ I am working on an ETL process lately. The requirements are as follows.
 
 Initially, I was trying to build everything with data service components.  Quickly, I realized it took fairly long time to convert SQL script. Some functions in Oracle do not have the equivalent in data service. Workaround takes time, sometimes even not possible.   Eventually, we decide to convert PL SQL script to data service batch script. 
 This is an example of DS script. 
+<img src="/images/blog16/ds_script_example.PNG" >   
  
 Here I have two statement with same outcome
 Compared with Oracle SQL, you can see it use sql ().  Within this function, it has a datastore name (in our case, NATLDWH_UTLMGT_DASHBOARD), then the SQL statements.  You can put all your statement in a single quotation block, like the lower example, but be aware you need to escape the single quotation in case you use single quotation for string, otherwise DS don’t know where the statement ends.  The upper example chops the SQL statement into line of string and pieces them together with ||.  Both works fine. Our team, however, prefers the upper format because the statement color are consistent I guess. Make it easier to tell a block of code from others.  Also, it is noteworthy that DS requires no semi-comma in the SQL statement except that it is a procedure which has a begin and end block. That means each SQL statement need to have a separate sql() in DS.  
+
 You can make format change for a SQL statement within minutes.  But imaging you are going to handle a few hundreds of line of code, or you need to do it over and over because original code change.  A lot of text edit need to be done and it is easy to introduce human error. This drives me to think if there is better way to handle this kind of work. 
+
 I am using Python to do other things at the time. I know python can read file and process line by line. Can I make it read SQL file and apply certain rule to the line process based on the DS requirement? I gave it a try.
+
 The goal:
 •	be able to separate PL SQL statement from one to next one
 •	be able to automatically add datastore, ||, escape single quotation, et al
