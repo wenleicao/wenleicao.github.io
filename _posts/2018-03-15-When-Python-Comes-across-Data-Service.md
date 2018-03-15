@@ -51,7 +51,7 @@ If line start with "--", that means it is comment line, we simply add # to it.
 If there is "--"  behind the statement, that is in line comment. DS does not like it, it need to be removed.
 If isBegin is true, that means it is SQL statement begin, we need to add “sql(datastore name”,  at the begin.  Set isBegin to false afterwards.  Looking for line with ";" as SQL end, if so, you need to replace ";" with " );"  line in between will add "||'" at the begin and "'" add the end.
 
- I came across some issue for drop table and drop index, when running the DS script. It is complaining table or index is not there. So instead of using drop table directly, I use 'begin execute immediate \'drop table tablename\'; exception when others then null; end;' The same apply to drop index. I also add this logic in by finding the "drop table, drop index" keywords
+ I came across some issues for drop table and drop index, when running the DS script. It is complaining table or index is not there. So instead of using drop table directly, I use 'begin execute immediate \'drop table tablename\'; exception when others then null; end;' The same apply to drop index. I also add this logic in by finding the "drop table, drop index" keywords
 
 Using this function, it greatly reduce the tedious work I have to do. I just need to tell the function path.
 Like: convertToBODSScript ( r'C:\Users\Wenlei\Desktop\sample15.sql')
@@ -66,7 +66,7 @@ This is part of result in python shell window, you can see it recognize comment 
  
  <img src="/images/blog16/final.PNG" >
  
-Here you are.  
+Here you are.  You have DS script now.
 
 Hope this trick can help you as well
 
