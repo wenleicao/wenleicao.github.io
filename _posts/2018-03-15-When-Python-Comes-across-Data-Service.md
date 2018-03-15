@@ -1,6 +1,6 @@
 ---
 layout: post
-title: When Python comes across Data Service?
+title: When Python comes across Data Service
 ---
 
 I am working on an ETL process lately. The requirements are as follows.
