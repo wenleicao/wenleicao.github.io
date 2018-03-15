@@ -33,30 +33,43 @@ I build the function from simple to more complex. After a few try and error, fix
   
 Create a function, take a path variable
 Create file object f0, import file content. 
-Since blank line could interfere the later logic, I create a list f1, add non-blank line from f0 into the list
+Since blank line could interfere the later logic, I create a list f1, add non-blank line from f0 into the list 
+
+<img src="/images/blog16/handle_comment_block1.PNG" >  
  
-Create Boolean variable isBegin and isCommentBegin, use as switch for indicating normal SQL code begin and block comment begin.  Check each line if “/*” in the line, also it is not parallel SQL indicator. If so, swtich isCommentBegin to True, add DS comment sign “#” to the line. If in the same line, it has “*/”, it indicate the comment block has ended. We need to flag the isCommentBegin to False. Since the line is already add “#”, we will print the line and skip the rest of code using continue key word
+Create Boolean variable isBegin and isCommentBegin, use as switch for indicating normal SQL code begin and block comment begin.  Check each line if “/*” in the line, also it is not parallel SQL indicator. If so, swtich isCommentBegin to True, add DS comment sign “#” to the line. If in the same line, it has “*/”, it indicate the comment block has ended. We need to flag the isCommentBegin to False. Since the line is already add “#”, we will print the line and skip the rest of code using continue key word 
+
+<img src="/images/blog16/handle_comment_block2.PNG" >  
  
 If iscommentBegin is true, just need to add # to each line and print. At the same time, check if it is end of commentblock
 
-If line is not related with comment block, this is the code to handle it
- 
+If line is not related with comment block, this is the code to handle it 
 
-If line start with ‘--‘, that means it is comment line, we simply add # to it.
-If there is ‘--‘  behind the statement, that is in line comment. DS does not like it, it need to be removed.
-If isBegin is true, that means it is SQL statement begin, we need to add “sql(datastore name”,  at the begin.  Set isBegin to false afterwards.  Looking for line with “;” as SQL end, if so, you need to replace “;” with” );”  line in between will add ||’ at the begin and ‘ add the end.
+<img src="/images/blog16/handle_ds_rule_main.PNG" >  
 
- I came across some issue for drop table and drop index, when running the DS script. It is complaining table or index is not there. So instead of using drop table directly, I use 'begin execute immediate \'drop table tablename\'; exception when others then null; end;' The same apply to drop index. I also add this logic in by finding the “drop table, drop index” keywords
+If line start with "--", that means it is comment line, we simply add # to it.
+If there is "--"  behind the statement, that is in line comment. DS does not like it, it need to be removed.
+If isBegin is true, that means it is SQL statement begin, we need to add “sql(datastore name”,  at the begin.  Set isBegin to false afterwards.  Looking for line with ";" as SQL end, if so, you need to replace ";" with " );"  line in between will add "||'" at the begin and "'" add the end.
+
+ I came across some issue for drop table and drop index, when running the DS script. It is complaining table or index is not there. So instead of using drop table directly, I use 'begin execute immediate \'drop table tablename\'; exception when others then null; end;' The same apply to drop index. I also add this logic in by finding the "drop table, drop index" keywords
 
 Using this function, it greatly reduce the tedious work I have to do. I just need to tell the function path.
 Like: convertToBODSScript ( r'C:\Users\Wenlei\Desktop\sample15.sql')
- It will spit out the DS script.  Of course, if your source code has issues, it won’t correct it for you. I wish it could though.
 
-This is part of result in python shell window, you can see it recognize comment line, comment block, also add exception to drop table, datastore.  The output of python have extra blank line.  You can easily remove it using notepad++, copy output to notepad++, from edit--> line operation  remove empty line (containing blank characters)
+ It will spit out the DS script.  Of course, if your source code has issues, it won’t correct it for you. I wish it could though.  
+
+<img src="/images/blog16/result.PNG" >
+
+This is part of result in python shell window, you can see it recognize comment line, comment block, also add exception to drop table, datastore.  The output of python have extra blank line.  You can easily remove it using notepad++, copy output to notepad++, from edit--> line operation --> remove empty line (containing blank characters)
  
- After notepad++ process
+ After notepad++ process  
+ 
+ <img src="/images/blog16/final.PNG" >
  
 Here you are.  
-Hope this trick can help you as well
-Download the python code here
 
+Hope this trick can help you as well
+
+Download the python code <a href="/Files/read_sql_fn4.py">here</a>
+
+Wenlei
