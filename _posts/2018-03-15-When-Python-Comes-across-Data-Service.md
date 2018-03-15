@@ -10,6 +10,7 @@ I am working on an ETL process lately. The requirements are as follows.
 
 Initially, I was trying to build everything with data service components.  Quickly, I realized it took fairly long time to convert SQL script. Some functions in Oracle do not have the equivalent in data service. Workaround takes time, sometimes even not possible.   Eventually, we decide to convert PL SQL script to data service batch script. 
 This is an example of DS script. 
+
 <img src="/images/blog16/ds_script_example.PNG" >   
  
 Here I have two statement with same outcome
@@ -20,11 +21,11 @@ You can make format change for a SQL statement within minutes.  But imaging you 
 I am using Python to do other things at the time. I know python can read file and process line by line. Can I make it read SQL file and apply certain rule to the line process based on the DS requirement? I gave it a try.
 
 The goal:
-•	be able to separate PL SQL statement from one to next one
-•	be able to automatically add datastore, ||, escape single quotation, et al
-•	be able to handle single line comment, in line comment, block comment
-•	be able to convert drop table, drop index to something which can handle exception
-•	create it as function, take SQL file path as param and print the DS script as output
+*	be able to separate PL SQL statement from one to next one
+*	be able to automatically add datastore, ||, escape single quotation, et al
+*	be able to handle single line comment, in line comment, block comment
+*	be able to convert drop table, drop index to something which can handle exception
+*	create it as function, take SQL file path as param and print the DS script as output
 
 I build the function from simple to more complex. After a few try and error, fix some bugs. It is pretty much completed. Because I just use the function to run against PL SQL scripts and I only run against less than 10 scripts. There are possibility it is need to be modified when you use for your specific purpose. But you got the idea. The following, I will walk you through the Python code.  The code is written in python 3.
   
