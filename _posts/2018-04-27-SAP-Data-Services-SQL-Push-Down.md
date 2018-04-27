@@ -36,12 +36,34 @@ The first query transform took 7 tables join and output 50 columns.   There are 
 
 When I add column 1-3, it still show “insert /*+ APPEND */ INTO”. Once I add column 4 transformation, it became “select…”
 
-Solution: instead of making all transformation in one query transform, I split column4 and column5 transform into 2nd query transform.  Like the following structure 
+Solution: instead of making all transformation in one query transform, I split column4 and column5 transform into 2nd query transform.  Like the following structure. 
 
 Original :   data source -> query transform (column1-5) -> downstream data flow  
 Change to:   data source -> query transform (column1-3) -> transfer transform -> query transform (column4-5) -> downstream data flow
 
-This can make both become full push down.  Transfer transform (I used table option) servers as a temp table to bridge two query transform. Since you need columns for column4 and 5 transformation, you need to add those in first query transform.  You can first imitate this at SQL level and make sure data match, then do it at the data flow level.   
+This can make both become full push down.  Transfer transform (I used table option) servers as a temp table to bridge two query transform. Since you need columns for column4 and 5 transformation, you need to add those in first query transform.  You can first mimic this at SQL level and make sure data match, then do it at the data flow level.   
+
+* Do not include other transform except query transform and transfer transform in your data flow.  
+I need to merge two client data first to be used for a single source. Since this process include a merge transform, this will prevent the data flow push down.  
+
+Solution: create a separate data flow and let merge transform take place there and use the target table as source in your data flow.  This will make your data flow with complicated logic push down.  
+
+* When call customer function in mapping, try to import the custom function under the datastore you are currently working.    
+
+Solution:  your current destination is currentdatastore.table,   you can use otherdatastore.function, but it is likely to prevent the data flow from pushing down.  Import the function under currentdatastore. You can call currentdatastore.function in your transformation.   
+* Sometimes DS engine just did not push down for unknown reason, as long as we keep most complicated process pushing down, you should feel performance improvement. In my case, I boosted performance from over 1 hour to about 10 min.   
+
+For example, I have transformation using decode: 
+
+Decode (condition, ‘A’, ‘B’)   this can be fully pushed down  
+But if it like this  
+Decode (condition, null, ‘B’) this cannot fully pushed down  
+
+It seems to me Data service did not like to push down null value somehow.  
+
+Data service will accommodate more and more function with each release.  I believe those will be resolved in near future. As a developer, we just need to do our best.   
+
+Wenlei
 
 
 
