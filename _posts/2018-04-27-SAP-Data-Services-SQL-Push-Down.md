@@ -36,7 +36,7 @@ The first query transform took 7 tables join and output 50 columns.   There are 
 
 When I add column 1-3, it still show “insert /*+ APPEND */ INTO”. Once I add column 4 transformation, it became “select…”
 
-Solution: instead of making all transformation in one query transform, I split column4 and column5 transform into 2nd query transform.  Like the following structure. 
+Solution: instead of making all transformation in one query transform, I split column4 and column5 transform into 2nd query transform.    Like the following structure. 
 
 Original :   data source -> query transform (column1-5) -> downstream data flow  
 Change to:   data source -> query transform (column1-3) -> transfer transform -> query transform (column4-5) -> downstream data flow
@@ -61,9 +61,9 @@ Decode (condition, null, ‘B’) this cannot fully pushed down
 
 It seems to me Data service did not like to push down null value somehow.  
 
-Data service will accommodate more and more function with each release.  I believe those will be resolved in near future. As a developer, we just need to do our best.   
+It is somewhat frustrating, but Data service will accommodate more and more function with each release.  I believe those will be resolved in near future. This process is ELT rather than ETL, which avoids unneccessary data moving. As a developer, we just need to do our best.   
+
+Happy BI!
 
 Wenlei
-
-
 
