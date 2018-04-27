@@ -17,28 +17,28 @@ Unfortunately, there is not a step-by-step guide for how to implement pushdown f
 
 I had a data flow, the corresponding script ran about 10 min at database. This data flow ran over an hour. I decide to rebuild this data flow from ground up.  This is what I experienced.
 
---First and foremost important, watch the display optimized SQL, while you are developing your data flow. This menu is only available when you open a data flow. 
+* First and foremost important, watch the display optimized SQL, while you are developing your data flow. This menu is only available when you open a data flow. 
 
 <img src="/images/blog17/optimize.PNG" >  
 
-When you see the converted SQL like the following, it is pushed down
-INSERT /*+ APPEND */ INTO "schema name"."table name" ….
+When you see the converted SQL like the following, it is pushed down  
+INSERT /*+ APPEND */ INTO "schema name"."table name" ….  
 
-When you see SQL begin with “select”, it did not
+When you see SQL begin with “select”, it did not  
 
---Transformation is too complex to push down
-The first query transform took 7 tables join and output 50 columns.   There are 5 columns need transformation
-  Column1: User defined function call (I imported into datastore and use the function in mapping)
-	Column2: use ltrim_blanks, rtrim_blanks function
-	Column3: use ltrim_blanks, rtrim_blanks function
- 	Column4: use nested decode function (about 40 case when)
-	Column5: use decode function (about 4 case when)
+* Transformation is too complex to push down  
+The first query transform took 7 tables join and output 50 columns.   There are 5 columns need transformation  
+  Column1: User defined function call (I imported into datastore and use the function in mapping)  
+	Column2: use ltrim_blanks, rtrim_blanks function  
+	Column3: use ltrim_blanks, rtrim_blanks function  
+ 	Column4: use nested decode function (about 40 case when)  
+	Column5: use decode function (about 4 case when)  
 
 When I add column 1-3, it still show “insert /*+ APPEND */ INTO”. Once I add column 4 transformation, it became “select…”
 
 Solution: instead of making all transformation in one query transform, I split column4 and column5 transform into 2nd query transform.  Like the following structure 
 
-Original :   data source -> query transform (column1-5) -> downstream data flow
+Original :   data source -> query transform (column1-5) -> downstream data flow  
 Change to:   data source -> query transform (column1-3) -> transfer transform -> query transform (column4-5) -> downstream data flow
 
 This can make both become full push down.  Transfer transform (I used table option) servers as a temp table to bridge two query transform. Since you need columns for column4 and 5 transformation, you need to add those in first query transform.  You can first imitate this at SQL level and make sure data match, then do it at the data flow level.   
