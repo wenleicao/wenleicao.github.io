@@ -59,7 +59,7 @@ Decode (condition, ‘A’, ‘B’)   this can be fully pushed down
 But if it likes this  
 Decode (condition, null, ‘B’) this cannot fully pushed down  
 
-It seems to me Data service did not like to push down null value somehow.  
+It seems to me Data service does not like to push down null value somehow.  
 
 It is somewhat frustrating, but Data service will accommodate more and more function with each release.  I believe those will be resolved in near future. This process is ELT rather than ETL, which avoids unneccessary data moving. As a developer, we just need to do our best.   
 
