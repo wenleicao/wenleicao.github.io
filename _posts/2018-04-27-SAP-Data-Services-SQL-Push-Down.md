@@ -56,7 +56,7 @@ Solution:  your current destination is currentdatastore.table,   you can use oth
 For example, I have transformation using decode: 
 
 Decode (condition, ‘A’, ‘B’)   this can be fully pushed down  
-But if it like this  
+But if it likes this  
 Decode (condition, null, ‘B’) this cannot fully pushed down  
 
 It seems to me Data service did not like to push down null value somehow.  
