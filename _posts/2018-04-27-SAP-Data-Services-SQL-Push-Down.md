@@ -17,7 +17,7 @@ Unfortunately, there is not a step-by-step guide for how to implement pushdown f
 
 I had a data flow, the corresponding script ran about 10 min at database. This data flow ran over an hour. I decide to rebuild this data flow from ground up.  This is what I experienced.
 
-•	First and foremost important, watch the display optimized SQL, while you are developing your data flow. This menu is only available when you open a data flow. 
+--First and foremost important, watch the display optimized SQL, while you are developing your data flow. This menu is only available when you open a data flow. 
 
 <img src="/images/blog17/optimize.PNG" >  
 
@@ -26,7 +26,7 @@ INSERT /*+ APPEND */ INTO "schema name"."table name" ….
 
 When you see SQL begin with “select”, it did not
 
-•	Transformation is too complex to push down
+--Transformation is too complex to push down
 The first query transform took 7 tables join and output 50 columns.   There are 5 columns need transformation
   Column1: User defined function call (I imported into datastore and use the function in mapping)
 	Column2: use ltrim_blanks, rtrim_blanks function
