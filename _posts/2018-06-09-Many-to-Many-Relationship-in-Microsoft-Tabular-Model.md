@@ -11,5 +11,10 @@ Here I use student class dataset which I had a post before to use for an example
 
 <https://wenleicao.github.io/Many_to_Many_relationship_in_SSAS_cube/>
 
+This dataset is like this:
+<img src="/images/blog3/data_in_table.PNG" alt="sample data">
+
+
+
 
 
