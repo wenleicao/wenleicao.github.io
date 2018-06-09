@@ -11,8 +11,12 @@ Here I use student class dataset which I had a post before to use for an example
 
 <https://wenleicao.github.io/Many_to_Many_relationship_in_SSAS_cube/>
 
-This dataset is like this:
-<img src="/images/blog3/data_in_table.PNG" alt="sample data">
+This dataset is like this:  
+<img src="/images/blog3/data_in_table.PNG" alt="sample data">  
+
+ So, one student can take multiple classes and one class could have multiple students. Our goal is able to calculate correctly from one side to the other.  Such as how much each student paid for class?   How many students in each class?    I included classfee in class table, we can see if it works natively.  If not, how we fix it.  The presentation layer, we use PowerBI desktop, we can show result in table and graph. We can also create custom DAX measure there if we need to fix the problem.   
+ 
+ 
 
 
 
