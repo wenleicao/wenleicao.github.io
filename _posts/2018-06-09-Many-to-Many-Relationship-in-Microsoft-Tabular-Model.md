@@ -7,4 +7,9 @@ One of features that Multi-dimension cube has whereas Tabular model doesn’t is
 
 I read quite a few articles online.  Either they don’t have detail steps or the example is too complex to follow.  I try to use a simple example and give detail steps as to how to implement it.  
 
+Here I use student class dataset which I had a post before to use for an example.  Please consult the following link for table setup if you want to follow along. 
+
+<https://wenleicao.github.io/Many_to_Many_relationship_in_SSAS_cube/>
+
+
 
