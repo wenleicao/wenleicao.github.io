@@ -52,7 +52,10 @@ if we create a measure like this
 
 
 you will see this 
-<img src="/images/blog18/third_result.PNG"> 
+<img src="/images/blog18/thirdresult.PNG"> 
+
+you would have to create measure like the follows
+<img src="/images/blog18/correct_student_count.PNG"> 
 
 
 
