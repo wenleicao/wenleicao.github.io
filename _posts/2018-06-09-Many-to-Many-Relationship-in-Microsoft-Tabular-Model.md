@@ -19,7 +19,9 @@ Steps
 1.	Create student, class, mapstudentclass table in SQL Server database.   <a href="/Files/student_class_table_script.sql">download code here</a>
 2.	In visual studio, Create tabular model project, import data   
   a.	 From menu model, import data source, choose SQL Server database,  following the instruction, import data from the table you created in step 1  
-  b.	Now, you will see model structure like this if you click digram view of tabular model project.  You can see  the bridge table mapstudentclass is in the middle
+  b.	Now, you will see model structure like this if you click digram view of tabular model project.  You can see  the bridge table mapstudentclass is in the middle  
+  <img src="/images/blog18/structure.PNG">
+  
 
 
 
