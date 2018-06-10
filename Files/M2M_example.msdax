@@ -1,0 +1,30 @@
+--classfee sum
+correct_classfee = 
+
+calculate (
+sum(class[ClassFee]),
+filter(
+      class,
+  calculate (
+	countrows(mapStudentClass)
+	   ) >0	
+	)
+)
+
+--worng student count
+
+student_count = DISTINCTCOUNT(student[StudentID]) 
+
+
+--correct student count
+correct_studentcount = 
+
+calculate (
+distinctcount(student[studentid]),
+filter(
+      student,
+  calculate (
+	countrows(mapStudentClass)
+	   ) >0	
+	)
+)
