@@ -31,7 +31,8 @@ Steps
  <img src="/images/blog18/first result.PNG"> 
 
 This is what we get from the SQL query  
-<img src="/images/blog18/student_count_per_class.PNG"> 
+<img src="/images/blog3/DW_calculation.PNG" alt="calcuation at dw">
+
 
 
 
