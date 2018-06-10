@@ -49,13 +49,16 @@ Let us see what we are supposed to see in SQL.
 <img src="/images/blog18/student_count_per_class.PNG"> 
 
 if we create a measure like this   
+studentcount = distinctcount(student[studentid])
 
-
-you will see this 
+you will see this   
 <img src="/images/blog18/thirdresult.PNG"> 
 
-you would have to create measure like the follows
+you would have to create measure like the follows  
 <img src="/images/blog18/correct_student_count.PNG"> 
+
+this is what we expected  
+<img src="/images/blog18/fourth_result.PNG"> 
 
 
 
