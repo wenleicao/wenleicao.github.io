@@ -60,5 +60,54 @@ you would have to create measure like the follows
 this is what we expected  
 <img src="/images/blog18/fourth_result.PNG"> 
 
+So why Tabular model behaves like this?
+It is because in Tabular model, there are two context, row context and filter context.  Row context works row by row.  When you create a calculated column,  column C = columnA + columnB.  At each row, it will find column A and columnB  and add together.  Some DAX function like addcolumns, sumx  et al works this way. 
+
+Filter context is set of filter already applied on data before DAX start to calculate measure. Somewhat similar to where clause in SQL.  
+In the case of classfee calculation, each student will have classfee. We selectstudentname with classfee. Each studentname is the filter context. 
+
+In DAX, you can change filter context via  calculate and calculatable function. This is helpful when you want the result in different context level,  such us child/parent ratio calculation.   For example in the following link, I show how to sum at product and product category level and then calculate ratio
+<https://wenleicao.github.io/Compare_MDX_to_DAX_programming_pattern/>
+
+ Filter context can propagate along one to Many direction.  If you filter on the one side, the many side is also filtered. For example, if the fact table has membersk link to dimmember table,  you can filter on dimemember, the fact table also filtered, which mean calculation only happen to the fact record with membersk filtered in.
+
+We model the Many to Many relationship with bridge table. It is composed of two one to many relationship.   Table-bridge table- Table  is  one-Many-one relation.   
+
+With these knowledge in hand, let us look at the correct_classFee measure again
+correct_classfee = 
+calculate (
+ sum(class[ClassFee]),
+ filter(
+       class,
+   calculate (                                                                             
+  countrows(mapStudentClass)
+     ) >0	
+  )
+)
+
+If outside filter context is John (in powerBI, we drag in studentname in table with measure, each student will be aggregated by , therefore became filter context),    this will propagate to mapsudentclass table (one to many), there are two record in this filter context ie,  
+StudentID     classID
+1	A
+1	B
+
+The following will  end up with  class A and B row, because studentID 1 is in filter context, the sum of classFee  will give correct number (class A and B fee).  
+filter(
+      class,
+  calculate (                                                                             
+	countrows(mapStudentClass)
+	   ) >0	
+)
+	
+ The same apply to Mary and Lisa. Therefore it ends up with correct number. 
+ 
+ Hope my explanation make sense to you.  
+ 
+ <a href="/Files/M2M_example.msdax">You can download DAX code here</a> 
+ <a href="/Files/M2M_example.pbix">You can download PowerBI file here</a>
+
+ 
+ thank you.
+ 
+ Wenlei
 
 
