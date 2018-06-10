@@ -46,3 +46,13 @@ The number matched :)
 What if we want to get how many student each class. That is reverse process from the previous one. 
 Let us see what we are supposed to see in SQL. 
 
+<img src="/images/blog18/student_count_per_class.PNG"> 
+
+if we create a measure like this   
+
+
+you will see this 
+<img src="/images/blog18/third_result.PNG"> 
+
+
+
