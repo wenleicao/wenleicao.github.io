@@ -20,8 +20,21 @@ Steps
 2.	In visual studio, Create tabular model project, import data   
   a.	 From menu model, import data source, choose SQL Server database,  following the instruction, import data from the table you created in step 1  
   b.	Now, you will see model structure like this if you click digram view of tabular model project.  You can see  the bridge table mapstudentclass is in the middle  
-  <img src="/images/blog18/structure.PNG">
+  <img src="/images/blog18/structure.PNG">  
+
+3.	Save the project, and deploy the project to a tabular model server. 
+4.	Open PowerBI desktop, click get data, choose SQL Server analysis service database,  provide server name and select the tabular model you just deployed.
+5.	You will see table is imported in powerBI  
+  <img src="/images/blog18/show_column_in_powerBI.PNG">  
   
+6. Now let us see what if we choose studentname and classfee (choose like above figure).  I use visualization of table and bar chart 
+ <img src="/images/blog18/first result.PNG"> 
+
+This is what we get from the SQL query  
+<img src="/images/blog18/student_count_per_class.PNG"> 
+
+
+
 
 
 
