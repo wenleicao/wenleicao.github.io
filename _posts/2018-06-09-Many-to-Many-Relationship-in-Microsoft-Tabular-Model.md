@@ -30,14 +30,15 @@ Steps
 6. Now let us see what if we choose studentname and classfee (choose like above figure).  I use visualization of table and bar chart 
  <img src="/images/blog18/first result.PNG"> 
 
-This is what we get from the SQL query  
+This is what we are supposed to get 
 <img src="/images/blog3/DW_calculation.PNG" alt="calcuation at dw">
 
+Clearly the calculation in tabular model is not correct.  How to fix that?  We can create a new measure and define the new measure as the follows  
 
+<img src="/images/blog18/correct_classfee_measure.PNG">
 
+Now let us bring in this new measure side by side with the ClassFee   
+<img src="/images/blog18/show_column_in_powerBI2.PNG">
 
-
-
-
-
-
+The number matched :)
+<img src="/images/blog18/second_result.PNG">
