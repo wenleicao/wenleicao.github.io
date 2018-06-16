@@ -71,10 +71,17 @@ click the link, I get the dashboard containing John, Lisa and Mary. So, it actua
 
 Now the next question comes. let us say, you have 100 different default filter setting for 100 users. some have one filter, some have multiple filter. How will you manage it?  
 
-Angry Analytics has a blog about using window flow to delive hyperlink to user. 
+Angry Analytics has a blog about using window flow to delive hyperlink with filter embedded to user. 
 <https://angryanalyticsblog.azurewebsites.net/index.php/2017/11/13/data-driven-subscriptions-in-power-bi/>  
 
-It is a good GUI tool if you have this paid app in your office 365 suite. 
+It is a good GUI tool if you have this paid app in your office 365 suite (in the example, it only show single filter. I am not positive , it can handle multiple filters). Unfortunately, we don't have this tool. The next thing, I can think is SSIS. If you have worked with SSIS, you can draw all filter setting from database table into an object variable. then in a foreach loop container, use Foreach ADO enumerator to read one row of object at a time. Pass the parameter to form a hyperlink string, then send it using send email task. However, not all report developers are SSIS savvy. But most powerBI developer, I believe , understand T SQL.  Here I am showing how to use script to handle single filter and multiple filter as well as send it out using dbmail stored procedure all within SSMS.
+
+I use two user, one has single default filter, the other has multiple default filter. 
+let us create a table and insert the setting
+
+
+
+
 
 
 
