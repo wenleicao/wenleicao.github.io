@@ -42,12 +42,12 @@ The following is from Adam's post
 ?filter=<Table>/<Field> eq 'value'
   
 There are a couple of things to be aware of when using this.
---Field type has to be string
---Table and field names cannot have any spaces
---Table and field names are case sensitive. The value is not.
---Fields that are hidden from report view can still be filtered
---Value has to be enclosed with single quotes
---The field does not need to be present in the Filters pane. It can be used on any table/field within the model."
+-Field type has to be string
+-Table and field names cannot have any spaces
+-Table and field names are case sensitive. The value is not.
+-Fields that are hidden from report view can still be filtered
+-Value has to be enclosed with single quotes
+-The field does not need to be present in the Filters pane. It can be used on any table/field within the model."
 
 
 
