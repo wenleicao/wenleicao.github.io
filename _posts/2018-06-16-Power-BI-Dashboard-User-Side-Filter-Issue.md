@@ -12,5 +12,35 @@ Q1. For first question, visualization pane has slicer, you can bring in one slic
 This is unfiltered dashboard  
 <img src="/images/blog19/unfiltered.PNG">  
 
-I add a slicer and drug in the studentname filter in the slicer. From the slicer, I choose Mary. 
+I add a slicer and drag in the studentname filter in the slicer. From the slicer, I choose Mary. As you can see, the dashboard has been filtered in Mary data only. 
 <img src="/images/blog19/add_slice.PNG">  
+
+You can actually add multiple slicer in the same dashboard. For example, you can add another slicer and drag in classname,  and choose Science. Then the dashboard will only filter in Mary and Science data.  
+
+Q1 is not difficult, how about Q2?   
+In old SSRS school, we have different parameter for the report, you can set default parameter value. However, Power BI dashboard's parameters are more helping developer to dynamically load data to model than helping user. When dashboard is published, the parameter value cannot be changed. Please check the following blog for the difference.  
+<https://www.mssqltips.com/sqlservertip/4475/using-parameters-in-power-bi/>
+
+In addition, if there are multiple users for the same dashboard, all of them want to have their own default filter value. What are you going to do? 
+You can publish customerized dashboard with specific filter for each user.  That is a solution.  But you will have many dashboards to maintain. That is a not good solution. 
+
+Here is a better way to do it, although it is not perfect yet. 
+
+Adam described a way called URL string parameter to help address the default filter issue.
+<https://powerbi.microsoft.com/en-us/blog/filter-a-report-with-a-url-query-string-parameter/>  
+
+When you publish to Power BI site, you first see your work in the report section. You need to pin it to dashboard to share.  
+
+VERY IMPORTANT, you need to click the visual in your report section and copy the link in the broswer address line to get the link. it is not dashboard link you shared with your colleague after you pin it to dashboard. To tell the difference, the correct address should have "reportsection" in it. The following is my report address.  
+
+<https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection>
+
+
+
+
+
+
+
+
+
+
