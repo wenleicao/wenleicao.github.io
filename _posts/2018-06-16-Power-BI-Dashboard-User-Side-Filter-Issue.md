@@ -3,9 +3,9 @@ layout: post
 title: Power BI Dashboard User Side Filter Issue
 ---
 
-I was asked two questions about Power BI recently. 
-Q1.  For a given dashboard, how user can filter data at his/her will?
-Q2. How user can keep his/her default filter?
+I was asked two questions about Power BI recently.    
+Q1.  For a given dashboard, how user can filter data at his/her will?  
+Q2. How user can keep his/her default filter?  
 
 Q1. For first question, visualization pane has slicer, you can bring in one slicer or multiple slicer to the dashboard. User can choose filter value as you like. I use the student-class example in previous post to illustrate that.
 
@@ -70,6 +70,11 @@ Apparently, it does work for above purpose including multiple columns. just out 
 click the link, I get the dashboard containing John, Lisa and Mary. So, it actually does not work on OR logic. Therefore, it work for some situation but not all
 
 Now the next question comes. let us say, you have 100 different default filter setting for 100 users. some have one filter, some have multiple filter. How will you manage it?  
+
+Angry Analytics has a blog about using window flow to delive hyperlink to user. 
+<https://angryanalyticsblog.azurewebsites.net/index.php/2017/11/13/data-driven-subscriptions-in-power-bi/>  
+
+It is a good GUI tool if you have this paid app in your office 365 suite. 
 
 
 
