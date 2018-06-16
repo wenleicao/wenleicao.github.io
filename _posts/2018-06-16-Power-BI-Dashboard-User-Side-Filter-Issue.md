@@ -39,15 +39,15 @@ The following is from Adam's post
 
 "Filters can be added to the query string of a report UR using the following syntax. This is based on OData $filter syntax. Only a string compare is available using eq, however.
 
-?filter=<Table>/<Field> eq 'value'
+?filter=<Table>/<Field>eq'value'
   
 There are a couple of things to be aware of when using this.
-1.Field type has to be string
-2.Table and field names cannot have any spaces
-3.Table and field names are case sensitive. The value is not.
-4.Fields that are hidden from report view can still be filtered
-5.Value has to be enclosed with single quotes
-6.The field does not need to be present in the Filters pane. It can be used on any table/field within the model."
+1.Field type has to be string  
+2.Table and field names cannot have any spaces  
+3.Table and field names are case sensitive. The value is not  
+4.Fields that are hidden from report view can still be filtered  
+5.Value has to be enclosed with single quotes  
+6.The field does not need to be present in the Filters pane. It can be used on any table/field within the model."  
 
 
 
