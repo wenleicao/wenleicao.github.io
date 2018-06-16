@@ -49,6 +49,34 @@ There are a couple of things to be aware of when using this.
 5.Value has to be enclosed with single quotes  
 6.The field does not need to be present in the Filters pane. It can be used on any table/field within the model."  
 
+if we can use one dashboard source and change the dashboard filter URL, we can have different URL for different user. If the dashboard need to updated, we just need to update one dashboard. That is good for version control and maintenance.  Let us see if this works on our dashboard. 
+
+if we want to filter in only Mary
+<https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection?filter=student/StudentName eq 'Mary'>  
+
+click the link I get   
+<img src="/images/blog19/filtered.PNG">  
+
+if we want to filter student for Mary and class for math
+<https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection?filter=student/StudentName eq 'Mary' and class/ClassName eq 'Math'>  
+
+click the link I get  
+<img src="/images/blog19/filterbymultiplecolumn.PNG">   
+
+
+Apparently, it does work for above purpose including multiple columns. just out of curiosity, I tried to filter in both Mary and John by the following using OR logic operator  
+<https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection?filter=student/StudentName eq 'Mary' or student/StudentName eq 'John'>  
+
+click the link, I get the dashboard containing John, Lisa and Mary. So, it actually does not work on OR logic. Therefore, it work for some situation but not all
+
+Now the next question comes. let us say, you have 100 different default filter setting for 100 users. some have one filter, some have multiple filter. How will you manage it?  
+
+
+
+
+
+
+
 
 
 
