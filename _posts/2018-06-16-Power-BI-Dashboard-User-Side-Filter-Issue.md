@@ -112,7 +112,7 @@ step 1. Create group for each filter set, mark the param1 and param2 if they hav
 step 2. Pivot the value of of filter. Notice 3 row in step 1 became 2 row. That is because I use the grouping column and you also see the filter is combined in the format of URL string filter 
 <img src="/images/blog19/step2.PNG"> 
 
-step 3.  I created cursor. Store the filter info the cursor and read one row at a time to assign variable value. Those variable will be used to build the string for execute sp_send_dbmail. I use print function to print it out. So we can check if it has syntax error. We can copy it out and execute to test. If no issue, we can safely use dynamic SQL to execute it.
+step 3.  I created a cursor. Store the filter info into the cursor and read one row at a time to assign variable value. Those variable will be used to build the string for execute sp_send_dbmail. I use print function to print it out. So we can check if it has syntax error. We can copy it out and execute to test. If no issue, we can safely use dynamic SQL to execute it.
 <img src="/images/blog19/step3.PNG"> 
 
 
