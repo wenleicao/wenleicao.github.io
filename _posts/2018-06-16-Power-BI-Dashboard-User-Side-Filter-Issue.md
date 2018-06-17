@@ -120,7 +120,7 @@ In summary, URL parameter filter can apply preset filter to Power BI dashboard. 
 
 We can use configuration table to keep filter info, and use script and sp_send_dbmail to delive the dashboard to user ad hoc or we can schedule a job to run the script in SQL agent.  Please note, I use up to 2 filter set. This is a prototype. We can use more filter set. Only thing to do is to modify the step 2 script.  
 
-Please download 
+Please download <a href="/Files/blog19_script.zip">code</a> here
 
 Thank you.
 
