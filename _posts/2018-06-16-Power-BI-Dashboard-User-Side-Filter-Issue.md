@@ -80,7 +80,7 @@ It is a good GUI tool if you have this paid app in your office 365 suite (in the
 First we want to know if we are able to send hard coded dashboard link out via SSMS.
 You need to set up dbmail following the following link 
 <https://blog.sqlauthority.com/2008/08/23/sql-server-2008-configure-database-mail-send-email-from-sql-database/>
-after that, I try to execute the following code, need to change to msdb database, 
+after that, I try to execute the following code, need to change to msdb database, Also notice: I use an fake email to replace my real email.
 
 USE msdb  
  GO  
@@ -98,6 +98,10 @@ Soon, I received email. I clicked the link, it brought me to the dashboard. The 
 
 Now, We can create a table to save user filter info and insert the info   
 I use two user, one has single default filter, the other has multiple default filter.   
+<img src="/images/blog19/ddl.PNG">   
+
+
+
 
 
 
