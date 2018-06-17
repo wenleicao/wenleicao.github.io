@@ -51,13 +51,13 @@ There are a couple of things to be aware of when using this.
 
 If we can use one dashboard source and change the dashboard filter URL, we can have different URL for different user. If the dashboard need to updated, we just need to update one dashboard. That is good for version control and maintenance.  Let us see if this works on our dashboard. 
 
-If we want to filter in only Mary
+If we want to filter in only Mary  
 <https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection?filter=student/StudentName eq 'Mary'>  
 
 Click the link I get   
 <img src="/images/blog19/filtered.PNG">  
 
-If we want to filter student for Mary and class for math
+If we want to filter student for Mary and class for math  
 <https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection?filter=student/StudentName eq 'Mary' and class/ClassName eq 'Math'>  
 
 Click the link I get  
@@ -78,8 +78,8 @@ It is a good GUI tool if you have this paid app in your office 365 suite (in the
 
 
 First we want to know if we are able to send hard coded dashboard link out via SSMS.
-You need to set up dbmail following the following link 
-<https://blog.sqlauthority.com/2008/08/23/sql-server-2008-configure-database-mail-send-email-from-sql-database/>
+You need to set up dbmail following the following link     
+<https://blog.sqlauthority.com/2008/08/23/sql-server-2008-configure-database-mail-send-email-from-sql-database/>   
 after that, I try to execute the following code(change to msdb database first). Please notice: I use a fake email to replace my real email.
 
 USE msdb  
