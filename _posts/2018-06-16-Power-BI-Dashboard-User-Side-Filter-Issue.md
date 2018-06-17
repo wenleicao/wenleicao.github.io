@@ -100,26 +100,28 @@ Now, We can create a table to save user filter info and insert the info
 I use two user, one has single default filter, the other has multiple default filter.   
 <img src="/images/blog19/ddl.PNG">   
 
+This is what we have in the table  
+<img src="/images/blog19/configuretable.PNG">  
+
+OK, we have info we need to build email string. Notice John Doe have two filters for the Dashboard. 
+what we want is to go through every row, send out an email based on the info in one row.  John Doe has two row of info, it need to combined into one row.  To do that, I using the following code. 
+
+step 1. create group for each filter set, mark the param1 and param2 if they have more than 1 param. Also combined table, column and value as filter. Notice I add quotation on left side, but leave it blank on the right.  That is because I need to add second filter if it has. at the last step, I will add left quoation.  
+<img src="/images/blog19/step1.PNG"> 
+
+step 2. Pivot the value of of filter. Notice 3 row in step 1 became 2 row. That is becasue I use the grouping column and you also see the filter is combined in the format of URL string filter 
+<img src="/images/blog19/step2.PNG"> 
+
+step 3.  I created cursor. Store the filter info the cursor and read one row at a time to assign variable value. Those variable will be used to build the string for execute sp_send_dbmail. I use print function to print it out. So we can check if it has syntax error. We can copy it out and execute to test. if no issue, we can safely use dynamic SQL to execute it.
+<img src="/images/blog19/step3.PNG"> 
 
 
+In summary, URL parameter filter can apply preset filter to Power BI dashboard. It can take multiple column filter. But it cannot handle more complicated logic, such as 'OR'. 
 
+We can use configuration table to keep filter info, and use script and sp_send_dbmail to delive the dashboard to user ad hoc or we can schedule a job to run the script in SQL agent.  Please note, I use up to 2 filter set. This is a prototype. We can use more filter set. Only thing to do is to modify the step 2 script.  
 
+Please download 
 
+Thank you.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Wenlei
