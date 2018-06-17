@@ -78,7 +78,7 @@ It is a good GUI tool if you have this paid app in your office 365 suite (in the
 
 
 First we want to know if we are able to send hard coded dashboard link out via SSMS.
-You need to set up dbmail following the following link     
+You need to set up dbmail following the following link if you have not yet        
 <https://blog.sqlauthority.com/2008/08/23/sql-server-2008-configure-database-mail-send-email-from-sql-database/>   
 after that, I try to execute the following code(change to msdb database first). Please notice: I use a fake email to replace my real email.
 
@@ -118,7 +118,7 @@ step 3.  I created cursor. Store the filter info the cursor and read one row at 
 
 In summary, URL parameter filter can apply preset filter to Power BI dashboard. It can take multiple column filter. But it cannot handle more complicated logic, such as 'OR'. 
 
-We can use configuration table to keep filter info, and use script and sp_send_dbmail to deliver the dashboard to user ad hoc or we can schedule a job to run the script in SQL agent.  Please note, I use up to 2 filter set. This is a prototype. We can use more filter set. Only thing to do is to modify the step 2 script.  
+We can use configuration table to keep filter info, and use script and sp_send_dbmail to deliver the dashboard to user ad hoc or we can schedule a job to run the script in SQL agent.  Please note, I use up to 2 filter set. This is a prototype. We can use more filter set. Only thing to do is to modify the step 2 script (add param3, param4, ...).  
 
 Please download <a href="/Files/blog19_script.zip">code</a> here
 
