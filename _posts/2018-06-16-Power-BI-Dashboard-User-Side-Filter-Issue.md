@@ -4,25 +4,25 @@ title: Power BI Dashboard User Side Filter Issue
 ---
 
 I was asked two questions about Power BI recently.    
-Q1.  For a given dashboard, how user can filter data at his/her will?  
-Q2. How user can keep his/her default filter?  
+Q1.  For a given dashboard, how can user filter data of his/her choice?  
+Q2. How can user keep his/her default filter?  
 
 Q1. For first question, visualization pane has slicer, you can bring in one slicer or multiple slicer to the dashboard. User can choose filter value as you like. I use the student-class example in previous post to illustrate that.
 
 This is unfiltered dashboard  
 <img src="/images/blog19/unfiltered.PNG">  
 
-I add a slicer and drag in the studentname filter in the slicer. From the slicer, I choose Mary. As you can see, the dashboard has been filtered in Mary data only.   
+I added a slicer and dragged in the studentname filter in the slicer. From the slicer, I chose Mary. As you can see, the dashboard has been filtered in Mary data only.   
 <img src="/images/blog19/add_slice.PNG">  
 
 You can actually add multiple slicer in the same dashboard. For example, you can add another slicer and drag in classname,  and choose Science. Then the dashboard will only filter in Mary and Science data.  
 
 Q1 is not difficult, how about Q2?   
-In old SSRS school, we have different parameter for the report, you can set default parameter value. However, Power BI dashboard's parameters are more helping developer to dynamically load data to model than helping user. When dashboard is published, the parameter value cannot be changed. Please check the following blog for the difference.    
+In old SSRS school, we have different parameters for the report, you can set default parameter value. However, Power BI dashboard's parameters are more helping developer to dynamically load data to model than helping user. When dashboard is published, the parameter value cannot be changed. Please check the following blog for the difference.    
 <https://www.mssqltips.com/sqlservertip/4475/using-parameters-in-power-bi/>
 
 In addition, if there are multiple users for the same dashboard, all of them want to have their own default filter value. What are you going to do? 
-You can publish customerized dashboard with specific filter for each user.  That is a solution.  But you will have many dashboards to maintain. That is a not good solution. 
+You can publish customerized dashboard with specific filter for each user.  That is a solution.  But you will have many dashboards to maintain. That is a not good solution though. 
 
 Here is a better way to do it, although it is not perfect yet. 
 
@@ -31,7 +31,7 @@ Adam described a way called URL string parameter to help address the default fil
 
 When you publish to Power BI site, you first see your work in the report section. You need to pin it to dashboard to share.  
 
-VERY IMPORTANT, you need to click the visual in your report section and copy the link in the browser address line to get the link. It is not dashboard link you shared with your colleague after you pin it to dashboard. To tell the difference, the correct address should have "reportsection" in it. The following is my report address.  
+VERY IMPORTANT, you need to set your cursor in the report not dashboard and copy the link in the browser address line to get the link. It is not dashboard link you shared with your colleague. To tell the difference, the correct address should have "reportsection" in it. The following is my report address.  
 
 <https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection>
 
@@ -64,17 +64,17 @@ Click the link I get
 <img src="/images/blog19/filterbymultiplecolumn.PNG">   
 
 
-Apparently, it does work for above purpose including multiple columns. Just out of curiosity, I tried to filter in both Mary and John by the following using OR logic operator  
+Apparently, it did work for above purpose including multiple columns. Just out of curiosity, I tried to filter in both Mary and John by the following using OR logic operator  
 <https://app.powerbi.com/groups/me/reports/c4c5004b-31d0-4330-8cad-de0fb8f71563/ReportSection?filter=student/StudentName eq 'Mary' or student/StudentName eq 'John'>  
 
-Click the link, I get the dashboard containing John, Lisa and Mary. So, it actually does not work on OR logic. Therefore, it work for some situation but not all
+Click the link, I get the dashboard containing John, Lisa and Mary. So, it actually does not work on OR logic. Therefore, it works for some situation but not all
 
 Now the next question comes. Let us say, you have 20 different default filter setting for 20 users. some have one filter, some have multiple filter. How will you manage it?  
 
-Angry Analytics has a blog about using window flow to deliver hyperlink with filter embedded to user. 
+Angry Analytics has a blog about using window flow to deliver hyperlink with filter embedded to user(in the example, it only show single filter. I am not positive if it can handle multiple filters).   
 <https://angryanalyticsblog.azurewebsites.net/index.php/2017/11/13/data-driven-subscriptions-in-power-bi/>  
 
-It is a good GUI tool if you have this paid app in your office 365 suite (in the example, it only show single filter. I am not positive if it can handle multiple filters). Unfortunately, we don't have this tool. The next thing, I can think is SSIS. If you have worked with SSIS, you can draw all filter setting from database table into an object variable. then in a foreach loop container, use Foreach ADO enumerator to read one row of object at a time. Pass the parameter to form a hyperlink string, then send it using send email task. However, not all report developers are SSIS savvy. But most powerBI developer, I believe, understand T SQL.  Here I am showing how to use script to handle single filter and multiple filter as well as send dashboard link out using dbmail stored procedure all within SSMS.
+It is a good GUI tool if you have this paid app in your office 365 suite . Unfortunately, we don't have this tool. The next thing, I can think is SSIS. If you have worked with SSIS, you can draw all filter setting from database table into an object variable. then in a foreach loop container, use Foreach ADO enumerator to read one row of object at a time. Pass the parameter to form a hyperlink string, then send it using send email task. However, not all report developers are SSIS savvy. But most powerBI developer, I believe, understand T SQL.  Here I am showing how to use script to handle single filter and multiple filter as well as send dashboard link out using dbmail stored procedure all within SSMS.
 
 
 First we want to know if we are able to send hard coded dashboard link out via SSMS.
