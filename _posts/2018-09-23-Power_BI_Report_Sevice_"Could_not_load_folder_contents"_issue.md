@@ -25,7 +25,8 @@ However, when my colleagues access the same site, they came across the following
 <img src="/images/blog20/issue.jpg"> 
 
 I have tried to adjust at Site level security and folder level security, give them even admin privilege. 
-Also, google the problem on the web, I can see people have the similar issue, but struggle to find a solution.
+Also, google the problem on the web, I can see people have the similar issue, but struggle to find a solution.  
+
 https://community.powerbi.com/t5/Report-Server/Power-BI-Report-Server-You-are-not-allowed-to-view-this-folder/td-p/236338
 
 None is working. It took us two weeks to figure out the problem. Here I share how it get fixed.
@@ -36,7 +37,7 @@ The above powerbi link is right, but one thing not so clear is about "manage fol
 
 once click that, you will see the security 
 
-<img src="/images/blog20/folder_level_security.PNGimages/blog20/managefolder.PNG">
+<img src="/images/blog20/folder_level_security.PNG">
 
 once I give permission to my colleague, the problem resolved. 
 
