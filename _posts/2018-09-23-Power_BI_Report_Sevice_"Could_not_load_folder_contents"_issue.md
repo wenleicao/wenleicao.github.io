@@ -31,7 +31,7 @@ https://community.powerbi.com/t5/Report-Server/Power-BI-Report-Server-You-are-no
 
 None is working. It took us two weeks to figure out the problem. Here I share how it get fixed.
 
-The above powerbi link is right, but one thing not so clear is about "manage folder". People will go straight to folder security to change the setting, but that will not work. you need to go here. see the yellow shaded. You need to be admin who build the server to see that. Even you are site admin, you cannot see that. So, you need to be in right group.
+The above powerbi link is right, but one thing not so clear is about "manage folder". People will go straight to folder level security to change the setting, but that will not work. you need to go here. see the yellow shaded. You need to be admin who build the server to see that. Even you are site admin, you cannot see that. So, you need to be in right group.
 
 <img src="/images/blog20/managefolder.PNG"> 
 
