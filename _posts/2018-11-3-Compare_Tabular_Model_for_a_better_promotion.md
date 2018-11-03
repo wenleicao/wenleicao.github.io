@@ -35,9 +35,10 @@ It is designed to compare the two model on different server. So it will be very 
 Here is one result showing on their site. very good from my perspective.  
 <img src="/images/blog21/BismNormComparison.png">   
 
-Personally, I would recommend method 2, because it is easiest.  But method 1 definitely works from my research.
-I have tried comparing feature to do comparison between two changeset in visual studio, but no luck. 
-I also see someone suggest adding it as a feature online. or maybe I don't do it correctly.  
+Personally, I would recommend method 2, because it is easiest.  But method 1 definitely works from my research.  
+
+Also, I have tried comparing feature to do comparison between two changeset in visual studio, but no luck. 
+I saw someone suggested adding it as a feature online 5 years ago. Maybe VS already can do that but I don't do it correctly.  
 <https://visualstudio.uservoice.com/forums/330519-visual-studio-team-services/suggestions/3205750-provide-tfs-with-change-set-to-change-set-diff-com>
 
 Do you have a better way to do it? Please share your thought.  
