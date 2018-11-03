@@ -32,6 +32,9 @@ While I search online, I also notice there is a third party tool which can be ad
 
 It is designed to compare the two model on different server. So it will be very easy if you want to compare your model on dev server and QA server.  There is no need finding the correct changeset in source control.  Unfortunately, while I am writing this post, our QA deployment has completed. So, both version are same.  So I cannot use this tool to tell difference. I will need to wait next deployment to give a try.
 
+Here is one result showing on their site. very good from my perspective.  
+<img src="/images/blog21/BismNormComparison.png">   
+
 Personally, I would recommend method 2, because it is easiest.  But method 1 definitely works from my research.
 I have tried comparing feature to do comparison between two changeset in visual studio, but no luck. 
 I also see someone suggest adding it as a feature online. or maybe I don't do it correctly.  
