@@ -37,8 +37,8 @@ I have tried comparing feature to do comparison between two changeset in visual 
 I also see someone suggest adding it as a feature online. or maybe I don't do it correctly.  
 <https://visualstudio.uservoice.com/forums/330519-visual-studio-team-services/suggestions/3205750-provide-tfs-with-change-set-to-change-set-diff-com>
 
-Do you have a better way to do it? Please share your thought.
-Again thanks a lot and Happy BI.
+Do you have a better way to do it? Please share your thought.  
+Again thanks a lot and Happy BI.  
 
 Wenlei
 
