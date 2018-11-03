@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Compare Tabular Model Difference For Better Project Change Promotion 
+title: Compare Tabular Model Difference For Better Promotion Experience 
 ---
 
 If you work on the same project with others, you must be familiar with source control.  There are a variety of source control products on the market. There is open source one, such as Git offered by Github. I worked with SAP products before, which uses central repository to check in and out.  People working with visual studio will probably be more familiar with Team foundation server (TFS).   
