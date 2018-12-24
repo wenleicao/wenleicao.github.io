@@ -1,0 +1,26 @@
+﻿<# var allTableNames = new[] { "Model_Table", "Model_relationship" }; #>
+<# //var tableName = "Model_Table"; #>
+<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+    <Connections>
+        <OleDbConnection Name="Source" ConnectionString="Provider=SQLNCLI11;Server=servername;Initial Catalog=leedo002_Sandbox;Integrated Security=SSPI;" />
+        <OleDbConnection Name="Target" ConnectionString="Provider=SQLNCLI11;Server=servername;Initial Catalog=leedo002_Sandbox;Integrated Security=SSPI;" />
+    </Connections>
+    <Packages>
+        <# foreach (var tableName in allTableNames) { #>
+            <Package Name="Copy <#=tableName#>" ConstraintMode="Parallel">
+                <Tasks>
+                    <Dataflow Name="DFT_CopyData">
+                        <Transformations>
+                            <OleDbSource Name="Retrieve Rows" ConnectionName="Source">
+                                <DirectInput>SELECT * FROM dbo.<#=tableName#></DirectInput>
+                            </OleDbSource>
+                            <OleDbDestination Name="Load Rows" ConnectionName="Target">
+                                <ExternalTableOutput Table="temp.<#=tableName#>" />
+                            </OleDbDestination>
+                        </Transformations>
+                    </Dataflow>
+                </Tasks>
+            </Package>
+         <# } #>
+    </Packages>
+</Biml>
