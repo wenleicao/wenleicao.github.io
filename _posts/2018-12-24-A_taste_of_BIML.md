@@ -21,6 +21,24 @@ If meta-data is easily available, BIML is very robust. I use the following BIML 
 This script is based on Scott Currie’s post with some modification.  
 <http://bimlscript.com/Walkthrough/Details/3118>  
 
+<img src="/images/blog23/biml.PNG">  
 
+If you read the code, you can tell even if you have not yet written any BIML code.   
+First, create an array of table name. Next, define the connection for data source and data destination.  Here I marked the server name just to protect the privacy.  You can put in your actual server name and change the database name if you want to follow along.  Finally, use foreach to loop the table array to create two package which contains a data flow respectively for both tables.   
+This is the solution explorer before I generate package.   
 
+<img src="/images/blog23/solution_before_expansion.PNG">  
 
+Now, after I right click bimlscript.biml and choose generate SSIS package. There are two more packages showing up.  
+
+<img src="/images/blog23/solution_after_expansion.PNG">  
+
+If I dilled down to see detail, I can see that the data flow has been configured and ready to run.    
+
+<img src="/images/blog23/task.PNG">   
+
+<img src="/images/blog23/task_detail.PNG">  
+
+<img src="/images/blog23/task_detail2.png">   
+
+Now I only included two tables in the array. It might not save much time. But what if there are 10 tables.  That will save you a lot of time.  For creating SSIS package massively, in Scott’s post, he showed using ImportDB method to retrieve meta-data from whole database. Actually, there are three main methods out there. 
