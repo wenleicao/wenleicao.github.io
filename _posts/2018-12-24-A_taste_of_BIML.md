@@ -41,4 +41,26 @@ If I dilled down to see detail, I can see that the data flow has been configured
 
 <img src="/images/blog23/task_detail2.png">   
 
-Now I only included two tables in the array. It might not save much time. But what if there are 10 tables.  That will save you a lot of time.  For creating SSIS package massively, in Scott’s post, he showed using ImportDB method to retrieve meta-data from whole database. Actually, there are three main methods out there. 
+Now I only included two tables in the array. It might not save much time. But what if there are 10 tables.  That will save you a lot of time.  For creating SSIS package massively, in Scott’s post, he showed using ImportDB method to retrieve meta-data from whole database. Actually, there are three main methods out there.   
+
+1.	ImportTableNodes, limited to one schema   
+2.	ImportDB   in a database but not limited to one schema  
+3.	GetDatabaseSchema  
+
+The first 2 methods are good if you want to import all table/view in one schema or one database. But if you want to pick a few from the table list, you have limited options. The third method, however, has more granularity of control to define a collection. You can define a collection of the schemas or tables, also you can have importoptions to exclude ID, foreign key, index et al, if you want to include an execute SQL task before the data flow to  drop and recreate table before you load. That will be useful.   
+
+<img src="/images/blog23/use_method_get_metadata.PNG">  
+
+You define includedschema, includedtables, finally, you have meta-data stored in variable sourceconneciton.  When you retrieve the meta-data, you just need to loop through and use the meta data as before. Please note, the meta-data is in the property of TalbeNotes.  
+
+<img src="/images/blog23/use_method_get_metadata2.PNG">    
+
+The other part, I still have a question is about syntax of tasks.   
+If you have BIML studio, you can drag in the task and look the BIML code. Then copy it to your edit window. What if you use the BIML express? This link give you some example that you can copy from.  
+<https://varigence.com/Documentation>    
+
+As I am getting closer to BIML, I feel there are more to know.   
+Hope my tastes of BIML helps you. It will take some time to digest.  You cannot build Rome in one night.  
+Again, happy BI.  
+
+Wenlei
