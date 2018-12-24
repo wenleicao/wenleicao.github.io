@@ -41,7 +41,7 @@ If I dilled down to see detail, I can see that the data flow has been configured
 
 <img src="/images/blog23/task_detail2.png">   
 
-Now I only included two tables in the array. It might not save much time. But what if there are 10 tables.  That will save you a lot of time.  For creating SSIS package massively, in Scott’s post, he showed using ImportDB method to retrieve meta-data from whole database. Actually, there are three main methods out there.   
+Now I only included two tables in the array. It might not save much time. But what if there are 10 tables.  That will save you a lot of time.  For creating SSIS package massively, in Scott’s post, he showed using ImportDB method to retrieve meta-data from whole database. Actually, there are three main methods out there.  In this post, I will show you how to use the third method. 
 
 1.	ImportTableNodes, limited to one schema   
 2.	ImportDB   in a database but not limited to one schema  
@@ -54,6 +54,8 @@ The first 2 methods are good if you want to import all table/view in one schema 
 You define includedschema, includedtables, finally, you have meta-data stored in variable sourceconneciton.  When you retrieve the meta-data, you just need to loop through and use the meta data as before. Please note, the meta-data is in the property of TalbeNotes.  
 
 <img src="/images/blog23/use_method_get_metadata2.PNG">    
+
+The last step is generate the package, it is essentially the same. So, I will not show the pics. 
 
 The other part, I still have a question is about syntax of tasks.   
 If you have BIML studio, you can drag in the task and look the BIML code. Then copy it to your edit window. What if you use the BIML express? This link give you some example that you can copy from.  
