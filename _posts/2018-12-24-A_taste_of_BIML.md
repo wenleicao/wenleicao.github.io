@@ -62,7 +62,10 @@ If you have BIML studio, you can drag in the task and look the BIML code. Then c
 <https://varigence.com/Documentation>    
 
 As I am getting closer to BIML, I feel there are more to know.   
-Hope my tastes of BIML helps you. It will take some time to digest.  You cannot build Rome in one night.  
+Hope my tastes of BIML helps you. It will take some time to digest.  You cannot build Rome in one night. 
+if you want to follow along, the biml can be download in the following link
+<a href="/Files/BimlScript.biml">download First Example BIML here</a>
+<a href="/Files/BimlScript_dynamic.biml">download BIML using meta-data here</a>
 Again, happy BI.  
 
 Wenlei
