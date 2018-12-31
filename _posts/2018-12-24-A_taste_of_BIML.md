@@ -1,12 +1,12 @@
 ---
 layout: post
-title: A Taste of BIML 
+title: Leverage metadata in BIML 
 ---
 
-I having been working on SSIS for many years. I came across BIML in multiple occasions, such as reading reference, browsing BI topics…  BIML as a tool is used to massively create SSIS package and meta-data driven ETL solution.   
-So, my view on BIML   
+I have been working on SSIS for many years. I came across BIML in multiple occasions, such as reading reference, browsing BI topics…  BIML as a tool is used to massively create SSIS package and meta-data driven ETL solution.   
+My view on BIML   
 •	Good candidate project for BIML  
-If your project following certain pattern, such as moving multiple table data from one database to another (you can do it via script if it is between same type of database, but  would be harder between SQL server and Oracle for example).  In addition, it is much easier to maintain the big project using BIML.   
+If your project is following certain pattern, such as moving multiple table data from one database to another (you can do it via script if it is between same types of database, but  would be harder between SQL server and Oracle for example).  In addition, it is much easier to maintain the big project using BIML.   
 •	Not good candidate project:  small task with unique requirement   
 
 BIML is built on top of XML.  Like HMTL, java script / ASP.Net can be embedded into it and make it more dynamic and more powerful; BIML script (based on C# / VB.Net) can embed in BIML to automate many time consuming or labor-intensive tasks (use loop and condition et al). 
@@ -17,7 +17,7 @@ One thing, I feels a bit cumbersome that we have to load flat file format header
 Imaging you have a folder containing bunch of flat files to be loaded, you can loop through it and automatically get the meta data and use for BIML, that would be wonderful.   
 I have not seen a BIML extension /help class to do that.  But I think it is possible.  If you have used SAP data service. You know they will set up the different datastore for different type of data sources, one of them is flat file. You can see how it is set up in the following link.  It is pretty accurate in term of choosing data type based on my experience. Maybe BIML creator, Varigence, can build an extension for flat file metadata extraction.  
 <https://blogs.sap.com/2013/01/14/data-transfer-from-flat-file-to-database/>  
-If meta-data is easily available, BIML is very robust. I use the following BIML script as example (this example is between two different schemas in the same databases in SQL Server since it is readily available to me, but also apply between different database or between different type of database such as SQL Server to Oracle)  
+If meta-data is easily available, BIML is very robust. I use the following BIML script as example (this example is between two different schemas in the same databases in SQL Server since it is readily available to me, but also the idea apply between different database or between different type of database such as SQL Server to Oracle)  
 This script is based on Scott Currie’s post with some modification.  
 <http://bimlscript.com/Walkthrough/Details/3118>  
 
@@ -33,7 +33,7 @@ Now, after I right click bimlscript.biml and choose generate SSIS package. There
 
 <img src="/images/blog23/solution_after_expansion.PNG">  
 
-If I dilled down to see detail, I can see that the data flow has been configured and ready to run.    
+If I drilled down to see detail, I can see that the data flow has been configured and ready to run.    
 
 <img src="/images/blog23/task.PNG">   
 
@@ -47,7 +47,7 @@ Now I only included two tables in the array. It might not save much time. But wh
 2.	ImportDB   in a database but not limited to one schema  
 3.	GetDatabaseSchema  
 
-The first 2 methods are good if you want to import all table/view in one schema or one database. But if you want to pick a few from the table list, you have limited options. The third method, however, has more granularity of control to define a collection. You can define a collection of the schemas or tables, also you can have importoptions to exclude ID, foreign key, index et al, if you want to include an execute SQL task before the data flow to  drop and recreate table before you load. That will be useful.   
+The first 2 methods are good if you want to import all table/view in one schema or one database. But if you want to pick a few from the table list, these two methods will not do. The third method, however, has more granularity of control to define a collection. You can define a collection of the schemas or tables, also you can have importoptions to exclude ID, foreign key, index et al.
 
 <img src="/images/blog23/use_method_get_metadata.PNG">  
 
@@ -57,15 +57,26 @@ You define includedschema, includedtables, finally, you have meta-data stored in
 
 The last step is generate the package, it is essentially the same. So, I will not show the pics. 
 
-The other part, I still have a question is about syntax of tasks.   
-If you have BIML studio, you can drag in the task and look the BIML code. Then copy it to your edit window. What if you use the BIML express? This link give you some example that you can copy from.  
+Up till now, you might say, there is no advantage this method VS table array. But if you want to include table creation before table loading. You will see the advantage.     
+
+I added another task to help create the same table but in different schema. Here I can use getDropandCreateDDL method, which I don’t need to manually find the table DDL. In order to replace the original dbo schema to temp schema, I used replace function.  As you can see the generated package reflects what have been changed in the BIML. 
+
+<img src="/images/blog23/add_another_task.PNG">   
+
+<img src="/images/blog23/add_task1.PNG">     
+
+<img src="/images/blog23/add_task2.PNG">   
+
+Another question is about syntax of tasks.   
+If you have BIML studio, you can drag in the task and look the BIML code. Then copy it to your edit window. What if you use the BIML express? This link give you some example (not all scenario though) that you can copy from.   
+  
 <https://varigence.com/Documentation>    
 
-As I am getting closer to BIML, I feel there are more to know.   
-Hope my tastes of BIML helps you. It will take some time to digest.  You cannot build Rome in one night. 
+Hope this example helps you understand the power of BIML. It will take some time to digest.    
+ 
 if you want to follow along, the biml can be download in the following link  
-<a href="/Files/BimlScript.biml">download First Example BIML here</a>  
-<a href="/Files/BimlScript_dynamic.biml">download BIML using meta-data here</a>  
+<a href="/Files/bimlscript.rar">download all example BIML here</a>  
+ 
 Again, happy BI.  
 
 Wenlei
