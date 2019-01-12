@@ -14,7 +14,7 @@ Hope this can also help others
 
 [wenleicao at hotmail.com](mailto:wenleicao@hotmail.com)
 
-<https://www.linkedin.com/in/wenleicao>
+
 
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
