@@ -15,3 +15,7 @@ Hope this can also help others
 [wenleicao at hotmail.com](mailto:wenleicao@hotmail.com)
 
 <https://www.linkedin.com/in/wenleicao>
+
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="wenleicao"><a class="LI-simple-link" href='https://www.linkedin.com/in/wenleicao?trk=profile-badge'>Wenlei Cao</a></div>
