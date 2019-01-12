@@ -75,7 +75,7 @@ If you have BIML studio, you can drag in the task and look the BIML code. Then c
 Hope this example helps you understand the power of BIML. It will take some time to digest.    
  
 if you want to follow along, the biml can be download in the following link  
-<a href="/Files/bimlscript.rar">download all example BIML here</a>  
+<a href="/Files/bimlscript.zip">download all example BIML here</a>  
  
 Again, happy BI.  
 
