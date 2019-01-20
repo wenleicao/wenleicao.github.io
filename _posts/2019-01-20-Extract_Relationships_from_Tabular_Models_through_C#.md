@@ -33,6 +33,33 @@ This link gives you an overview about Tabular object model
 The following link shows how you install the library and reference the library in visual studio  
 <https://docs.microsoft.com/en-us/bi-reference/tom/install-distribute-and-reference-the-tabular-object-model>
 
+Divya did a good job by introducing various way C# can do to extract info from tabular model. I tried some of her code. Somehow, there are syntax errors. The link is as follows 
+<https://www.sqlshack.com/automate-documentation-of-sql-server-analysis-server-tabular-model/>  
+
+Here I walk you through a working script  
+
+I will assume you have basics of using C# in script task for SSIS.  
+
+<img src="/images/blog22/namespaces.png">   
+
+In the namespaces, I import miscrosoft.analysisservies.core/tabular to create Tabular object. I also include other library to help. The reason is in comment out.   
+
+<img src="/images/blog22/codebody1.png">  
+
+Here I use two tabular models as example.  Stringbuilder object is created to help file creation. Variable env is to indicate environment (dev, QA, prod). I created a string list. Add both model names in the list. Since, I only have one server, "vmwenlei", holds these two models. So, I assign the servername ="vmwenlei". In reality, different models often live in different servers.  You can use switch case statement to resolve that based on the model name.  Then for each model, we create a tabular server object svr.  Once you define the connection, you can get the database object under the particular svr.  
+
+<img src="/images/blog22/codebody2.png">  
+
+A bunch of string variables are created to hold the value when loop through the particular model relationship property.  
+
+<img src="/images/blog22/codebody3.png">  
+
+Finally, the variable value needed is appended to the stringbuilder object created before and write to flat file.  Behind scene, C# is extracting the relationships like the follows showing in the tabular bim file.  
+
+
+
+
+
 
 
 
