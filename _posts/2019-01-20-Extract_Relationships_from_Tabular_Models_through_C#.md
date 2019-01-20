@@ -33,7 +33,7 @@ This link gives you an overview about Tabular object model
 The following link shows how you install the library and reference the library in visual studio  
 <https://docs.microsoft.com/en-us/bi-reference/tom/install-distribute-and-reference-the-tabular-object-model>
 
-Divya did a good job by introducing various way C# can do to extract info from tabular model. I tried some of her code. Somehow, there are syntax errors. The link is as follows 
+Divya did a good job by introducing various way C# can do to extract info from tabular model. I tried some of her code. Somehow, there are syntax errors. The link is as follows   
 <https://www.sqlshack.com/automate-documentation-of-sql-server-analysis-server-tabular-model/>  
 
 Here I walk you through a working script  
@@ -56,11 +56,36 @@ A bunch of string variables are created to hold the value when loop through the 
 
 Finally, the variable value needed is appended to the stringbuilder object created before and write to flat file.  Behind scene, C# is extracting the relationships like the follows showing in the tabular bim file.  
 
+<img src="/images/blog22/json.png"> 
+
+After you run the script task. 
+
+<img src="/images/blog22/ssis_execution.png"> 
+
+You can see the flat file is generated at c:\temp
+
+<img src="/images/blog22/result.png">   
+
+Similarly, you can create a c# script for table list, column list, et al.  
+
+Next you can load the flat file to database (excel will do if no database needed). I am sure if you are reading this post, you already knew how to do it.  From there. You can use any reporting tool to show relationship. Tableau, power BI, SSRS, Webi... you name it. 
+
+Here I show you the result with power BI. This is for demo the meta-data extraction purpose so bear with me about cosmetics.  
+
+<img src="/images/blog22/powerbi.png">  
+
+With this, you can slice it to just see one model. Date and dev tell you when this info is extracted and at what environment.  
+You can sort by different column so that it helps you to find the relation and quickly formulate SQL. 
 
 
+I hope you feel this post is helpful. Actually, when you explore more, you will face new challenges. Extracting accurate info from tabular model is not an easy topic. That is why Microsoft still did not offer a very good solution for it. While I am writing this, I notice an interesting post talking about Microsoft have a not well-known SQLite database storing the meta-data info. It shows Microsoft also is exploring different way to do things.
 
+<https://biinsight.com/ssas-tabular-model-documenter-with-power-bi-without-dmvs/>  
 
+As always, I include the ssis project with this post, where you can find C# code. 
 
+<a href="Files/extract_relations.dtsx">download package here</a>  
 
+thanks for reading. 
 
-
+Wenlei
