@@ -84,7 +84,7 @@ I hope you feel this post is helpful. Actually, when you explore more, you will 
 
 As always, I include the ssis project with this post, where you can find C# code. 
 
-<a href="Files/extract_relations.dtsx">download package here</a>  
+<a href="/Files/extract_relations.dtsx">download package here</a>  
 
 thanks for reading. 
 
