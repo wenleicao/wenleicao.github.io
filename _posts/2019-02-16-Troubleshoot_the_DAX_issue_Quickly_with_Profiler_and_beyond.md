@@ -45,7 +45,7 @@ When you are ready, in SQL Server Profiler, you can click run to start tracing, 
 
 <img src="/images/blog24/daxQuery.PNG">  
 
-Of course, those DAX query are machine generated query, somewhat looks strange. You need some DAX knowledge to go further. That is not scope of this post.
+Of course, those DAX queries are machine generated queries, somewhat looks strange. You need some DAX knowledge to go further. That is not scope of this post though :).
 
 I hope you find this post useful.
 
