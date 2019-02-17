@@ -38,7 +38,7 @@ You can use SQL Server Profiler to trace the DAX query.  Open the SQL Server Man
 
 <img src="/images/blog24/profiler.PNG">   
 
-If your dashboard contains multiple visuals, you are only troubleshooting one visual.  What I would do is to duplicate the dashboard page.  Delete all visuals you are not interested. That way, you don’t have other DAX query running to interfere your analysis.  You can also filter the NTUserName column in SQL Server profiler to only allow your activity show in the window in case there are a lot of user out there. (see more filter topic in this link)    
+If your dashboard contains multiple visuals, you are only troubleshooting one visual.  What I would do is to duplicate the dashboard page.  Delete all visuals you are not interested. That way, you don’t have other DAX query running to interfere your analysis. In profiler, You can also filter the NTUserName column in SQL Server profiler to only allow your activity show in the window in case there are a lot of user out there. (see more filter topic in this link)    
 <https://docs.microsoft.com/en-us/sql/relational-databases/sql-trace/filter-a-trace?view=sql-server-2017>  
 
 When you are ready, in SQL Server Profiler, you start tracing, then run the duplicated dashboard page. In the SQL Server Profiler window, the DAX query will pop up.  You can copy the query from profiler and start to do research in DAX studio to figure out why.  
