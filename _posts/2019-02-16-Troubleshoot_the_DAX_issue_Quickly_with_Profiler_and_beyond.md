@@ -10,7 +10,7 @@ Guess what, you are not sure if you will be able to figure that out within 1 hou
 
 What are you going to do?  
 
-(Please Note: This post is intend how to get thing rolling quicker, not about how to resolve a particular issue.)      
+(**Please Note:** This post is intend how to get thing rolling quicker, not about how to resolve a particular issue.)      
 
 Everybody does things differently. There are no so-called correct ways to do it.  As long as you can solve the issue, it is a right way.  The following is usually what I would do.  
 
