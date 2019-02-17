@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQL Server Profiler for DAX troubleshooting
+title: Troubleshoot DAX issue quickly with SQL Server Profiler and beyond
 ---
 
 Assuming you are a developer of big organization, your Power BI dashboards were all built from one popular Tabular model.   
