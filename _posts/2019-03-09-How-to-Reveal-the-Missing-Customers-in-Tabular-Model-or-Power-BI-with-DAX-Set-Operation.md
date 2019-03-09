@@ -72,7 +72,7 @@ Thank you for visiting my site.  Hope you feel this useful.
 
 Happy BI  
 
-As usual, you can download pbix file here.   
+As usual, you can download pbix file<a href="/Files/missing_customer.pbix"> here</a>.   
 
 Wenlei
 
