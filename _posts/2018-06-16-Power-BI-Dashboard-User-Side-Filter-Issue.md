@@ -23,7 +23,8 @@ Q1 is not difficult, how about Q2?
 
 <img src="/images/blog19/PBI_service_bookmark.PNG">   
 
--------below is the old post
+-------below is the old post  
+
 In old SSRS school, we have different parameters for the report, you can set default parameter value. However, Power BI dashboard's parameters are more helping developer to dynamically load data to model than helping user. When dashboard is published, the parameter value cannot be changed. Please check the following blog for the difference.    
 <https://www.mssqltips.com/sqlservertip/4475/using-parameters-in-power-bi/>
 
