@@ -19,10 +19,11 @@ You can actually add multiple slicer in the same dashboard. For example, you can
 
 Q1 is not difficult, how about Q2?   
 
-As of early 2019, Microsoft has addressed this issue by set up bookmark on the client side at power BI service as follows. My solution is before they push this feature out. no work around needed anymore 
+**please Note:** As of early 2019, Microsoft has addressed this issue by set up bookmark on the client side at power BI service as follows. My solution is before they push this feature out. no work around needed anymore 
 
 <img src="/images/blog19/PBI_service_bookmark.PNG">   
 
+-------below is the old post
 In old SSRS school, we have different parameters for the report, you can set default parameter value. However, Power BI dashboard's parameters are more helping developer to dynamically load data to model than helping user. When dashboard is published, the parameter value cannot be changed. Please check the following blog for the difference.    
 <https://www.mssqltips.com/sqlservertip/4475/using-parameters-in-power-bi/>
 
