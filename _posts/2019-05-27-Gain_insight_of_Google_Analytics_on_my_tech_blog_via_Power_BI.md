@@ -12,4 +12,18 @@ First, let us define what I want to see in the dashboard.
 
 We need to get data from Google analytics. In Power BI, it is easy to do. There is a connection as follows. Just follow the instruction. You will be able to load data.
 
-<img src="/images/blog26/get-adgroup.png">  
+<img src="/images/blog27/google_analytics_connection.PNG">  
+
+I only choose the dimension and measure I am interested. The following is the part of data.   
+
+<img src="/images/blog27/raw_pull.PNG">  
+
+Here I create a new measure as follows  
+
+<img src="/images/blog27/dax.PNG">  
+
+For people who is not familiar with DAX. This first calculate total user number in each day, then pick the highest single day total user number. This measure will dynamically change when you change different time period. For example, if you choose year 2017 vs year 2019.  It will calculate the highest single day total user number in chosen period.  
+
+With measure ready, I start to build chart. This is a draft.  
+ 
+<img src="/images/blog27/draft.PNG"> 
