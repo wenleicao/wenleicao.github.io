@@ -50,6 +50,6 @@ Notice, the end date of this dashboard is 5/26/2019.  I want to refresh it today
 
 <img src="/images/blog27/refresh.PNG">  
 
-Thanks. Happy BI 
+Thanks. Happy BI  
 Wenlei
 
