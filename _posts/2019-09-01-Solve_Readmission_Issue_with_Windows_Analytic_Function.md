@@ -48,14 +48,10 @@ You can update the table based on this condition. You can see in the yellow shad
 
 I just use one patient as an example to explain.  In reality, there are thousands and millions of patients' record. Therefore, depending how long the segment you are working on, you need to go through the process X time.   Because we don’t know what the X is. We need to use while loop to do this.  Also we do not want the while loop to be an infinite one, we need to have something to stop it.  The stop condition is the after each round of process, we keep a copy of value, then we go to another round, now we can compare the current value with the previous copy.  If it has any value change, it means still there are long segment need to be broken.  If not, we are all set and we can break the loop.  
 
-readmission rate calculation is a very common one.  I write this using heavily on Windows analytic function. This function is very useful and worth the time to master them.  
+readmission rate calculation is a very common one in Healthcare field.  I wrote this relying heavily on Windows analytic functions. These function are very useful and worth the time to master them.  
 
 Hope this post help you and the script can be download <a href="Files/full_script.sql">here</a>.  
 
 thanks  
 
 Wenlei
-
-
-
-
