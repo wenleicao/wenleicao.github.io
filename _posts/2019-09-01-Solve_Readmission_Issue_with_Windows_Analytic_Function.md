@@ -2,7 +2,6 @@
 layout: post
 title: Solve Readmission Flag Issue with Windows Analytic Function
 ---
-<button onclick="this.innerHTML = Date()">The time is?</button>
 
 I was requested to rewrite the old readmission script which is cursor based. The script is not long, but it has nested cursor inside code.  It took me some time to figure out how it works.  Basically, it works on one patient at a time (sorted by discharge date). Compare the first record discharge date with the rest record admission date. if the period < =30 (readmission), we flag it 1; if >30, it is a new admission, we flag it as 0.  Now same process will start with this new admission record to compare the rest of record with the same patientID.     
 
