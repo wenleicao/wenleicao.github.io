@@ -3,6 +3,7 @@ layout: post
 title: test youtube with markdown
 ---
 
+<button onclick="this.innerHTML = Date()">The time is?</button>
 
 <iframe 
   width="560" 
