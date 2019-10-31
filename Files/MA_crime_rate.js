@@ -103,7 +103,7 @@
       )
     );
   };
-  const rootElement = document.getElementById('root');
+  const rootElement = document.getElementById('root1');
   ReactDOM.render(React$1__default.createElement( App, null ), rootElement);
 
 }(React, ReactDOM, d3, topojson));
