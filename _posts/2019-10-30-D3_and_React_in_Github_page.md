@@ -18,6 +18,6 @@ title: Show D3 and React Visualization in Github Page
   </head>
   <body>
     <div id="root"></div>
-    <script src="bundle.js"></script>
+    <script src="/Files/MA_county_map.js"></script>
   </body>
 </html>
