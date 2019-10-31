@@ -135,7 +135,7 @@
 
     //console.log(getCounty("Shrewsbury"))
     return (
-      React$1__default.createElement( 'svg', { width: width, height: height, viewBox: "0 0 1200 700" },
+      React$1__default.createElement( 'svg', { width: width, height: height, viewBox: "-100 0 1200 625" },
        
         React$1__default.createElement( 'g', { transform: `translate( ${innerWidth-120}, 60)` },
             React$1__default.createElement( 'text', {
