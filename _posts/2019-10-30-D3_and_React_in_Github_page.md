@@ -20,10 +20,14 @@ The following is Massachusetts county map, I created with D3 and react in javasc
   			<script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>  
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
     <script src="/Files/MA_county_map.js">
     
     </script>
+    </div>
+    
+
+    
      
   </body>
 </html>
