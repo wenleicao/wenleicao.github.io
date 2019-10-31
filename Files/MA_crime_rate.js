@@ -95,7 +95,7 @@
   	.range([0, maxRadius]);
    
     return (
-      React$1__default.createElement( 'svg', { width: width, height: height, , viewBox: "50 0 1920 1000" },
+      React$1__default.createElement( 'svg', { width: width, height: height, , viewBox: "0 0 1920 1000" },
        
           React$1__default.createElement( Marks, {
             MassGeo: MassGeo, CrimeData: CrimeData, sizeScale: sizeScale, sizeValue: sizeValue, cityname: cityname, countyname: countyname })
