@@ -4,7 +4,7 @@ title: Show D3 and React Visualization in Github Page
 ---
 
 Let us say, you create some javascript data visualization somewhere and you would like it show in Github page site. Is it possible?
-
+The following is Massachusetts county map, I created with D3 and react in javascript.  The legend is interactive if you hover mouse over it.
 
 <html>
   <head>
