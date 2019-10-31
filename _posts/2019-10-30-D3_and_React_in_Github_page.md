@@ -21,7 +21,7 @@ Let us say, you create some javascript data visualization somewhere and you woul
   </head>
   <body>
     <div id="root"></div>
-    <script src="/Files/bundle.js">
+    <script src="/Files/MA_county_map.js">
     
     </script>
      
