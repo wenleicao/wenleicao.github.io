@@ -3,6 +3,9 @@ layout: post
 title: Show D3 and React Visualization in Github Page
 ---
 
+Let us say, you create some javascript data visualization somewhere and you would like it show in Github page site. Is it possible?
+
+
 <html>
   <head>
     <title>Massachusetts Chrolopleth map with interactive legend and viewbox</title>
