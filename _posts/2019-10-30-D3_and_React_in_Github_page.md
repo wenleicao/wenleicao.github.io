@@ -26,7 +26,11 @@ The following is Massachusetts county map, I created with D3 and react in javasc
     </script>
     </div>
     
-
+    <div id="root1">
+    <script src="/Files/MA_crime_rate.js">
+    
+    </script>
+    </div>
     
      
   </body>
