@@ -26,6 +26,7 @@ The following is Massachusetts county map, I created with D3 and react in javasc
     </script>      
   </body>
 </html>  
+
 This is basically the html behind the image.  you need to save js to somewhere and point the source to that path in your html.  
 
 <img src="/images/blog29/html_setting.PNG">  
