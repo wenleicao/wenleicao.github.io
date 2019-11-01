@@ -143,7 +143,7 @@
               colorLegendLabel
             ),
             React$1__default.createElement( ColorLegend, {
-              tickSpacing: 22, tickSize: 10, tickTextOffset: 12, tickSize: circleRadius, colorScale: colorScale, onHover: setHoveredValue, hoveredValue: hoveredValue, toTitleCase: toTitleCase })
+              tickSpacing: 30, tickSize: 10, tickTextOffset: 12, tickSize: circleRadius, colorScale: colorScale, onHover: setHoveredValue, hoveredValue: hoveredValue, toTitleCase: toTitleCase })
           ),
           React$1__default.createElement( 'g', null,
            React$1__default.createElement( Marks1, {
