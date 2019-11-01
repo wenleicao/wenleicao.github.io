@@ -30,10 +30,10 @@ This is basically the html behind the image.  you need to save js to somewhere a
 
 <img src="/images/blog29/html_setting.PNG">  
 
-I had some other visual created in D3 and React which I presented in this youtube video if you are interested.
+I had some other visual created in D3 and React which I presented in the following youtube video if you are interested.
 [![image](/images/blog29/youtube.PNG)](https://www.youtube.com/watch?v=JGznOuhE_mo)  
 
-For code, you can visit my project, click the image, you will be able to see source code. 
+For javascript code, you can visit the following link, click the image, you will be able to see source code in vizhub file. 
 <https://github.com/wenleicao/dataviz-project-template-proposal>
 
 Again Happy BIing.
