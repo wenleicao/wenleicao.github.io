@@ -25,9 +25,11 @@ The following is Massachusetts county map, I created with D3 and react in javasc
     </script>      
   </body>
 </html>
-a This is basically the html behind the image.  you need to save js to somewhere and point the source to that path in your html.  
+This is basically the html behind the image.  you need to save js to somewhere and point the source to that path in your html.  
 
-<img src="/images/blog29/html_setting.PNG">  
+<img src="/images/blog29/html_setting.PNG">    
+
+However, there are still some space between the js chart and text following it. I have no clue why there are space, but looks to me it is about the same size of html code behind scene. Some experts might have answer to it. 
 
 I had some other visual created in D3 and React which I presented in the following youtube video if you are interested.
 [![image](/images/blog29/youtube.PNG)](https://www.youtube.com/watch?v=JGznOuhE_mo)  
