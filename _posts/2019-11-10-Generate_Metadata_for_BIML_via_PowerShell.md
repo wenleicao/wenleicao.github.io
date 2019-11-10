@@ -18,7 +18,8 @@ This is the pseudo process that I break down and corresponding method I will use
 
 c and d. is not the focus of this post, but I will quickly go over and list biml file in the download link at the end of the post.  
 
-a.	Let us assume we have two files in a folder, course.csv and student.csv.  If this is successful, you can use it for hundreds and thousands file likewise. I am just use two files as an experiment (csv file are also in download link).  
+### a.	extract meta data from flat files
+Let us assume we have two files in a folder, course.csv and student.csv.  If this is successful, you can use it for hundreds and thousands file likewise. I am just use two files as an experiment (csv file are also in download link).  
 
 <img src="/images/blog30/course.PNG">  
 
@@ -33,7 +34,8 @@ This is what I have extracted from the source file in a csv file.
 
 <img src="/images/blog30/meta_data_content.PNG"> 
 
-b.	As you can see, the column header is in the columnstring.  In order to use that, I need to split the string into column name. It is much easier to be done when this is loaded into sql server table. Here I loaded it to a table named as source_flat_file_header by right click a databae and click tool then input flat file in SSMS or you can use SSIS.  
+### b.load meta data in SQL Server and make corresponding changes for BIML	
+As you can see, the column header is in the columnstring.  In order to use that, I need to split the string into column name. It is much easier to be done when this is loaded into sql server table. Here I loaded it to a table named as source_flat_file_header by right click a databae and click tool then input flat file in SSMS or you can use SSIS.  
 
 <img src="/images/blog30/import_flat_file.PNG"> 
 
@@ -44,11 +46,14 @@ File level view
 
 Column level view
 <img src="/images/blog30/create_metadata2.PNG"> 
+you can also make column data type as int here for example if column name has ID. 
 
-c.	I like to create a POC hard-coded and just see if it will succeed. Once it works, I will add biml script to be able to load more table.   
+### c. Create hard-coded BIML file	
+I like to create a POC hard-coded and just see if it will succeed. Once it works, I will add biml script to be able to load more table. I assume readers who are interested in this post are more or less experienced.   
 Attached in download has hard-coded biml file, I call it vanilla biml, because it has no biml script.  If you let it expand, it will only create one execute sql task, which only create a table.  The same thing for loading data flow.  Vanilla biml can be download at the end of post. 
 
-d.	Since out purpose is to load many tables.  I have modified the vanilla biml with biml script and be able to use the meta data I created to have multiple table load in one package. Notice I use nested loop, outside loop through files,  inside loop,  I will loop through columns for that particular table.   
+### d. implement BIML Script for larger scale
+Since out purpose is to load many tables.  I have modified the vanilla biml with biml script and be able to use the meta data I created to have multiple table load in one package. Notice I use nested loop, outside loop through files,  inside loop,  I will loop through columns for that particular table.   
 You can see multiple create table statement in one execute sql task  
 
 <img src="/images/blog30/create_table.PNG">   
