@@ -80,7 +80,7 @@ test using context C2 and t1
 <img src="/images/blog31/test_in_name_card.PNG">
 
 test using context C1, C2 and t1  
-<img src="/images/blog31/test_in_name_card2.PNG">
+<img src="/images/blog31/test_in_name_card3.PNG">
 
 In summary,  some measure are not so straightforward which will take some experienment work.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.  
 * Break into small workable chuck    
