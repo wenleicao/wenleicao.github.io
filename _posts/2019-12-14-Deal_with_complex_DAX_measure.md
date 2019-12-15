@@ -82,11 +82,16 @@ test using context C2 and t1
 test using context C1, C2 and t1  
 <img src="/images/blog31/test_in_name_card2.PNG">
 
-In summary,  some measure are not so straightforward which will take some experienment work.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.
-Break into small workable chuck,  
-first make it work, then make it right, finally make it fast.
+In summary,  some measure are not so straightforward which will take some experienment work.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.  
+* Break into small workable chuck    
+* first make it work, then make it right, finally make it fast  
+
 If you need to follow along, I have included dax and pbix at <a href="Files/complicated_dax_measures.zip">here</a>. 
-I hope you feel this is helpful.
-Good luck with your BI journey.
-thanks
+
+I hope you feel this is helpful.  
+
+Good luck with your BI journey.  
+
+thanks  
+
 Wenlei
