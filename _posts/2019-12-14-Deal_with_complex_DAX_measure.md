@@ -31,7 +31,7 @@ Now, in DAX studio, you can see the following tables in the model,  not sure why
 <img src="/images/blog31/dax_table_view.PNG">
 
 ### a. Get all eligible providers under certain filter context (here we assume filter context is  clinic = 'C2' and Tier = 't1')
-First step, we will use Calculatetable function to enforce the filter context we will encounter, let use say, user chose C2 and t1.
+First step, I will use Calculatetable function to enforce the filter context I will encounter, let use say, user chose C2 and t1.
 
 <img src="/images/blog31/dax_step1_filter_record.PNG">  
 
@@ -46,7 +46,19 @@ I want to have all column and additional column name as rnk
 
 <img src="/images/blog31/dax_step1_rank.PNG">  
 
-Notice between line 32 and 39 is selected record from the first step.   We add another column at line 31, then name is rnk and value from rankx() between line 41 and line 49.   The first param of rankx function is the selected record, so the selected record code block appeared twice. Maybe we can refactor it to make the readability better. Let us make the selected record as DAX variable
+Notice between line 32 and 39 is selected record from the first step.   I add another column at line 31, then name is rnk and value from rankx() between line 41 and line 49.   The first param of rankx function is the selected record, so the selected record code block appeared twice. Maybe we can refactor it to make the readability better. Let us make the selected record as DAX variable  
+
+<img src="/images/blog31/dax_step1_rank_var.PNG">  
+
+As you can see, I put selected provider into a var and then use var in the dax code,  this makes logic much easier to understand.
+Now I just need to pick the record with rank =3, I can simple add filter to this.  Next question is what if there are multiple record all rank =3?   We want to present the users with format like this   P1 clinic location  datetime, p3 clinic location datetime, …
+
+### c. create measure be able to handle multiple records
+
+<img src="/images/blog31/dax_step3_create_measure.PNG">  
+
+At line 102 and line 106  I filtered record and keep rank =3.  At line 101 and line 107, I catenate record if there are multiple record in the prevous step.The result is expected. Can we make some improvement on this code?  In first step,  I first filter the all table content with clinic and tier, but actaully because the filter context get passed in,  the line 90, clinical_data is not full dataset any more, it is already filtered by clinic and tier, so there is no need to filter it again. It is kind of redudant to do that although I do that explicitly make it easier to understand the logic. I can replaced the first step with follows, it still work.
+
 
 
 
