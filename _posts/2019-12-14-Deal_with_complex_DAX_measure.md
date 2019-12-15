@@ -76,7 +76,7 @@ I removed the filter context, just pasted var and meaure code to create measure 
 
 Now in the report view,  I added two slicers to give measure filter context, I also added a card visual to show the third appointment availabe.   I tested a few senario, it works.  
 
-test using context C2 and t1
+test using context C2 and t1  
 <img src="/images/blog31/test_in_name_card.PNG">
 
 test using context C1, C2 and t1  
