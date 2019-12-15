@@ -3,7 +3,7 @@ layout: post
 title: Deal with complex DAX measure
 ---
 
-If you are working on tabular model, power BI, or Excel pivot table, you probably are familiar with DAX. Although DAX seems like excel expression, I have experienced many frustration moments. In real life, you might ask to create measure like sum(value). But it is not usual, you will be requested to create something much more complex than that. I will use an example to show you my approach to solve complex measure.  
+If you are working on tabular model, power BI, or Excel pivot table, you probably are familiar with DAX. Although DAX seems like excel expression, I have experienced many frustration moments. You might be asked to create measure like sum(value). But every so often, you will be requested to create something much more complex than that. I don't see many book teach you how to deal with that.  I will use an example to show you my approach to solve a complex measure.  
 
 I was asked to help with a DAX measure about creating third available appointment date.  This is for helping someone scheduling patient appointment. Just so you know,  it is common clinical practice that clinic will reserve the first and second available appointment date for emergency case. I was told the business rule is as follows,  
 
@@ -82,7 +82,7 @@ test using context C2 and t1
 test using context C1, C2 and t2  
 <img src="/images/blog31/test_in_name_card3.PNG">
 
-In summary,  some measure are not so straightforward which will take some experienment work.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.  
+In summary,  some measure are not so straightforward which will take some experiment to work out.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.  
 * Break into small workable chuck    
 * first make it work, then make it right, finally make it fast  
 
