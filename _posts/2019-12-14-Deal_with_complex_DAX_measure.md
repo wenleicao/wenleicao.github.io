@@ -72,15 +72,15 @@ If I replace the step 1 code with new code, the final code became the follow.  I
 
 I removed the filter context, just pasted var and meaure code to create measure named as third appointment.  
 
-<img src="images/blog31/create_measure_in_pbi.PNG">  
+<img src="/images/blog31/create_measure_in_pbi.PNG">  
 
 Now in the report view,  I added two slicers to give measure filter context, I also added a card visual to show the third appointment availabe.   I tested a few senario, it works.  
 
 test using context C2 and t1
-<img src="images/blog31/test_in_name_card.PNG">
+<img src="/images/blog31/test_in_name_card.PNG">
 
 test using context C1, C2 and t1  
-<img src="images/blog31/test_in_name_card2.PNG">
+<img src="/images/blog31/test_in_name_card2.PNG">
 
 In summary,  some measure are not so straightforward which will take some experienment work.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.
 Break into small workable chuck,  
