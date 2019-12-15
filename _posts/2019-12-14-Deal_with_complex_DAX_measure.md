@@ -79,7 +79,7 @@ Now in the report view,  I added two slicers to give measure filter context, I a
 test using context C2 and t1  
 <img src="/images/blog31/test_in_name_card.PNG">
 
-test using context C1, C2 and t1  
+test using context C1, C2 and t2  
 <img src="/images/blog31/test_in_name_card3.PNG">
 
 In summary,  some measure are not so straightforward which will take some experienment work.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.  
