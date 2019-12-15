@@ -57,13 +57,36 @@ Now I just need to pick the record with rank =3, I can simple add filter to this
 
 <img src="/images/blog31/dax_step3_create_measure.PNG">  
 
-At line 102 and line 106  I filtered record and keep rank =3.  At line 101 and line 107, I catenate record if there are multiple record in the prevous step.The result is expected. Can we make some improvement on this code?  In first step,  I first filter the all table content with clinic and tier, but actaully because the filter context get passed in,  the line 90, clinical_data is not full dataset any more, it is already filtered by clinic and tier, so there is no need to filter it again. It is kind of redudant to do that although I do that explicitly make it easier to understand the logic. I can replaced the first step with follows, it still work.
+At line 102 and line 106  I filtered record and keep rank =3.  At line 101 and line 107, I catenate record if there are multiple record in the prevous step.The result is expected.
 
+## Can we make some improvement on this code?    
+In first step,  I first filter the all table content with clinic and tier, but actaully because the filter context get passed in,  the line 90, clinical_data is not full dataset any more, it is already filtered by clinic and tier, so there is no need to filter it again. It is kind of redudant to do that although I do that explicitly make it easier to understand the logic. I can replaced the first step with follows, it still work. 
 
+<img src="/images/blog31/step1_optmizaiton.PNG">  
 
+If I replace the step 1 code with new code, the final code became the follow.  I test differnet scenario by change filter context in calculatetable filter, with both clinic and tiers. The result is correct. Notice here I changed filter context to C1, C2, t1, t2. The result is expected. 
 
+<img src="/images/blog31/test.PNG">  
 
+## move measure to Power BI desktop
 
+I removed the filter context, just pasted var and meaure code to create measure named as third appointment.  
 
+<img src="images/blog31/create_measure_in_pbi.PNG">  
 
+Now in the report view,  I added two slicers to give measure filter context, I also added a card visual to show the third appointment availabe.   I tested a few senario, it works.  
 
+test using context C2 and t1
+<img src="images/blog31/test_in_name_card.PNG">
+
+test using context C1, C2 and t1  
+<img src="images/blog31/test_in_name_card2.PNG">
+
+In summary,  some measure are not so straightforward which will take some experienment work.  Dax studio is good tool to use. The strategy I deal with difficult measure are as follows.
+Break into small workable chuck,  
+first make it work, then make it right, finally make it fast.
+If you need to follow along, I have included dax and pbix at <a href="Files/complicated_dax_measures.zip">here</a>. 
+I hope you feel this is helpful.
+Good luck with your BI journey.
+thanks
+Wenlei
