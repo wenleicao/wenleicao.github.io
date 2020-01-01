@@ -52,7 +52,16 @@ Line 16, I create an anchor member including object_name, type, level (0 represe
 Line 18 is recursive member, which using recursive CTE to pass previous object_name for next level run. Because it is table function, I will have to use Cross apply, otherwise if it is a table, I can use table join.  
 Line 19, I am only running the same thing for view, function, stored procedure to get the base table  
 Line 17, combined different run together.    
-I make it a table function to capsulate the logic Let me create some dummy data to see if it works.  
+I make it a table function to capsulate the logic.   
+Let me create some dummy data to see if it works.  
+
+I first created a few tables using my favorite student course scenario.   
+
+<img src="/images/blog32/create_table.PNG">  
+
+Now let me populate these table with dummy data
+
+<img src="/images/blog32/populate table.PNG">  
 
 
 
