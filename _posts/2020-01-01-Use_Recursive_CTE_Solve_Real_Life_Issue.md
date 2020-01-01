@@ -63,6 +63,31 @@ Now let me populate these table with dummy data
 
 <img src="/images/blog32/populate table.PNG">  
 
+Since student and Course is many to many relation, they will need the student course bridge table to join together. In order to simplify query, I created a view.   
+I also create a function to calculate student age based on student DOB and today's date.  
+
+<img src="/images/blog32/create_view_function.PNG">  
+
+Finally, I created a stored procedure, it will take a course name as param  and then get all student name, age taking that course.  
+
+<img src="/images/blog32/storedprocedure.PNG"> 
+
+So, in this example, the stored proceudre will use the view and function which both are first level object used. Then the view in turn uses three base tablse.  
+
+let me use the my recursive CTE function to see if it can capture what objects has been used. 
+
+<img src="/images/blog32/test_drive.PNG">  
+
+As you can see, at the first level (0), the function captured view and age calculation function. Next level, it captures 3 tables. 
+
+
+
+
+
+
+
+
+
 
 
 
