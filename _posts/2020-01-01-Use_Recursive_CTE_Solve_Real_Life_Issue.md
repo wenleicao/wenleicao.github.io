@@ -78,16 +78,12 @@ let me use the my recursive CTE function to see if it can capture what objects h
 
 <img src="/images/blog32/test_drive.PNG">  
 
-As you can see, at the first level (0), the function captured view and age calculation function. Next level, it captures 3 tables. 
+As you can see, at the first level (0), the function captured view and age calculation function. Next level, it captures 3 tables. It works as expected.  
 
+Thank you for following along.  
 
+I wish you feels this helpful.  You can download the scripts <a href="Files/recursive_CTE_script.zip">here</a>. 
 
+Happy New Year!
 
-
-
-
-
-
-
-
-
+Wenlei
