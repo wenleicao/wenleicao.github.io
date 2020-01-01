@@ -72,7 +72,7 @@ Finally, I created a stored procedure, it will take a course name as param  and 
 
 <img src="/images/blog32/storedprocedure.PNG"> 
 
-So, in this example, the stored proceudre will use the view and function which both are first level object used. Then the view in turn uses three base tablse.  
+So, in this example, the stored proceudre will use the view and function which both are first level object used. Then the view in turn uses three base tables.  
 
 Let me use the my recursive CTE function to see if it can capture what objects has been used. 
 
