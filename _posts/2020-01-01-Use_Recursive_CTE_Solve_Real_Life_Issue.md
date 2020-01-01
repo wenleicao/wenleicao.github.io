@@ -74,15 +74,15 @@ Finally, I created a stored procedure, it will take a course name as param  and 
 
 So, in this example, the stored proceudre will use the view and function which both are first level object used. Then the view in turn uses three base tablse.  
 
-let me use the my recursive CTE function to see if it can capture what objects has been used. 
+Let me use the my recursive CTE function to see if it can capture what objects has been used. 
 
 <img src="/images/blog32/test_drive.PNG">  
 
-As you can see, at the first level (0), the function captured view and age calculation function. Next level, it captures 3 tables. It works as expected.  
+As you can see, at the first level (0), the function captured view and age calculation function. Next level, it captures 3 tables. It works as expected. This might not save you much time since this example only contains few tables, functions, views. But if it is a complex stored procedure, it will save you tons of time.  
 
 Thank you for following along.  
 
-I wish you feels this helpful.  You can download the scripts <a href="Files/recursive_CTE_script.zip">here</a>. 
+I wish you feel this helpful.  You can download the scripts <a href="Files/recursive_CTE_script.zip">here</a>. 
 
 Happy New Year!
 
