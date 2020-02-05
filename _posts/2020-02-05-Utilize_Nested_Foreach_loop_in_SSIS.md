@@ -28,7 +28,7 @@ Outer loop goes through one server at a time, inner loop goes through the model 
   
 <img src="/images/blog33/overall.PNG">
 
-let us take a look at the 3rd task setting. Here I got a list of server info and saved into an object variable. Notice full result set will be saved  
+* let us take a look at the 3rd task setting. Here I got a list of server info and saved into an object variable. Notice full result set will be saved  
 
 <img src="/images/blog33/get_list_server1.PNG">  
 
@@ -39,4 +39,35 @@ detailed query info to get three pieces of info,  servername, serverid, initial 
 save result to an object variable  
 
 <img src="/images/blog33/get_list_server2.PNG">  
+
+
+* Outer Foreach loop setting (this loop is used to loop through server list, provide server and inital database info to inner loop )  
+
+This loop use the object variable. Enumerator is Foreach ADO Enumerator. it take a row in the object variable at a time.  
+
+<img src="/images/blog33/outloop_setting1.PNG">  
+
+one row in object variable contains 3 piece of info. These info are mapping to three variables.  Please note: here serverid is not necessary. it is only for my record in data flow. you just need servername nad model name to dynamically create connection.   
+
+<img src="/images/blog33/outloop_setting2.PNG">   
+
+* Inner Foreach loop setting  
+this loop takes the servername and inital model name from outside loop, start loop through all models in a particular server
+Notice the enumerator is ADO.NET Schema Rowset Enumerator
+here we need to specify the connection used. I like to first create it hard code and then in the expression, I change the servername and catelog name to variable (I will show connection setting shortly)  
+
+<img src="/images/blog33/inner_loop_setting1.PNG">   
+
+The first tab gave you inital start setting. Then it starts looping through each model on that server.  The current model name is passed to the variable in the following setting. You will use this varialbe to create OLE DB connection which will be used in data flow inside inner loop.  Please note: the varialbe name is still same, which a bit weird to me. I tried to use different variable, the project crashes whenever you close the project and reopen. so keep the same variable name, it does the job just fine.   
+<img src="/images/blog33/inner_loop_setting1.PNG">   
+
+* connection
+For this ETL process, I just need 3 connection. 
+
+<img src="/images/blog33/connection.PNG">   
+
+
+
+
+
 
