@@ -70,11 +70,11 @@ The SSAS_ADO_Atlantis is created while I set up the inner loop manually. Then I 
 
 <img src="/images/blog33/conection_ado.PNG">   
 
-The SSAS_OLE_Atlantis is create while I build data flow.  Use SSAS data provider. Set up manually then replace the connection string with variable  
+The SSAS_OLE_Atlantis is create while I build data flow.  Use SSAS data provider. Set up manually then replace the connection string with variable. The expression seems identical to previous connection.   
 
 <img src="/images/blog33/conection_oldeb.PNG">  
 
-I will not talk about data flow. That is not focus of this post. 
+I will not going into data flow. Basically, they are bunch of DMV extraction. That is not focus of this post. 
 
 In summary, Nested foreach loop is possible and variable passing between loops are successful.
 
