@@ -59,7 +59,7 @@ Here we need to specify the connection used. I like to first create it hard code
 <img src="/images/blog33/inner_loop_setting1.PNG">   
 
 The first tab gave you initial start setting. Then it starts looping through each model on that server.  The current model name is passed to the variable in the following setting. You will use this variable to create OLE DB connection which will be used in data flow inside inner loop.  Please note: the variable name is still same, which a bit weird to me. I tried to use different variable, the project crashes whenever you close the project and reopen. So keep the same variable name, it does the job just fine.   
-<img src="/images/blog33/inner_loop_setting1.PNG">   
+<img src="/images/blog33/inner_loop_setting2.PNG">   
 
 * Connection
 For this ETL process, I just need 3 connections. The bidoc connection is used as data destination. 
