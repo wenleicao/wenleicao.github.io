@@ -36,23 +36,21 @@ Next, you can load the backfilledcustomer to downstream ETL.  You just fixed a d
 
 Correlated query is not limited to only use in select statement,  you can use it in other places. 
 
-another example  
+another example using it in where clause 
 
-I used to be in charge of data driven subscription (DDS) via a sharepoint hybrid SSRS environment. For those who is not familiar with DDS, just like regular subscription, you need to pass a set of param value to a report to let it run on certain schedule.  The differnece is that you pass serveral set of params.  In my case, I need to pass several set of insurance plan name to run the DDS. 
-One of the  insurance plan always run into the issue. The reason is it current did not meet the condition X. The simple way is to remove this insurance plan from the list, but what if next period this insurance plan meet the condition. Therefore, we need a dynamical way to qualify this insurance plan.  
+I used to be in charge of data driven subscription (DDS) via a sharepoint hybrid SSRS environment in my previous company. For those who is not familiar with DDS, just like regular subscription, you need to pass a set of param value to a report to let it produce a report.  The differnece is that you pass N set of params to product N reports.  In my case, I need to pass several set of insurance plan name to run the DDS. 
+One of the  insurance plan always run into the issue. The reason is it currently did not meet the condition X. The simple but brute way is to remove this insurance plan from the list, but what if next period this insurance plan meets the condition. Therefore, we need a dynamical way to qualify this insurance plan.  
 
 The following will be a pseudo code.
 
 select o.planname  from  dimplan o  where  conditionX (o.planname =i.planname)
 
-Unfortunately, I cannot replicate the condition since it has been many years. But this is how it works. 
+Notice you can use correlated subquery in where clause. Unfortunately, I cannot recall the condition since it has been many years ago. But this is how I solve that issue. 
 
 I hope you feel this is helpful. 
 
+As always, the script in the post can be found <a href="Files/blog34_script.sql">here</a>.  
 
+thanks and keep safe from this coronovirus crisis.
 
-
-
-
-
-
+Wenlei
