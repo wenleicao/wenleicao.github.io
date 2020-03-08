@@ -10,7 +10,7 @@ This post gives a good prime for correlated subquery
 
 Generally speaking, row-by-row operation is not recommended for query from performance perspective. But for smaller table, it is a life-saver under certain circumstance in BI world. This applies to cursor as well.  They exists for certain purpose.  
 
-The following is real life scenario.
+1. The following is real life scenario.
 
 One of our customer exports data from SSRS and would like those data load into SQL Server database. The particular SSRS is a stepped report with same row header only appeared once in multiple rows.  
 
@@ -34,12 +34,12 @@ Now, if you compare customer and backfilledcustomer column, you find all blank h
 
 Next, you can load the backfilledcustomer to downstream ETL.  You just fixed a data quality issue.
 
-Correlated query is not limited to only use in select statement,  you can use it in other places. 
+2. Correlated query is not limited to only use in select statement,  you can use it in other places. 
 
 another example using it in where clause 
 
 I used to be in charge of data driven subscription (DDS) via a sharepoint hybrid SSRS environment in my previous company. For those who is not familiar with DDS, just like regular subscription, you need to pass a set of param value to a report to let it produce a report.  The differnece is that you pass N set of params to product N reports.  In my case, I need to pass several set of insurance plan name to run the DDS. 
-One of the  insurance plan always run into the issue. The reason is it currently did not meet the condition X. The simple but brute way is to remove this insurance plan from the list, but what if next period this insurance plan meets the condition. Therefore, we need a dynamical way to qualify this insurance plan.  
+One of the  insurance plan always run into the issue. The reason is its data currently did not meet the condition X. The simple but brute way is to remove this insurance plan from the list, but what if next period this insurance plan meets the condition. You cannot always watch for that. Therefore, we need a dynamical way to qualify this insurance plan.  
 
 The following will be a pseudo code.
 
