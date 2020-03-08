@@ -45,7 +45,7 @@ The following will be a pseudo code.
 
 select o.planname  from  dimplan o  where  conditionX (o.planname =i.planname)
 
-Notice you can use correlated subquery in where clause. Unfortunately, I cannot recall the condition since it has been many years ago. But this is how I solve that issue. 
+Notice you can use correlated subquery in where clause. Unfortunately, I cannot recall the exact condition since it has been many years ago. But this is how I solve that issue. 
 
 I hope you feel this is helpful. 
 
