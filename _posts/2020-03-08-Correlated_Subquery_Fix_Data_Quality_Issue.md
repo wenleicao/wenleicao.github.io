@@ -29,9 +29,29 @@ Let us see how we use correlated query to write this code.
 <img src="/images/blog34/backfilledtable.PNG"> 
 
 Notice, I create Saleid as identity column always give you correct sequence to compare based on loading. 
-I also created a new column in the script, backfilledcustomer, using the logic highlight in the pseudocode. Notice "i.saleid < o.saleid"?  This is how outer query and inner query correlated. Also, i.
+I also created a new column in the script, backfilledcustomer, using the logic highlight in the pseudocode. Notice "i.saleid < o.saleid"?  This is how outer query and inner query correlated. Also, "order by i.saleid desc" enforce the closed record being used.  "i.customer is not null" will limit record only has customer name.
+Now, if you compare customer and backfilledcustomer column, you find all blank has been filled.
 
 Next, you can load the backfilledcustomer to downstream ETL.  You just fixed a data quality issue.
+
+Correlated query is not limited to only use in select statement,  you can use it in other places. 
+
+another example  
+
+I used to be in charge of data driven subscription (DDS) via a sharepoint hybrid SSRS environment. For those who is not familiar with DDS, just like regular subscription, you need to pass a set of param value to a report to let it run on certain schedule.  The differnece is that you pass serveral set of params.  In my case, I need to pass several set of insurance plan name to run the DDS. 
+One of the  insurance plan always run into the issue. The reason is it current did not meet the condition X. The simple way is to remove this insurance plan from the list, but what if next period this insurance plan meet the condition. Therefore, we need a dynamical way to qualify this insurance plan.  
+
+The following will be a pseudo code.
+
+select o.planname  from  dimplan o  where  conditionX (o.planname =i.planname)
+
+Unfortunately, I cannot replicate the condition since it has been many years. But this is how it works. 
+
+I hope you feel this is helpful. 
+
+
+
+
 
 
 
