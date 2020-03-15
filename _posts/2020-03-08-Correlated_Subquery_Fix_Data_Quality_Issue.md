@@ -29,7 +29,7 @@ Let us see how we use correlated query to write this code.
 <img src="/images/blog34/backfilledtable.PNG"> 
 
 Notice, I create Saleid as identity column always give you correct sequence to compare based on loading. 
-I also created a new column in the script, backfilledcustomer, using the logic highlight in the pseudocode. Notice "i.saleid < o.saleid"?  This is how outer query and inner query correlated. Also, "order by i.saleid desc" enforce the closed record being used.  "i.customer is not null" will limit record only has customer name.
+I also created a new column in the script, backfilledcustomer, using the logic highlight in the pseudocode. Notice "i.saleid < o.saleid"?  This is how outer query and inner query correlated. Also, "order by i.saleid desc" enforce the closest record being used.  "i.customer is not null" will limit record only has customer name.
 Now, if you compare customer and backfilledcustomer column, you find all blank has been filled.
 
 Next, you can load the backfilledcustomer to downstream ETL.  You just fixed a data quality issue.
