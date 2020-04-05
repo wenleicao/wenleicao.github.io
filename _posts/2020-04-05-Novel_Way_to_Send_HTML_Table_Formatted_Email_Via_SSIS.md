@@ -139,7 +139,7 @@ Use For XML Path to generate html code, which avoid lengthy C#  code.  Let SQL s
 Able to conditional formatting the table.   
 
 I hope you feel this post is helpful
-All script include SQL and C# can be download <a href="Files/blog35_code.zip">here</a>.  
+All script include SQL and C# can be download <a href="/Files/blog35_code.zip">here</a>.  
 Keep safe
 
 Wenlei
