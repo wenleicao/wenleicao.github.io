@@ -49,7 +49,7 @@ Notice you can use correlated subquery in where clause. Unfortunately, I cannot 
 
 I hope you feel this is helpful. 
 
-As always, the script in the post can be found <a href="Files/blog34_script.sql">here</a>.  
+As always, the script in the post can be found <a href="/Files/blog34_script.sql">here</a>.  
 
 thanks and keep safe from this coronavirus crisis.
 
