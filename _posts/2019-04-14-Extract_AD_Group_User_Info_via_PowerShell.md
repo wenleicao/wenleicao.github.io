@@ -43,7 +43,7 @@ Create an object, assign value to this object .  As you can see here, powershell
 
 Now I can use the csv file to load to database and serer as user dimension in the star schema.  
 
-Due to privacy, I will not include the export file. But the PS1 source code is available <a href="Files/ad_group.ps1">here</a>.
+Due to privacy, I will not include the export file. But the PS1 source code is available <a href="/Files/ad_group.ps1">here</a>.
 
 Hope you feel this post is helpful.
 
