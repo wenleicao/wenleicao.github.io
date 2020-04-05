@@ -100,15 +100,46 @@ In parameter mapping,  you need to add variable based on param sequence in store
 
 <img src="/images/blog35/execute_sql_setting2.PNG">  
 
+5. configure the connection between execute SQL task and script task, you can add the following condition so that if the query result is empty, it will not shoot the empty email. 
 
+<img src="/images/blog35/prevent_empty_email.PNG">  
 
+6. configure the script task, add emailbody and all email related variable as follows. Click edit script
 
+<img src="/images/blog35/script_setting1.PNG">  
 
+In the script window,  we need to import a  library .  This is C# code.
 
+<img src="/images/blog35/add_library.PNG">  
 
+In the script body,   
+Between row 96 to row 99: get the value from SSIS.  
+Row 103: get smtp server property  
+Row 106 to 107  pass all email variable to create a new mailmeassage object. Active email html property.  
+Row 110 to Row 112, create smtpclient object and send email out.
 
+<img src="/images/blog35/script_setting2.PNG">  
 
+Once done. Let us run package and see.  
+When variable course is Data Science Intro.  I receive this.  
 
+<img src="/images/blog35/email.PNG">  
 
+When it is algorithm   
 
+<img src="/images/blog35/email2.PNG">  
 
+When you change it to English. It will not send email because there is no query record. The len(emailbody) =0  
+
+<img src="/images/blog35/email3.PNG">  
+
+This method has following advantages.   
+This method modularized the html creation and email send step. Which is clear to follow and troubleshooting. 
+Use For XML Path to generate html code, which avoid lengthy C#  code.  Let SQL server to do heavy lifting.   
+Able to conditional formatting the table.   
+
+I hope you feel this post is helpful
+All script include SQL and C# can be download <a href="/Files/blog35_code.zip">here</a>.
+Keep safe
+
+Wenlei
