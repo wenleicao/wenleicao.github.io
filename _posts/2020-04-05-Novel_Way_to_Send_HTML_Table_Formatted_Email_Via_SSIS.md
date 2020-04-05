@@ -37,16 +37,14 @@ Let us first see, how we can create html with help of For XML Path clause.
           
 Row3 and row6, we initialized two variable,  one is course, the other is emailbody, which will be holding the html info.  We assign course value.  
 Row8 and row13, we get all corresponding records which equal to the course variable.  
-Row17 and row23,  we use XML Path to created a structure as follows .  Please note, you need ‘’ between each  td to make the query work. It will form the following structures for each row.  
-<tr>
-<td> column1</td>
-<td> column2</td>
-…
-</tr>
+Row17 and row23,  we use XML Path to created a structure as follows .  Please note, you need ‘’ between each  td to make the query work. It will form the following structures for each row.    
+
+<img src="/images/blog35/html_structure.PNG">
 
 It is still not completed for a html code, but we have done the most difficult part.  Now we need to add header and footer to make it complete.  
 
 <img src="/images/blog35/code_analysis_sc2.PNG">    
-          
+
+
 
 
