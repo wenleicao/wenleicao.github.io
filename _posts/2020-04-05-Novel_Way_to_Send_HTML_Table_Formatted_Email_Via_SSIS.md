@@ -45,6 +45,21 @@ It is still not completed for a html code, but we have done the most difficult p
 
 <img src="/images/blog35/code_analysis_sc2.PNG">    
 
+Row26 and row31 add header and footer and assign to emailbody. This html code is completed.  
+
+Now if we run this SQL script and copy the result to notepad, you can save it as html file. And then you can open it with Chrome. You will see this.  
+
+<img src="/images/blog35/open_by_chrome.PNG">   
+
+We can preview email this way, this indicated the html should work fine.  Now can we conditionally format it?  I did some experiments on the html.  
+
+<img src="/images/blog35/conditional_formatting_red1.PNG">   
+
+If I add additional attribute to F element.  Save and reopen it. I will see the follows  
+
+<img src="/images/blog35/conditional_formatting_red2.PNG"> 
+
+
 
 
 
