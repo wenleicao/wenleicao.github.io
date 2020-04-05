@@ -10,5 +10,20 @@ It is not working by default, You will need the certain permission to work on th
 
 <https://blog.sqlauthority.com/2008/08/23/sql-server-2008-configure-database-mail-send-email-from-sql-database/>
 
-2.	Use script task
-However, Not all ETL developer has the permission. Alternative way is to use the script task, certain .NET library will be needed to accomplish the same . 
+2.	Use script task  
+However, Not all ETL developer has the permission. Alternative way is to use the script task, certain .NET library will be needed to accomplish the same.
+
+We will discuss the second scenario.  
+
+In our day to day BI practice,  you are often asked to send out data in table format via your email.  These data are from your database. The number of records varies depending on when you run the query. 
+
+There are quite a few articles online about sending html table email via SSIS.  But majority of them handle the table html code in the script task, which make the code very lengthy if there are multiple columns [link](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/effa3050-6b40-4157-b299-ea6fdb39d9b7/html-table-formatted-email-using-ssis-script-task?forum=sqlintegrationservices).  
+
+Therefore, I am wondering if we can modularize the process. 
+*	Using SQL server XQuery to create table html code in execute SQL task, then pass the value to SSIS variable as email body  
+* Use script task to take the variable value and send the html email  
+* Explore the possibility of conditional formatting in email  
+
+As usual, we use a simple example to show concept .
+I first created a fake table  and inserted some data for demo purpose. 
+
