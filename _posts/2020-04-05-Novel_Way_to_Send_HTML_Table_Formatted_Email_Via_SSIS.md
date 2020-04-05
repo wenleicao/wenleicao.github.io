@@ -17,7 +17,7 @@ We will discuss the second scenario.
 
 In our day to day BI practice,  you are often asked to send out data in table format via your email.  These data are from your database. The number of records varies depending on when you run the query. 
 
-There are quite a few articles online about sending html table email via SSIS.  But majority of them handle the table html code in the script task, which make the code very lengthy if there are multiple columns [link](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/effa3050-6b40-4157-b299-ea6fdb39d9b7/html-table-formatted-email-using-ssis-script-task?forum=sqlintegrationservices).  
+There are quite a few articles online about sending html table email via SSIS.  But majority of them handle the table html code in the script task, which make the code very lengthy if there are multiple columns[link](https://social.msdn.microsoft.com/Forums/sqlserver/en-US/effa3050-6b40-4157-b299-ea6fdb39d9b7/html-table-formatted-email-using-ssis-script-task?forum=sqlintegrationservices).  
 
 Therefore, I am wondering if we can modularize the process. 
 *	Using SQL server XQuery to create table html code in execute SQL task, then pass the value to SSIS variable as email body  
