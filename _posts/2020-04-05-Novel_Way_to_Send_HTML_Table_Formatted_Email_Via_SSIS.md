@@ -59,6 +59,55 @@ If I add additional attribute to F element.  Save and reopen it. I will see the 
 
 <img src="/images/blog35/conditional_formatting_red2.PNG"> 
 
+This indicates that if we can implement the same thing  in our SQL query, we should be able to do conditional formatting. 
+
+I did some research and it works. The syntax is a bit counterintuitive, but you will have to add a statement before the score element. As you see between row 23 and 24, I use case statement to assigned red and yellow  background attribute value.  Notice, td/@style  means add this under td, and style is attribute name.  
+
+<img src="/images/blog35/conditional_formatting.PNG">  
+
+Once I run the script and copy paste to a online html formatter.  I can see the followings.  
+
+<img src="/images/blog35/check_html.PNG">  
+
+You can see that the style attribute has been added based on the score value. If I use chrome to take a look, it is as follows.  This is expected.  
+
+<img src="/images/blog35/conditional_formatting_red3.PNG">  
+
+Now that we have the code correct.  We need to able to pass it SSIS.  
+I decide to pass the html code as string. Therefore, I first change the script to stored procedure. Notice the @emailbody is output param.  At the last step of sp, I assign the html code to @emailbody  
+
+<img src="/images/blog35/create_sp.PNG">  
+
+Let us switch to SSIS and we create a new package. 
+
+1. Add one execute SQL task and one script task. Connect these two tasks 
+
+<img src="/images/blog35/SSIS_setup.PNG">  
+
+2. Create two connections,  one is OLE DB connection where you stored procedure resides. The other is SMTP Connection Manager, which you will use to send email.  
+
+3. Create a couple of variables as the follows.  Course value will be passed in stored procedure, emailbody will hold the return html code.  Others will be used in send email in script task  
+
+<img src="/images/blog35/SSIS_variable.PNG">   
+
+4. Configure the execute SQL task
+
+<img src="/images/blog35/execute_sql_setting1.PNG">  
+
+Choose the OLE DB connection, exec the stored procedure.  Please note the quirky format. You need to add output since 2nd parameter is return by stored procedure.  
+
+In parameter mapping,  you need to add variable based on param sequence in stored procedure. Also notice, the direction is output for @emailbody.  
+
+<img src="/images/blog35/execute_sql_setting2.PNG">  
+
+
+
+
+
+
+
+
+
 
 
 
