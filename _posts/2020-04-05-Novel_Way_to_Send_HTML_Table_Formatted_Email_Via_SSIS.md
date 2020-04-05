@@ -27,13 +27,13 @@ Therefore, I am wondering if we can modularize the process.
 As usual, we use a simple example to show concept .
 I first created a fake table  and inserted some data for demo purpose. 
 
-<img src="/images/blog35/table_prep.PNG>   
+<img src="/images/blog35/table_prep.PNG">   
           
 As you see,  we have some students with two courses and scores.   
 Let us say, we want to send score for one course in table format.  If score is F, we shaded it in red; if score is C, we shaded it in yellow.  
 Let us first see, how we can create html with help of For XML Path clause.  
 
-<img src="/images/blog35/code_analysis_sc1.PNG>  
+<img src="/images/blog35/code_analysis_sc1.PNG">  
           
 Row3 and row6, we initialized two variable,  one is course, the other is emailbody, which will be holding the html info.  We assign course value.  
 Row8 and row13, we get all corresponding records which equal to the course variable.  
@@ -46,7 +46,7 @@ Row17 and row23,  we use XML Path to created a structure as follows .  Please no
 
 It is still not completed for a html code, but we have done the most difficult part.  Now we need to add header and footer to make it complete.  
 
-<img src="/images/blog35/code_analysis_sc2.PNG>  
+<img src="/images/blog35/code_analysis_sc2.PNG">    
           
 
 
