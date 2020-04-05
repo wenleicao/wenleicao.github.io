@@ -5,13 +5,13 @@ title: Novel Way to Send HTML Table Formatted Email Via SSIS
 
 The send mail task in SSIS can handle regular email just fine.  But when requirements ask you to send an html email, it won’t work. 
 There are two ways that you can html.  
-1.	Use sp_send_dbmail.   
-It is not working by default, You will need the certain permission to work on the Database mail configuration wizard  in SQL server.  Once you are able to send email via SQL server, the next step,  use execute SQL task to send email. You can find the configuration in the following link. This is by far the simpliest solution.  
+1. Use sp_send_dbmail.   
+It is not working by default, You will need certain permissions to work on the Database mail configuration wizard  in SQL server.  Once you are able to send email via SQL server, the next step,  use execute SQL task to send email. You can find the configuration in the following link. This is by far the simpliest solution.  
 
 <https://blog.sqlauthority.com/2008/08/23/sql-server-2008-configure-database-mail-send-email-from-sql-database/>
 
-2.	Use script task  
-However, Not all ETL developer has the permission. Alternative way is to use the script task, certain .NET library will be needed to accomplish the same.
+2. Use script task  
+However, Not all ETL developer has the permission. An alternative way is to use the script task, certain .NET library will be needed to accomplish the task.
 
 We will discuss the second scenario.  
 
@@ -37,7 +37,7 @@ Let us first see, how we can create html with help of For XML Path clause.
           
 Row3 and row6, we initialized two variable,  one is course, the other is emailbody, which will be holding the html info.  We assign course value.  
 Row8 and row13, we get all corresponding records which equal to the course variable.  
-Row17 and row23,  we use XML Path to created a structure as follows .  Please note, you need ‘’ between each  td to make the query work. It will form the following structures for each row.    
+Row17 and row23,  we use XML Path to created a structure as follows .  Please note, you need '' between each  td to make the query work. It will form the following structures for each row.    
 
 <img src="/images/blog35/html_structure.PNG">
 
@@ -139,7 +139,7 @@ Use For XML Path to generate html code, which avoid lengthy C#  code.  Let SQL s
 Able to conditional formatting the table.   
 
 I hope you feel this post is helpful
-All script include SQL and C# can be download <a href="/Files/blog35_code.zip">here</a>.
+All script include SQL and C# can be download <a href="Files/blog35_code.zip">here</a>.  
 Keep safe
 
 Wenlei
