@@ -50,7 +50,7 @@ I just use one patient as an example to explain.  In reality, there are thousand
 
 Readmission rate calculation is a very common one in Healthcare field.  I wrote this relying heavily on Windows analytic functions. These function are very useful and worth the time to master them.  
 
-Hope this post help you and the script can be download <a href="Files/full_script.sql">here</a>.  
+Hope this post help you and the script can be download <a href="/Files/full_script.sql">here</a>.  
 
 thanks  
 
