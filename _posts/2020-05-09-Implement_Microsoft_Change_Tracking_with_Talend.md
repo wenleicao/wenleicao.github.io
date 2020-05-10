@@ -20,11 +20,11 @@ If you are in a hurry, this is my summary
 ## Difference 
 | CT  | CDC |
 | ----------- | ----------- |
-| Header | Title |
+| tracking change in hidden table | take use of transaction log|
 | Paragraph | Text |
 
 CT         	CDC			
-tracking change in hidden table	take use of transaction log	
+		
 light-weighted, only keep last change	keep all change history	
 real time	need to compare transaction log, async
 available in all sql server version	supported in standard, developer, enterprise, not in express and web 
