@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implement Microsoft Change Tracking with Talend
+title: Implement Microsoft SQL Server Change Tracking with Talend
 ---
 
 If you have been using Microsoft SSIS to do ETL work, you must heard CDC (change data capture). You can even find some CDC tasks in SSIS tool box. But many people are not aware Microsoft provide another way to do similar work, Change Tracking (CT).
