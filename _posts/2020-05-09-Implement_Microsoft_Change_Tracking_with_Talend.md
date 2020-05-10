@@ -58,7 +58,7 @@ Let us compare two table again
 
 <img src="/images/blog37/run_talend3.PNG">   
 
-The following screenshot is not completed because the component window cannot enlarged. but I have a file to included all script used in these components.
+The next few screenshots are not completed because Talend component window cannot enlarged freely. I have included all codes in the file which can be download below.
 
 a. Upper panel:
 Get version to be used box
@@ -72,7 +72,7 @@ first create a context variable,  I use Long data type because version is bigint
 assign the value to context variable from previous query  
 <img src="/images/blog37/assign_varible.PNG">  
 
-* tDBRow_3:  save most updated version number to version table  (if table change frequently, there might be possilbe, when you run this process, the version has been changed, so record this before the process kicks off)
+* tDBRow_3:  save most updated version number to version table  (if table change frequently, it might be possible when you run this process, the version has been changed, so keep a record of this before the process kicks off)
 <img src="/images/blog37/save_version.PNG">  
 
 b. Lower panel  
