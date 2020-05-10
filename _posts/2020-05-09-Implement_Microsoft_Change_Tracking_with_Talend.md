@@ -24,7 +24,33 @@ If you are in a hurry, this is my summary
 | light-weighted, only keep last change | keep all change history |
 | real time | need to compare transaction log, async |
 | available in all sql server version | supported in standard, developer, enterprise, not in express and web |		
-		
+
+## Use Cases
+* When only current version need,  use CT
+* When history data are need, such as  slow changing dimension to track historical price, address, then CDC is better option.
+
+I am interested in using this technology with new ETL tool Talend. In my case, I use two tables in one database, but this can also apply to use in different type of database, on prem or on cloud. You just need to change last destination component. 
+
+
+## My Adventure
+1. You need to enable change tracking for source table (see above example link)
+
+2. some table prep work  
+<img src="/images/blog37/prepare_copy_table.PNG">   
+
+a. Line 2 -3 , prepare a table for saving version number.  You can have table with column such as  tablename, version, updatetime. After you update destination, you can save new version number in the table  
+
+b. Line 10-15, truncate destination and insert source table data. Make 2 table the same.  
+
+
+
+
+
+
+
+
+
+
 		
 	
 	 
