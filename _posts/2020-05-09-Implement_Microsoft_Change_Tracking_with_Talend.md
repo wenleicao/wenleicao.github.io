@@ -38,9 +38,9 @@ I am interested in using this technology with new ETL tool Talend. In my case, I
 2. some table prep work  
 <img src="/images/blog37/prepare_copy_table.PNG">   
 
-a. Line 2 -3 , prepare a table for saving version number.  You can have table with column such as  tablename, version, updatetime. After you update destination, you can save new version number in the table  
+ a. Line 2 -3 , prepare a table for saving version number.  You can have table with column such as  tablename, version, updatetime. After you update destination, you can save new version number in the table  
 
-b. Line 10-15, truncate destination and insert source table data. Make 2 table the same.  
+ b. Line 10-15, truncate destination and insert source table data. Make 2 table the same.  
 
 
 
