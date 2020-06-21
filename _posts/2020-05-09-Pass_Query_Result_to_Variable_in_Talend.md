@@ -36,6 +36,58 @@ Overall, two subjobs, one use global variable, the other use context variable; E
 
 Setting in database input.  Select max(id) and give new column name maxid  
 
+<img src="/images/blog36/mysql_databaseinput.png">   
+
+tjavaRow_4  using global variable,  because id data type is bigint,  I use long talend data type  
+
+<img src="/images/blog36/mysql_java_row_global2.PNG">  
+
+tjavaRow_3 using context variable. You need to set up the context variable maxid in context tab first.  I set up two context variable, one for mysql, the other for mssql.
+
+<img src="/images/blog36/context_setting.PNG">  
+
+<img src="/images/blog36/mysql_java_row_context2.PNG">  
+
+It works in my sql.  What about we do the same thing in sql server. You will think it will automatically work, right?  not really.
+
+<img src="/images/blog36/sql_server_error1.png">  
+
+detailed error is as follows, showing maxid is not found??
+
+<img src="/images/blog36/sql_server_error.PNG">  
+
+My setting in MSSQLinput is as follows. As you can see maxid is alias 
+
+<img src="/images/blog36/sqlserver_databaseinput.png">  
+
+Setting for tjavaRow_1  
+
+<img src="/images/blog36/sql_server_java_row_global1a.PNG">   
+
+Double check schema, do you notice that the db column name still is id even I explicitly name it " max(id) as maxid"  
+
+<img src="/images/blog36/java_row_schema.PNG">  
+
+Change setting to  
+
+<img src="/images/blog36/sql_server_java_row_global1.PNG">  
+
+Now it works. 
+
+<img src="/images/blog36/success0.png">  
+
+<img src="/images/blog36/success.PNG">  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
