@@ -30,7 +30,7 @@ I , myself, also struggled with this setting a bit.  I would like to show step b
 
 I use MySQL as an example first 
 
-Overall, two subjobs, one use global variable, the other use context variable; Each subjob uses database input to query, javaRow assigns variable and prints the value to show if it is working
+Overall, two subjobs, one use global variable, the other use context variable; Each subjob uses database input to query, javaRow assigns variable and prints the value to show if it is working. Please note: I block some info to protect privacy, but should not affect conveying the info. 
 
 <img src="/images/blog36/mysql.png">   
 
