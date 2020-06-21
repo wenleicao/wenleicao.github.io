@@ -87,5 +87,5 @@ I hope this post helps you with the variable setting in Talend.
 thanks and have a nice summer!
 
 
-Wnenlei
+Wenlei
 
