@@ -32,7 +32,7 @@ I use MySQL as an example first
 
 Overall, two subjobs, one use global variable, the other use context variable; Each subjob uses database input to query, javaRow assigns variable and prints the value to show if it is working
 
-<img src="/images/blog36/mysql.PNG">   
+<img src="/images/blog36/mysql.png">   
 
 Setting in database input.  Select max(id) and give new column name maxid  
 
