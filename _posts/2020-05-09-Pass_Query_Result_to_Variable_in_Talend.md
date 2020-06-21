@@ -66,7 +66,7 @@ Setting for tjavaRow_1
 
 Double check schema, do you notice that the db column name still is id even I explicitly name it " max(id) as maxid"  
 
-<img src="/images/blog36/java_row_schema.PNG">  
+<img src="/images/blog36/java_row_schema.png">  
 
 Change setting to  
 
