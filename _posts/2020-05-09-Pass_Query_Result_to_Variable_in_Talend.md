@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pass Query Result to Variable_in_Talend
+title: Pass Query Result to Variable in Talend
 ---
 
 Talend is new competitor in the Data integration tool market. If you has been using Microsoft SSIS, you know it is a very good tool. But when it comes to the needs for connecting to different type of databases, you will have a lot of hassle to make it work. Talend is very good at this. Also it has tons of components to be able to work with big data and cloud. If you know how to use, it is a very powerful tool.  
