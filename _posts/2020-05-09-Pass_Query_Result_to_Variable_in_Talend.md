@@ -58,7 +58,7 @@ detailed error is as follows, showing maxid is not found??
 
 My setting in MSSQLinput is as follows. As you can see maxid is alias 
 
-<img src="/images/blog36/sqlserver_databaseinput.png">  
+<img src="/images/blog36/sqlserver_databaseinput2.png">  
 
 Setting for tjavaRow_1  
 
@@ -74,26 +74,18 @@ Change setting to
 
 Now it works. 
 
+also I add contect varialbe too for sql server. 
+<img src="/images/blog36/sql_server_java_row_context1.PNG">    
+
+
 <img src="/images/blog36/success0.png">  
 
 <img src="/images/blog36/success.PNG">  
 
+I hope this post helps you with the variable setting in Talend.
+
+thanks and have a nice summer!
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Wnenlei
 
