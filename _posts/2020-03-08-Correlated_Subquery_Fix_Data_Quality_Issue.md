@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Correlated_Subquery Fix Data_Quality Issue
+title: Using Correlated Subquery Fix Data Quality Issue
 ---
 
 Correlated subquery is a special type of subquery. It takes outer query value and uses in inner query. Therefore, it will loop though every row of outer query.   Unlike regular subquery, correlated subquery has the dependency on outer query. Thus, it cannot run by itself. 
