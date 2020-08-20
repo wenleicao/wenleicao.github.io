@@ -10,7 +10,7 @@ Because Github pages does not support display Jupyter notebook, surprisingly, re
 [![image](https://wenleicao.github.io/images/blog38/join.PNG)](https://github.com/wenleicao/python_pandas_for_database_developer/blob/master/Python_pandas.ipynb)  
 
 ### Please Note:
-* I listed the correspond SQL command and corresponding python code how to implement the same thing.   
+* I listed the SQL command and corresponding python code how to implement the same thing.   
 * Some section, I also include hyperlink which I used it as reference. I think it is helpful to read it if you want to know deeper.   
 
 Hope this helps.  
