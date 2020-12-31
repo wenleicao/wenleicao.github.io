@@ -19,7 +19,9 @@ There has been some work around for this issue.  Noticeably, someone has altered
 
 I decide to design a simple experiment (or you can call POC in the business world) to prove it is working.   
 
-### Let us first make some dummy data for this testing purpose.  Create a view to hold the data.  
+### Let us first make some dummy data for this testing purpose.  
+
+Create a view to hold the data.  
 
 <img src="/images/blog40/create_data_set.PNG">  
 
@@ -93,12 +95,27 @@ Let us give a run. It will automatically run with all courses. But you can modif
 
 <img src="/images/blog40/course_default_run.PNG">  
 
-Now let us see how we do DDS.   
+Now let us see how we do with DDS.   
 
+<img src="/images/blog40/teacher.PNG">  
 
+In this case, we set it like this, course using default values, we have 3 rows in DDS dataset.  
 
+<img src="/images/blog40/workign.PNG">  
 
+DDS run, all successful.   
 
+Let us see if prof. alpha has luck to receive all his scores. Yes, indeed it is all in one email with 2 courses.  
 
+<img src="/images/blog40/Capture_working.PNG">  
 
+When I test it, I set it to use testemail, which points to my email address. Now everything is set to go, you just need to switch to teacheremail. You are all set.  
 
+This POC shows that we can add a hidden param to solve the first param multi-value DDS issue.  This does need to set a default value to the first param, but it avoids providing the value on the fly (which is not possible by the way).  It did not cause much inconvenience, just need to select different values if you want to run different parameter sets.   
+Sql code and both working and non-working SSRS included <a href="/Files/blog40.zip">here</a>.  Personal info was changed to protect privacy.  
+
+I hope this is helpful to help you avoid the hassle of setting up tons of regular subscriptions, which is very hard to manage and maintain for lazy/smart yet productive developers.  
+
+Happy New Year!
+
+Wenlei
