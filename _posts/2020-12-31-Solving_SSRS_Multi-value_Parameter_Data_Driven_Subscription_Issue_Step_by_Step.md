@@ -108,7 +108,7 @@ DDS param setting
 
 DDS run, all successful.   
 
-Let us see if prof. alpha has luck to receive all his scores. Yes, indeed it is all in one email with 2 courses.  
+Let us see if prof. alpha has luck to receive all his scores in attached Excel file. Yes, indeed it is all in one email with 2 courses.  
 
 <img src="/images/blog40/Capture_working.PNG">  
 
