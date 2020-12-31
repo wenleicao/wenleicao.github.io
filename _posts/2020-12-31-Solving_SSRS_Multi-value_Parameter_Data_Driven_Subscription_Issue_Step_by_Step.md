@@ -27,9 +27,78 @@ I decide to design a simple experiment (or you can call POC in the business worl
 
 We have teachers, students and score.  Let us assume the report is using course as only param to show one or more courses and other info (you can use teacher course cascading param, but in this case, I intentionally use only course param as first param, forcing us to use multiple values for this param). Notice that prof. alpha teaches two courses, course1 and course2.  We would like to send him email with both courses in one email instead of two emails. This will need to provide >1 parameter value to report when scheduling the DDS.
 
-### Let us first make ssrs report work 
-Create course dataset like so
+### Let us first make ssrs report work   
+
+Create course dataset like so  
+
+<img src="/images/blog40/course_dataset.PNG">   
+
+Then create a parameter, configure like this, notice allow multi value is checked   
+
+<img src="/images/blog40/course_param.PNG">   
+
+Available values  
+
+<img src="/images/blog40/course_available_value.PNG">  
+
+For main report dataset  
+
+<img src="/images/blog40/studentscore_main_dataset.PNG">  
+
+You can see the specific syntax when using multiple value params.
+
+Let us run the report. It allows you to select param values.  
+
+<img src="/images/blog40/select_multple_value.PNG">  
+
+If we choose 3 courses  
+
+<img src="/images/blog40/select_three_course.PNG"> 
+
+It does what it is supposed to do.  Let us see whether it works on the data driven subscription.  
+
+Create dataset for DDS  
+
+<img src="/images/blog40/first_dds.PNG"> 
+
+Use course column for course param.  Notice I use testemail to send it to myself.
+
+<img src="/images/blog40/notworking_setting.PNG">  
+
+Run result, one process has error, which is a comma-separated string. Passing combined strings won’t work.  
+
+<img src="/images/blog40/not_workign.PNG">  
+
+### Let us see if we can fix it.  
+
+We add a hidden param, which is TeacherSwitch, works as a switch. If teacher = all, we select all teachers,   if teacher = prof. alpha, we only select prof. alpha course  
+
+<img src="/images/blog40/add_hidden_param.PNG">   
+
+<img src="/images/blog40/hidden_available.PNG">  
+
+In this case, I default it as all value to include all courses.  
+
+<img src="/images/blog40/hidden_default.PNG">  
+
+Create a dataset, so that course will have default value from the dataset.  Notice here, if hidden pararm  TeacherSwitch = All,  I will have teacher = teacher, this will be always true. Therefore include all record, otherwise, it will be filtered by the passed in teacherswitch variable.  
+
+<img src="/images/blog40/course_default.PNG">  
+
+Set the course default value from this dataset.  
+
+<img src="/images/blog40/default_setting.PNG">  
+
+Let us give a run. It will automatically run with all courses. But you can modify it to only select a subset of course if you like in the second run.  
+
+<img src="/images/blog40/course_default_run.PNG">  
+
+Now let us see how we do DDS.   
 
 
- 
+
+
+
+
+
 
