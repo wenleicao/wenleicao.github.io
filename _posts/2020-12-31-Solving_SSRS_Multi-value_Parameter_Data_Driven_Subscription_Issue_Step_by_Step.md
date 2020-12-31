@@ -103,6 +103,9 @@ In this case, we set it like this, course using default values, we have 3 rows i
 
 <img src="/images/blog40/workign.PNG">  
 
+DDS param setting   
+<img src="/images/blog40/dds_working_param.PNG">  
+
 DDS run, all successful.   
 
 Let us see if prof. alpha has luck to receive all his scores. Yes, indeed it is all in one email with 2 courses.  
