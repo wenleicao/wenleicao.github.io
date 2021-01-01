@@ -1,1 +1,4 @@
-a
+---
+layout: post
+title: test banner
+---
