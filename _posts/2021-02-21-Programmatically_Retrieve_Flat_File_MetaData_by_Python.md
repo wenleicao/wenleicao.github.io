@@ -60,13 +60,13 @@ Let us give a test drive.
 I randomly downloaded some data from data.gov to do a test.  
 Three datasets are used, ranging from demographis, financial to police report.  Largest row count is 22K. The widest table contains 70 columns. I think it might represent the majority of files we will come across on the daily basis. 
 
-<images/blog41/source_file_folder.PNG">  
+<img src="/images/blog41/source_file_folder.PNG">  
 
 I passed the directory and destination file to the function and calculated the time it needed to process the file.  It takes about 5 sec to process a total 154 columns from 3 files. The performance is good for my requirements. 
 
 This is the result which shows in final_meta_data. 
 
-<images/blog41/final_result.PNG"> 
+<img src="/images/blog41/final_result.PNG"> 
 
 I did a brief check on the detection result with raw data. I think it did a good job. 
 
