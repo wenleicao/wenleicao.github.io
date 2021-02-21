@@ -20,4 +20,14 @@ The goal for this question is we need to have:
 3. Automatically generate a column data type file to be used later (for e.g., BIML)  
 
 Please Note: if you are interested in usage of BIML, I have a blog talking about it at the following address.
-[Link](https://wenleicao.github.io/Generate_Metadata_for_BIML_via_PowerShell/)
+[Link](https://wenleicao.github.io/Generate_Metadata_for_BIML_via_PowerShell/)  
+
+Python has rich libraries and has been used in many fields to simplify the repetitive task.  Let us see how Python can help us to reach the goal we defined.
+ 
+The overall idea is as follows,
+* import flat file to pandas dataframe
+2.       Dataframe has dtypes property for each column. It will roughly tell you the data type, which is not always accurate.
+3.       There are int8, int16… in python, but all start with int, same for float, object data type are a bit tricky. Because not all datetime will be following python datatime format, so many of them are classified as object data type.  We will try a different approach to see if it is datetime.
+4.       Need to implement multiple file scenario
+5.       Need to output to a final file.
+
