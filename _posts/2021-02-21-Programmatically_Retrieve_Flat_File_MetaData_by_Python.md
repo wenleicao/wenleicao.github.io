@@ -74,7 +74,7 @@ The output can be easily convert to the format that BIML can use it to massively
 
 I hope you feel this function is helpful.  
 
-As always, I will include the download link <a href="/Files/blog41.zip">here</a> for Jupyter notebook and source files and outputfiles.  
+As always, I will include the download link <a href="/Files/blog41.zip">here</a> for Jupyter notebook and source files and output files.  
 
 Thanks and keep safe in 2021.
 
