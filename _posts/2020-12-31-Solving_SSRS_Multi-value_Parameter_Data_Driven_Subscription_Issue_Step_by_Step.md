@@ -3,7 +3,7 @@ layout: post
 title: Solving SSRS Multi-value Parameter Data Driven Subscription Issue Step by Step
 ---
 
-Subscription is very important for report automation. When you a handful subscription, you might get by setting regular subscription for each one. When there are many subscriptions like over 10, it will be painful to set up and manage. Luckily, we have data driven subscription (DDS) to help, but DDS has an limitation for multi-value parameter. 
+Subscription is very important for report automation. When you only have a handful subscription, you might get by setting regular subscription for each one. When there are many subscriptions like over 10 for a given SSRS, it will be painful to set up and manage. Luckily, we have data driven subscription (DDS) to help, but DDS has an limitation for multi-value parameter. 
 In regular subscription, system will provide parameter value and you can choose it.  DDS will get parameter value from a query. 
 
 <img src="/images/blog40/multi_value.PNG">     
