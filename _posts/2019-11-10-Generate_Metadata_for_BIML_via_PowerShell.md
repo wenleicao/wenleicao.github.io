@@ -71,7 +71,7 @@ Let us check final table to see if it get populated.
 
 This is an example, I use only two flat files as example. But it helps me to load ~80 tables without having to create each table and load it. Most importantly, it converted a tedious project into an interesting one.  If there are future request, you can just modify the biml to adapt the changes as oppose to go through each data flow task to fix things.  
 
-The script used in this project including powershell, t sql, biml and source files can be found <a href="Files/blog30.zip">here</a>.  
+The script used in this project including powershell, t sql, biml and source files can be found <a href="/Files/blog30.zip">here</a>.  
 
 To protect privacy, you need to replace the server and database name in your environment.  
 
