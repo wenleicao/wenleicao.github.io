@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Comparing Different Unpivot Methods in SQL Server
+title: Compare Different Unpivot Methods in SQL Server
 ---
 
 Recently, I have a request to unpivot two sets of multiple columns into two columns. It gave me an opportunity to explore different ways to do unpivoting, which is not common, but these methods are life saver when you need them.
