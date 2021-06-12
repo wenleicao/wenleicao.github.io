@@ -83,17 +83,27 @@ I will not add nonclustered index because it is not essential for partition swit
 
 Row 75 is used to reset the identity column start value.  Let us say your final table is already inserted 100 rows.  You would start from 101 for studentid.  
 
-Now I insert one record in stage table, you can imaging I am inserting 1 million row 😊 here.
+Now I insert one record in stage table, you can imaging I am inserting 1 million rows here 😊 .
 
 Let us check what partition looks like,  so you can see in partition 2, we have 1 row. That is what we expected.  Next step is we need to switch this to final table 
 
+<img src="/images/blog43/first_switch.PNG">  
 
+First, I drop nonlcustered index, so keep stage table and final table similar.  Then I do switch.  
+We check data in final table before switch and after switch.  You will see Donald Trump is appeared in the final table and in 2nd partition.   Imaging a large amount of data was moved in less than a millisecond, this is great for ETL developer.  Finally, I drop stage table, since it is empty now. 
 
+Now what if we need to do the third ETL.  We only defined 2 values in partition function, right?  
 
+We can use row 107 to 109 to move point to next partition, also add partition 3 to existed function.  Next, when we check, you will see one partition has been added 
 
+<img src="/images/blog43/add_new_partition.PNG">  
 
+You can then repeat the incremental loading we did for partition 2.   I don’t show the process here. But will include the code in the file.  
+ 
+This gives us the general idea how to do incremental using partitions  in a simple example. This is a hard-coded / vanilla version of the script. How do we make it more powerful? You can use a dynamic script to achieve that.  To do this for multiple tables,  you can use the table name as a variable and build sql text  and execute it. I believe if you are working on a partition, you probably already know dynamic sql. If not, there are a lot of resources  online to read too.
 
+Attached is the <a href="/Files/partition_in_a_simple_example2.sql">script</a> I used in this demo.   
 
+I hope this help you understand the process of table partition and use that in your work.  
 
-
-
+Wenlei
