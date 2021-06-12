@@ -106,4 +106,6 @@ Attached is the <a href="/Files/partition_in_a_simple_example2.sql">script</a> I
 
 I hope this help you understand the process of table partition and use that in your work.  
 
+thanks  
+
 Wenlei
