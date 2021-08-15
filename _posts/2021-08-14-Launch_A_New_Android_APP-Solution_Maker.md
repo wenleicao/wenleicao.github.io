@@ -50,17 +50,17 @@ This shows when you click Search Button. I pre-inserted about 350 commonly used 
 
 This displayed an example after I input all chemicals for solution 1X TBST.  Here you review the short list of chemicals.  If you find a mistake, you can simply click it and it will lead you to a window and let you fix the problem.  
 
-<img src="/images/blog44/Screenshot_1627955751.png" width="250">  
+<img src="/images/blog44/result.png" width="250">  
 
 Once you are good with the short list, click the confirm button.  This result window will pop up.  Upper portion of the window will show the requirement.  The lower portion of the window will automatically calculate the receipt for you to make the solution.  Notice there are a few buttons below, you can share your receipt, you can save the solution to the database, which can be used and modified later.  
 
-<img src="/images/blog44/Screenshot_1627956303.png" width="250">  
+<img src="/images/blog44/result2.png" width="250">  
 
 The above image shows I shared with hangout app with the calculation results  
 
 Notice the beaker sign in the first interface, if you click it, it will show you a list of solutions you have saved so far.  You can click the solution to retrieve or modify the solution as you like.  
 
-<img src="/images/blog44/Screenshot_1627956350.png" width="250">  
+<img src="/images/blog44/result3.png" width="250">  
 
 I hope this small app can help people in the wet lab. This is a free version, which including limited number of google ads that will support me to spend more time in improving this app. In the future release, I will include a paid option which is ads free version (should be very acceptable price). If you like the app, please buy the paid version (thinking as if you buy me a coffee 😊).  
 
