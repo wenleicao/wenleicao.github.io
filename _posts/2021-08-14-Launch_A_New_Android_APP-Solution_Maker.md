@@ -36,7 +36,15 @@ For folks who cannot access YouTube.  I feel your pain. I have included the foll
 
 <img src="/images/blog44/Screenshot_1627956668_1024.png" width="250">    
 
-The app interface.  1. Fill in info about your solution name and final volume.  2. You have two options to add chemicals. Manually/search database.  If the chemical is in the database, I highly recommend you use the search function.  It will save you a lot of typing.  But if the chemical is not in the database, you only need to fill in once, then remember to save it, you can use it by searching later.  Selected chemicals will show in the middle portion of windows.  Once you are done with inputting, you can click confirm to show the result.  The left lower button (start over) will clear all info, if you want to redo the process.
+The app interface.  1. Fill in info about your solution name and final volume.  2. You have two options to add chemicals. Manually/search database.  If the chemical is in the database, I highly recommend you use the search function.  It will save you a lot of typing.  But if the chemical is not in the database, you only need to fill in once, then remember to save it, you can use it by searching later.  Selected chemicals will show in the middle portion of windows.  Once you are done with inputting, you can click confirm to show the result.  The left lower button (start over) will clear all info, if you want to redo the process.  
+
+<img src="/images/blog44/Screenshot_1628164522.png" width="250">   
+
+This demonstrated when you click Add manually,   you need to fill in all blank, except the catalog, which is optional  
+
+
+
+
 
 
 
