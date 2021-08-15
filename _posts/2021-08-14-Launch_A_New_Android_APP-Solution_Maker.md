@@ -34,13 +34,38 @@ I recorded a video to introduce the app interface, demonstrating how to use the 
 
 For folks who cannot access YouTube.  I feel your pain. I have included the following screenshot with a brief intro going along.  
 
-<img src="/images/blog44/Screenshot_1627956668_1024.png" width="250">    
+<img src="/images/blog44/Screenshot_1627956668.png" width="250">    
 
 The app interface.  1. Fill in info about your solution name and final volume.  2. You have two options to add chemicals. Manually/search database.  If the chemical is in the database, I highly recommend you use the search function.  It will save you a lot of typing.  But if the chemical is not in the database, you only need to fill in once, then remember to save it, you can use it by searching later.  Selected chemicals will show in the middle portion of windows.  Once you are done with inputting, you can click confirm to show the result.  The left lower button (start over) will clear all info, if you want to redo the process.  
 
+<img src="/images/blog44/Screenshot_1627955601.png" width="250">   
+
+This demonstrated when you click Add manually,   you need to fill in all blank, except the catalog, which is optional   
+
 <img src="/images/blog44/Screenshot_1628164522.png" width="250">   
 
-This demonstrated when you click Add manually,   you need to fill in all blank, except the catalog, which is optional  
+This shows when you click Search Button. I pre-inserted about 350 commonly used chemicals from Sigma, which is the main chemical source in the US.  It has different catalogs for different levels of purity for the same chemical. But generally, you can choose either one.  Please note, the search is wild card search against chemical name, catalog and formula.    
+
+<img src="/images/blog44/Screenshot_1627955742.png" width="250">   
+
+This displayed an example after I input all chemicals for solution 1X TBST.  Here you review the short list of chemicals.  If you find a mistake, you can simply click it and it will lead you to a window and let you fix the problem.  
+
+<img src="/images/blog44/Screenshot_1627955751.png" width="250">  
+
+Once you are good with the short list, click the confirm button.  This result window will pop up.  Upper portion of the window will show the requirement.  The lower portion of the window will automatically calculate the receipt for you to make the solution.  Notice there are a few buttons below, you can share your receipt, you can save the solution to the database, which can be used and modified later.  
+
+<img src="/images/blog44/Screenshot_1627956303.png" width="250">  
+
+The above image shows I shared with hangout app with the calculation results  
+
+Notice the beak sign in the first interface, if you click it, it will show you a list of solutions you have saved so far.  You can click the solution to retrieve or modify the solution as you like.  
+
+
+<img src="/images/blog44/Screenshot_1627956350.png" width="250">  
+
+
+
+
 
 
 
