@@ -62,7 +62,9 @@ Notice the beaker sign in the first interface, if you click it, it will show you
 
 <img src="/images/blog44/Screenshot_1627956350.png" width="250">  
 
-I hope this small app can help people in the wet lab. This is a free version, which including limited number of google ads that will support me to spend more time in improving this app. In the future release, I will include a paid option which is ads free version (should be very acceptable price). If you like the app, please buy the paid version (thinking as if you buy me a coffee 😊).
+I hope this small app can help people in the wet lab. This is a free version, which including limited number of google ads that will support me to spend more time in improving this app. In the future release, I will include a paid option which is ads free version (should be very acceptable price). If you like the app, please buy the paid version (thinking as if you buy me a coffee 😊).  
+
+please leave your sugguestions and comments below.
 
 thanks and keep safe in pandemic
 
