@@ -21,4 +21,18 @@ Here is the app play store address
 
 <https://play.google.com/store/apps/details?id=com.caowenlei.solutionmaker3>  
 
+Before starting work, I looked through Google play app store.   I noticed there are similar Apps.  But the problem is they only calculate concentration for one chemical at a time. In reality, a solution usually contains multiple chemicals. There are NO database support in those apps, which means you will have to redo all the typing if you did not store the result somewhere.  
+
+Based on the analyses, these are the basic goals that I want to achieve:  
+1. Being able to handle multiple chemicals, can add, delete, and update chemical info.  
+2. Can store chemicals and solution in database, do CRUD operation easily.  
+3. Can share easily, you can send solutions to colleagues. You can print it out so that you don’t have to hold your cell phone while you weigh chemicals.  
+ 
+I recorded a video to introduce the app interface, demonstrating how to use the app to make solution calculations along the way, I also showed you how to save chemical/solutions to the database. How to delete/update them should you make a mistake. Please check out the following YouTube video.  
+
+[![image](/images/blog44/video.PNG)](https://www.youtube.com/watch?v=H8lVlpId8oA)   
+
+
+
+
 
