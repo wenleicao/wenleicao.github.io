@@ -58,19 +58,12 @@ Once you are good with the short list, click the confirm button.  This result wi
 
 The above image shows I shared with hangout app with the calculation results  
 
-Notice the beak sign in the first interface, if you click it, it will show you a list of solutions you have saved so far.  You can click the solution to retrieve or modify the solution as you like.  
-
+Notice the beaker sign in the first interface, if you click it, it will show you a list of solutions you have saved so far.  You can click the solution to retrieve or modify the solution as you like.  
 
 <img src="/images/blog44/Screenshot_1627956350.png" width="250">  
 
+I hope this small app can help people in the wet lab. This is a free version, which including limited number of google ads that will support me to spend more time in improving this app. In the future release, I will include a paid option which is ads free version (should be very acceptable price). If you like the app, please buy the paid version (thinking as if you buy me a coffee 😊).
 
+thanks and keep safe in pandemic
 
-
-
-
-
-
-
-
-
-
+Wenlei
