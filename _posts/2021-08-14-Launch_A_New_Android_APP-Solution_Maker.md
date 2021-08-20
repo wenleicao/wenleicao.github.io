@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Launch A New Android APP-Solution_Maker
+title: Launch A New Android APP - Solution Maker
 ---
 
 About 15 years ago, while I was working at University of Pennsylvania. I started to play with Java to create a few small desktop applications for scientific calculation. For example, solution maker, Real-time PCR calculator.  You can still find those at google code repository.  
