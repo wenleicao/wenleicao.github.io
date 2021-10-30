@@ -57,8 +57,9 @@ In this case, I first using summarize to create a virtual table, then sum it row
 
 <img src="/images/blog45/correct.PNG">  
 
-As you can see, it met the requirement, the S1 total has been showing in both groups. And subtotal is correct for both G1 and G2.  The grand total is not double counted.
-People have been questioning the summarize function, complaining it gives weird results. For that, Alberto has a specific blog for using summarize.  This is an in-depth explanation.  
+As you can see, it met the requirement, the S1 total has been showing in both groups. And subtotal is correct for both G1 and G2.  The grand total is not double counted.  
+
+However, People have been questioning the summarize function, complaining it gives weird results. For that, Alberto has a specific blog for using summarize.  This is an in-depth explanation.  
 
 <https://www.sqlbi.com/articles/all-the-secrets-of-summarize/>  
 
@@ -66,7 +67,7 @@ The following discussion is a good one for understanding in general
 
 <https://forum.enterprisedna.co/t/understand-the-difference-between-summarize-and-addcolumns/9018/10>
 
-To avoid potential issues, can we replace it with Addcolumns to avoid potential unexpected issues?  
+To avoid potential issues, can we replace it with Addcolumns to avoid unexpected issues?  
 
 <img src="/images/blog45/add_column1.PNG">  
 
