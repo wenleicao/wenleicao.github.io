@@ -86,7 +86,7 @@ In summary,  some measure are not so straightforward which will take some experi
 * Break into small workable chuck    
 * first make it work, then make it right, finally make it fast  
 
-If you need to follow along, I have included dax and pbix at <a href="Files/complicated_dax_measures.zip">here</a>. 
+If you need to follow along, I have included dax and pbix at <a href="/Files/complicated_dax_measures.zip">here</a>. 
 
 I hope you feel this is helpful.  
 
