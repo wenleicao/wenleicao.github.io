@@ -39,7 +39,7 @@ Note:TFS is centralized model, you will need to connect to the server to check o
 
 <img src="/images/blog46/Git.PNG"> 
 
-Note: each member has a copy, code history is at local level, you don’t need to connect to the master to work.  
+Note: each member has a copy, code history is at local level, you don’t need to connect to the master to work. The redundancy also makes code safer.  
  
 As you probably can see, the Git source control takes more steps. It does have its advantages. For example, let us say you need to develop some feature, it will involve many changes at different shared files. In TFVC, if you do that, you will lock those files, which other people cannot modify, and block other people’s work. Git does not have that issue, because developers work on their own local branch. They only need to merge the code when everything is done (get the latest from the master first).  
 
@@ -54,7 +54,7 @@ Let us use BI project as an example:
 
 You definitely can use TFVC/Git to do both. But I am talking about efficiency with a large team.  
 
-Microsoft would like everyone to start to use Git and if you like you can still use TFVC.  
+Microsoft would like everyone to start to use Git because they will not update TFVC any more. but if you like you can still use TFVC.  
 
 I hope this is helpful.  
 
