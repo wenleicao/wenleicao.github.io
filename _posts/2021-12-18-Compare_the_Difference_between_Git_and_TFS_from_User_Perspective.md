@@ -13,7 +13,7 @@ People who used Visual Studio before probably will have experience with TFS, tea
 
 This link gives the general idea of the difference between Git and TFVC.  Git is a distributed system, the other is centralized. But it did not actually visualize what users need to do differently.  
 
-I have been using TFVC until I began to use Git about a year ago.  I had a lot of confusion at the beginning for Git and a somewhat steep learning curve before you can comfortably use it.  
+I have been using TFVC until I began to use Git about a year ago.  I had a lot of confusion at the beginning for Git and a somewhat steep learning curve (mostly you need to get used to new steps as discussed below) before you can comfortably use it.  
 
 If you have been using TFVC for many years, It is natural that people do not want to give up what they used to and embrace the new way to do things unless they have to.  
 
