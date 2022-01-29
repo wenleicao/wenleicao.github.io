@@ -7,7 +7,7 @@ permalink: /about/
 
 ### More Information
 
-A place to curate valuable info, share tricks and solutions to some real-life problems which I came across in the business intellignece journey.
+A place to curate valuable info, share tricks and solutions to some real-life problems which I came across in the business intellignece and data science journey.
 Hope this can also help others
 
 ### Contact me
