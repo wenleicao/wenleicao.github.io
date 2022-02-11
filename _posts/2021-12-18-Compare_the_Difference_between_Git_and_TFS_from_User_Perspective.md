@@ -31,7 +31,7 @@ Note:TFS is centralized model, you will need to connect to the server to check o
 * Clone the project  
 * You will create a new branch from master branch, this new branch is a copy of master branch  
 * Working on the new branch  
-* Periodically commit the change and push the change to your new branch at remove server (it calls origin)  
+* Periodically commit the change and push the change to your new branch at remote server (it calls origin)  
 * Testing  
 * Deploy the change by merging the branch to master branch (pull request)  
 * Delete the new branch generated before.  
