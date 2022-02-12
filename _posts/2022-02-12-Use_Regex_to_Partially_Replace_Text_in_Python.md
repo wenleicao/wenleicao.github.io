@@ -87,7 +87,7 @@ In this post, I showed you how to define my own function, troubleshooting the pr
 
 In summary, Regex is very powerful. It has been widely used in different programming languages. Just like you, I was overwhelmed by the regex pattern at the beginning, which looks gibberish.  But it was worth the time. It will save you a lot of time to build your own.  
 
-As always, the Jupyter notebook can be downloaded <a href="/Files/regex_test.ipynb">here</a>.  
+As always, the Jupyter notebook can be found <a href="/Files/regex_test.ipynb">here</a>.  
 
 Thank you.  
  
