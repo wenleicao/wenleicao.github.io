@@ -22,18 +22,18 @@ The process for using Regex is generally like the following.
 You use regex rule to define a pattern, then use a regex function (match, search, findall, sub) to see if there are matches. If so, you might want to list them, or want to replace them with other words.  
 
 Here is use case:  
-We are in the process of transitioning SAS proc SQL query to Teradata query. Since a lot of functions used in both systems are different.  I will need to do a lot of changing functions repetitively.  Of course, this is not a fun job.  Can we use python to parse the change?  (You know I am not a big fan of repetitive work :smirk:). For example, I want to change the following.  I already simplified it. You can think there could be many columns.   
+We are in the process of transitioning SAS proc SQL query to Teradata query. Since a lot of functions used in both systems are different.  I will need to do a lot of changing functions repetitively.  Of course, this is not a fun job.  Can we use python to parse the change?  (You know I am not a big fan of repetitive work :). For example, I want to change the following.  I already simplified it. You can think there could be many columns.   
 
 <img src="/images/blog47/1sample_query.PNG">  
 
 #goal: strip(left(b.type_rw)) -> trim(b.type_rw)  
 
-Now if we take a close look, the partial string needs to be replaced (left side: “strip(left(“, right side, “)” ). The middle part needs to be kept.  This is just part of the string, if there are multiple such patterns, we want them all replaced with a new function, but the middle part needs to be dynamically kept as original. Therefore if something like below. Then should be able to converted accordingly. 
+Now if we take a close look, the partial string needs to be replaced (left side: "strip(left(", right side, "))" . The middle part needs to be kept.  This is just part of the string, if there are multiple such patterns, we want them all replaced with a new function, but the middle part needs to be dynamically kept as original. Therefore if something like below. Then should be able to converted accordingly. 
 
 strip(left(b.type_rw)) -> trim(b.type_rw)  
 strip(left(c.type_rw)) -> trim(c.type_rw)  
 
-In addition, you cannot use the find and replace edit function, because if you replace ‘))’ for all text, the line 10 will be impacted.  
+In addition, you cannot use the find and replace edit function, because if you replace "))" for all text, the line 10 will be impacted.  
 
 At first, I was not able to figure out how to use regex to do it.  To me, regex will match a pattern and replace all text with another string.   But in this case, I need to keep certain parts of it intact.  I ended up creating a function of my own to do the work.  Let us break it up into pseudo code.  
 
@@ -81,7 +81,7 @@ As I research the Regex, I realize Regex can isolate patterns in groups and we c
 
 <img src="/images/blog47/11usesub.PNG">  
 
-I use regex sub function to replace.  In the sub function, we match the pattern defined previously. Notice, we use trim(\1),   here \1 is referring to the first group defined in the pattern, which is in the parenthesis (.+), this refers to anything between prefix and appendix.   When the regex engine finds the match, it will keep the value and put it back in the replacement you defined (‘trim(\1)’).  
+I use regex sub function to replace.  In the sub function, we match the pattern defined previously. Notice, we use trim(\1),   here \1 is referring to the first group defined in the pattern, which is in the parenthesis (.+), this refers to anything between prefix and appendix.   When the regex engine finds the match, it will keep the value and put it back in the replacement you defined ('trim(\1)').  
 
 In this post, I showed you how to define my own function, troubleshooting the problem and finally found regex can do it better.  
 
