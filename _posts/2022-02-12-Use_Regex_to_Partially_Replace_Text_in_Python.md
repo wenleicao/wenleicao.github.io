@@ -7,7 +7,7 @@ People who work on databases know wild card search will help if you don’t want
 
 Please note: what I have discussed is in the structural data world. What happens when you deal with unstructured data? For example, In Python, we deal with sentiment analysis.  You will want to find some pattern in a message to manipulate. In this case, the Regex library comes in handy.  I think the best way to learn is by using it.  
 
-Here I present a use case. I ran into a tricky issue during my work, where there is no obvious solution online (when I initially worked). I manually crafted one and did troubleshooting. But later on, I was able to find a way to use  regex to solve it more elegantly.  You can compare how powerful the regex is.   
+Here I present a use case. I ran into a tricky issue during my work, where there is no obvious solution online (when I initially started). I manually crafted one and did troubleshooting. But later on, I was able to find a way to use  regex to solve it more elegantly.  You can compare how powerful the regex is.   
 
 I will assume you have regex basics.  If not, the following are helpful to get you started.  
 
