@@ -58,6 +58,42 @@ from table1, variabletabe
 
 looks the variable table method works.  Oftentimes, we cannot change the world, we will adapt ourselves to interact with the world.  
 
-Now, let us challenge ourselves, can we make it a stored procedure where we can just pass in the target year? then everything changes to align.  
+Now, let us challenge ourselves, can we make it a stored procedure where we can just pass in the target year, then all other variables will change accordingly?  
 
 <img src="/images/blog48/6stp1.PNG">  
+
+Row 64, create a procedure getlast4yearstudent and pass target year variable  year_var.
+
+Row 67-76, add a try catch like handler to deal with drop table error.   If you don’t include this,  the 2nd time you run the stored proc,  it will complain so and so table exists.  Many DBMS have drop table if exists tablename, unfortunately, you have no such luxury in Teradata.
+
+<img src="/images/blog48/6stp2.PNG">  
+
+Row 78-96, I copied the previous script to stored proc.  Only I changed 2018 to year_var, so next time, when I pass in 2019, everything will change accordingly.  
+
+<img src="/images/blog48/6stp3.PNG">  
+
+Row 100-123, I copy the dummy table,  the last output table, I use where clauses limit records within the last 4 years.  
+
+Run code between 64 and 123, you will create the stored procedure in your database.  
+
+Now let us see if it works. 
+
+<img src="/images/blog48/7test1.PNG">  
+
+Run Row 126-127,   you pass in target year 2018  and you will get student from prior 4 year since 2014 (4 students)  
+
+<img src="/images/blog48/7test2.PNG">  
+
+Run Row 129-130.  You pass in 2019, you get 3 student from prior 4 year since 2015.  
+
+Please note, if you are used to writing a select statement as your last statement in your stored proc, you will have to create a cursor. I wrote a create table statement. I select the table outside the procedure.  So, I don’t need that.  Teradata has a lot of quirkiness like other languages. And their documentation is not as good as others.  It is a pain.  
+
+Just wish some of my research will help others save some pain I have experienced.    
+
+Keep safe in this crazy world.  
+
+As always,  code is included <a href="/Files/blog48.sql">here</a> if you want to follow along.  
+
+Wenlei
+
+
