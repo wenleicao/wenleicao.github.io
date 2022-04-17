@@ -35,7 +35,7 @@ I created a fake student table containing 4 records with various enrollment date
 
 The table will contains data like this  
 
-<img src="/images/blog48/3create_sample_table_result.PNG.PNG">   
+<img src="/images/blog48/3create_sample_table_result.PNG">   
 
 You can see the results.  Notice, the name length is based on your first records. So Hillary is chopped off.  Sorry, Hillary. But that did not affect our purpose.
 By the way, I did better than them in school. :)  
