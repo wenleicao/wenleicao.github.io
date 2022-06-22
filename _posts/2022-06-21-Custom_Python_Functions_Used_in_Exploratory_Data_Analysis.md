@@ -123,7 +123,7 @@ I hope these functions could help you save some time and guide you do EDA in a s
 
 Of couse, I could miss some important part here. but please let me know.
 
-The notebook can be showed [here](/Files/blog49_EDA_Titanic.ipynb). The function file  can be downloaded [here]().  
+The notebook can be showed [here](/Files/blog49_EDA_Titanic.ipynb). The function file  can be downloaded [here](/Files/EDA_function.py).  
 
 Thanks and keep safe. 
 
