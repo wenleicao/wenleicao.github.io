@@ -117,7 +117,9 @@ Another way to observe the relationship between  variables is to use a scatter p
 
 <img src="/images/blog49/10selectK.PNG">  
 
-This gives some hints. Looks fare is important here too, sex is also important factors.  
+You want 10 most important features. Here numeric features and categorical features need to be inputed and one-hot encoded to be able to use selectK feature function. Therefore you need put numeric and  categorical into different lists 
+
+The result gives some hints. Looks fare is important here too, sex is also important factors.  
 
 I hope these functions could help you save some time and guide you do EDA in a systematic fashion.  
 
