@@ -8,7 +8,7 @@ from scipy.stats import norm
 from sklearn.preprocessing import StandardScaler
 from scipy import stats
 from sklearn.feature_selection import SelectKBest
-from sklearn.feature_selection import chi2, f_regression
+from sklearn.feature_selection import f_classif, f_regression
 import sklearn.preprocessing
 import warnings
 warnings.filterwarnings('ignore')
@@ -310,11 +310,20 @@ def get_feature_names(column_transformer):
     return feature_names
 
 
-def eda_getKBestFeatures (df, k, numeric_features, categorical_features, score_func ):   #classification use chi2, regression: f_regression
+def eda_getKBestFeatures (df, k, numeric_features, categorical_features, target, score_func ):   #classification use f_classif, regression: f_regression
+    '''
+    df: dataframe
+    k: k best  int
+    numberic features: list
+    categorical features: list    will use get dummy to convert to onehot
+    target: string
+    score_func    
+    '''
     from sklearn.compose import ColumnTransformer
     from sklearn.pipeline import Pipeline
     from sklearn.impute import SimpleImputer
     from sklearn.preprocessing import  MinMaxScaler, OneHotEncoder
+    from sklearn.feature_selection import SelectKBest, f_classif, f_regression
     numeric_transformer = Pipeline(steps=[("imputer", SimpleImputer(strategy="median")), ("scaler", MinMaxScaler())])
     categorical_transformer = OneHotEncoder(handle_unknown="ignore")
     preprocessor = ColumnTransformer(
@@ -323,7 +332,7 @@ def eda_getKBestFeatures (df, k, numeric_features, categorical_features, score_f
         ("cat", categorical_transformer, categorical_features),  ]
     )
     X= preprocessor.fit_transform(df)
-    y = df['survived']
+    y = df[target]
     select = SelectKBest(score_func=score_func, k=k)
     features = get_feature_names(preprocessor)
     select.fit(X, y)
