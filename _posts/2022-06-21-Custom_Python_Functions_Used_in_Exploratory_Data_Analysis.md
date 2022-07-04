@@ -115,7 +115,7 @@ Another way to observe the relationship between  variables is to use a scatter p
 
 ## 6.	Use  statistical method to select feature
 
-<img src="/images/blog49/10selectK.PNG">  
+<img src="/images/blog49/10selectKb.PNG">  
 
 You want 10 most important features. Here numeric features and categorical features need to be inputed and one-hot encoded to be able to use selectK feature function. Therefore you need put numeric and  categorical into different lists 
 
