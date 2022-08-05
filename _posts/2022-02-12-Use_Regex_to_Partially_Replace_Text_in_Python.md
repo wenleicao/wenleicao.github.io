@@ -11,8 +11,8 @@ Here I present a use case. I ran into a tricky issue during my work, where there
 
 I will assume you have regex basics.  If not, the following are helpful to get you started.  
 
-* This site clearly show rules and code example  
-<https://www.programiz.com/python-programming/regex>  
+* These sites clearly show rules and code example  
+<https://www.programiz.com/python-programming/regex>, <https://www.scaler.com/topics/python/regular-expression-in-python/>  
 
 * This site is very helpful to check if your regex pattern is valid  
 <https://regex101.com/>  
