@@ -112,20 +112,10 @@ Looks like they performed pretty well.  Both recall and precision are high.
 
 <img src="/images/blog51/15test_result.PNG">  
 
+I introduced some custom steps to simulate what you would encounter in real life. I hope you feel this is useful.  
+ 
+Some errors I experienced may have something to do with scikit learn design. But I wish this post could help you avoid some of the pains I had.  
 
+Thanks, you can download the notebook [here](/Files/Handle_different_type_data4.ipynb).  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Wenlei
