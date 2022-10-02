@@ -84,6 +84,40 @@ So, we need to fix that.
 
 <img src="/images/blog51/9text_pipeline_fix.PNG">    
 
+In cell 30, we reshape data for  imputation. After that, we flatten the structure so that it is ready for CounterVectorizer. In order to use the same logic in the pipeline, This wrapper idea is good from stackoverflow site in cell 31.  Once we wrap the SimpleImputer class, it will yield the correct format for the next step.  
+ 
+Same way, we can handle txt2_pipeline.  
+
+<img src="/images/blog51/10text_pipeline.PNG">  
+
+It is time to put those pipelines together. In cell 36, we can merge  all these different pipelines together using make_column_transformer function. Here I came across the 2nd error, which is a bit weird.  Since all previous pipelines work individually, I don't expect there  will be an error here. The error is the same as it is shown in this stackoverflow post. I have  to change line 6 from ['Review Text'] to  'Review Text' .  This puzzled me about why the same error did not show up for txt1.pipeline. So far, I have no explanation but if you know, you can leave it in the comment section. The preprocess is successful, you can see that from dimension.
+
+<img src="/images/blog51/11text_pipeline.PNG">   
+
+I put together a list of classifiers and params (part of screen).  I included 8 different classifier to compare which one perform better. 
+
+<img src="/images/blog51/12classfier_param.PNG">  
+
+Now, in cell 39, we created a final pipeline with a classifier. And in cell 40, we did a RandomizedSearchCV to save time with 100 iterations, as our goal is not how good the model is. We are looking to handle textual features with others.  The train is completed in 42 min.  
+
+<img src="/images/blog51/13classifier.PNG"> 
+
+I would expect xgboost did a better job, but here logistic regression won the gold medal, and xgboost is in 2nd place.  
+
+<img src="/images/blog51/14result.PNG">   
+
+Let us see how it performed on test data it has never seen.  
+
+Looks like they performed pretty well.  Both recall and precision are high.  
+
+<img src="/images/blog51/15test_result.PNG">  
+
+
+
+
+
+
+
 
 
 
