@@ -19,5 +19,79 @@ Here, I would like to show how I go about it with an example via scikit learn fr
 
 I use Womens Clothing E-Commerce Reviews dataset.  This dataset contain numeric, categorical and text field.  You can download the dataset [here](/Files/Womens Clothing E-Commerce Reviews.zip) to follow along.  
 
-First, we import all packages that will be used in the analysis.   
+First, we import all packages that will be used in the analysis.  
+
+<img src="/images/blog51/1import_package.PNG">  
+
+Now we import the dataset and take a peek at what the data looks like.  
+
+<img src="/images/blog51/2check_data1.PNG">  
+
+Using the info function, we notice data type and some missing data. 
+
+<img src="/images/blog51/2check_data2.PNG">  
+
+Among all columns, Review Text and Title are text columns. Also Recommended IND is an indicator used for the recommendation, which we will use as a binary classification target.  
+
+Besides that, it looks like the data is imbalanced data by checking Recommended IND value count in cell 12.   In cell 13, I undersample value =1, so that I can create an equal number of positive and negative records in the dataset which will be used for training and test. It is very important to handle imbalanced data properly, otherwise, your model can learn to just predict the predominant value and still get high accuracy, which is not what you want.  
+
+You can use the python package, imblearn, to handle the imbalance problem, which will give you more flexibility. The following link will get you started. But this is not our goal here.  So I used a simple step.  
+
+<https://youtu.be/YMPMZmlH5Bo>  
+<https://youtu.be/OJedgzdipC0>  
+
+<img src="/images/blog51/3under_sample.PNG">  
+
+I defined column lists in cell 15.  
+
+I split the data into train and test in cell 17.  
+
+<img src="/images/blog51/4sample_split.PNG">  
+
+Since many machine learning algorithm only takes numpy array as input data,  we will need to impute null, scale data,  if data is not in normal form, we try to correct that,  for categorical data, we will need encode it to numeric value, for text data,  we will need to vectorize it.  
+ 
+Next we will build pipeline for numeric data. Normally you will see an imputer and a scaler, we will add a custom transformer too.  Since the data is not in a normal distribution. Let us try a log transoformation.  Because there are some 0 values in the data, if we directly use the log function, it will generate –inf, which will cause trouble for the next transformation in the pipeline. Therefore, we add 1 to the original value, then do log transformation. In my case, the minimum value is 0, so it is fine. But if you have negative value, you might want to try other kind of transformation like box-cox.  
+
+In cell 20, I use functionTransformer to convert a function to a class. This is a shortcut in which you don’t have to write a class for a transformer.  
+
+<img src="/images/blog51/5log_function.PNG">  
+
+After transformation, notice the in third row (yellowshaded), the log(0+1) = 0, No –inf value anymore.  
+
+<img src="/images/blog51/6log_function_after.PNG">  
+
+I use the make_pipeline function to create a pipeline. Here, I put the custom log_transformer into the pipeline. Then test both the numerical and categorical pipeline.  Both work fine.  
+
+<img src="/images/blog51/7pipeline_handle_num_cat.PNG">  
+
+Next, I start to work on the text pipeline.  
+
+Since our focus is not training a model, rather handling heterozygous data. I will borrow Bert’s clean_text class to clean up the Review Text column.  His blog is at the following address if you want to know more about clean_text function.  
+
+<https://towardsdatascience.com/sentiment-analysis-with-text-mining-13dd2b33de27>
+
+<img src="/images/blog51/8clean_text_class.PNG">   
+
+Both pipelines have similar components. Only difference,  Txt2_pipeline contains  clean_text step. Also, I chose to pick up top 100 important features vs 20, since review text is longer.  
+
+Let us give it a shot. Whoops! We get our first error in the txt1_pipeline.  
+
+This error tells us, our first step imputer needs 2 dimensional data, However we provide one dimension data. However, we have to flatten the structure with ravel function, because in the next step, countVectorizer expects one dimension data.  
+
+<img src="/images/blog51/9text_pipeline_init_error.PNG">  
+
+So, we need to fix that.  
+
+<img src="/images/blog51/9text_pipeline_fix.PNG">    
+
+
+
+
+
+
+
+
+
+
+
 
