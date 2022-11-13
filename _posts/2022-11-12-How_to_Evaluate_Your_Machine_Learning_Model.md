@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Evaluate Your Model
+title: How to Evaluate Your Machine Learning Model
 ---
 
 Given a scenario, after a few days of hard work,  you have a model built, are you done?  
