@@ -36,7 +36,56 @@ Row 12,  when you schedule a job via task scheduler.  This will tell change dire
 Row 14,  The parent folder of the running file is code folder. So I save this path. It makes easier to change to this path later  
  
 Row 19. I get the directory one level up, because I want to save the log file in the output folder, whereas the output folder is at the same level as the code folder.  
-Row 24.  I combined the file path for two log files.
+Row 24.  I combined the file path for two log files.  
+
+<img src="/images/blog53/2brunfile.PNG">  
+
+
+Row 29 -32.   Change directory to code folder, at 31, call child bat, step1-2.bat,  to start step1-2 (see below for detail).   Because both step 1 and 2 use R. I combine them together in one step.  The “>” is used to output the log to log file. The file path was created at row 24.  If there is error, it will go to error handler at Row 49  
+
+Row 34-38.  Call step3 child bat.  Output the log to the file path generated previously.   
+
+Row 40.  Cleanup.bat  moves all files generated and then saves it in the archive folder.  
+
+If every step before  row 46 is correct, it will  print successful, then exit without error.  
+
+Row 49-52.  If the previous step has an error, this block of code will be called, it will show Failed and kill the process.  Then exit with error.  
+
+
+When run row 31, child bat file, step1-2.bat was called.  the content of this child bat file is as follows, 
+
+<img src="/images/blog53/3process_R.PNG">   
+
+Row 3. Tell R application path.  
+
+Row 8.  Under this python, there is a file named Rscript.exe.   you can use command  to run step1-2.R. 
+
+When run row 36. It will open step3.bat like so and run it.  
+
+<img src="/images/blog53/3bprocess_python.PNG">   
+
+Row 4.  Create a time variable,  mydate, it will be like 2023-02-15. But will need to change value based on the current month.  
+
+In this case, my python is run under an anaconda environment. So I need to run row 8-9 to activate the environment.  
+
+Row 17, we can use python to execute step3.py.  "test" and %mydate% are two parameters, which I use to pass to the python script. In the python script, you can use sys.argv[1] to get the value for the first variable, sys.argv[2] for second one. This way, you pass a variable value to the python script if every month the date needs to be changed like the following python snippets  
+
+<img src="/images/blog53/4passparaminpython.PNG"> 
+
+This is probably the way in which you use minimal tech resources to complete automation tasks.  But I don’t think this is the best practice.  If we will have to move it to the cloud, then you will need to create a virtual machine and install identical R and python environment to be able to run this.  It will take a long time. If you switch a different VM, you will need to create another environment.   
+
+The  better approach would be to create  a container that you can move anywhere.   
+
+But if you are on budget, this might be something you can try.  
+
+Thanks. Hope  this is useful.  
+
+Wenlei
+
+
+
+
+
 
 
 
