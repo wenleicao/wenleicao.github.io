@@ -30,7 +30,7 @@ Teradata syntax is quite different from other RDBMS. Honestly, I don't remember 
 
 It is time to get our hands dirty. let us go over the code. 
 
-<img src="images/blog54/stored_proc1.PNG">   
+<img src="/images/blog54/stored_proc1.PNG">   
 
 
 
