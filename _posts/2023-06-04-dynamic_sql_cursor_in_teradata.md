@@ -28,12 +28,38 @@ I use the script from the 2nd link as a template to create my own stored procedu
 
 Teradata syntax is quite different from other RDBMS. Honestly, I don't remember all those syntax unless I am doing it on a daily basis. So if you are on the same boat, I will suggest using a template and modify the code based on your need.  
 
-It is time to get our hands dirty. let us go over the code. 
+It is time to get our hands dirty. let us go over the code.  BTW, I marked the database name for privacy. you just need to change to yours. 
 
 <img src="/images/blog54/stored_proc1.PNG">   
 
+line 1-2, create stored procedure, pass in two params, dbname and tablename because I need to use it for different tables. maybe a different database in the future.  
+line 4-6,  define a few of local variables to be used later.  
+line 14, 15,  For loop start here if you have multiple columns to loop through.  
+line 19-22, from system view get column list based on the parameter dbname and tablename value, notice the syntax with ":".  
 
+<img src="/images/blog54/stored_proc2.PNG">  
 
+line 24-33 is using the columnname to do things.  
+First, get the cursor value with the set statement at line 27. Notice the syntax cursor.columnname.  You should be able to use it directly, it just makes it simpler later with a shorter variable name.  
+Line 28 forms SQL statement in the run time.  
+Line 32 executes update statement.  
 
+Let us give a test run.  
 
+<img src="/images/blog54/verify1.PNG">   
 
+line 1-9, create a fake table, with various leading and trailing spaces. I just wanna see if the stored procedure works.  
+By querying the table, we can see there are spaces that need to be removed.  
+
+<img src="/images/blog54/verify2.PNG">  
+
+line 14, call the stored procedure we created and then pass in the dbname and tablename.   
+then select the table again.  You see all value has been trimmed nicely.   
+
+Next, you can just pass any db and tablename, not worry how many columns they have and what changes will be made to those tables later. Your heart is free now :).   
+
+As always, code can be download [here](/Files/blog54.zip).
+
+thanks!
+
+Wenlei
