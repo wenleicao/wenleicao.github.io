@@ -132,6 +132,23 @@ See this blog for more on mysql connection
 
 Let us give it a shot.  
 
+<img src="/images/blog55/compose_up.JPG">  
+
+Using docker compose up,  we can see two services started and used –d for detached mode, so containers run behind the scene.   –remove-orphans  is optional since I have some other containers with the same name running.   
+
+<img src="/images/blog55/docker_run.JPG">  
+
+Using docker ps, we can see what name of container is running.  
+
+From here, we know the mysql container’s name is code-mysql_db-1. we can get into mysql containers to create tables and insert some records for testing.  
+
+<img src="/images/blog55/getinsidecontainer.JPG">   
+
+Here we use docker exec to add commands to existing running containers.  –it  is a command when you want to get inside a container (i:interactive, t: tty). Code-mysql_db-1 is the container name,  mysql –p  is  run mysql command and –p means asking for password.
+After entering the password, we set it as secret in the compose file.  We get a mysql prompt.  (in real life we will need encode the pw, see example in this [blog](https://www.dataknowsall.com/postgres.html))  
+
+
+
 
 
 
