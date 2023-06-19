@@ -47,9 +47,8 @@ The folder contains the following files.
 <img src="/images/blog55/first_folder_structure.JPG">   
 
 This is the content of dockerfile, which contains  instruction to build an image as a blueprint for a container.  
-
+dockerfile  
 <img src="/images/blog55/first_dockerfile.JPG">   
-
 Row 1:  get image from docker hub  python:3.8  version  
 Row 4:  create folder under home, form home/wcao/model structure  
 Row 5-7:  create environment variables to be used in other files. Those are paths and file names  
@@ -58,10 +57,31 @@ Row 11: move all file from current folder
 Row 13:  run python3 train.py while build the image  
 
 Train.py  
-<img src="/images/blog55/first_train.JPG">   
-Row 1-11, import necessary packages
+<img src="/images/blog55/first_train.JPG">     
+Row 1-11, import necessary packages.  
 Row 17-21, using environment variables to form the model and metadata paths to be used later.
-Row 27-36, getting training data. Due to some value was wrapped to 2nd row, there are some data manipulation between 31-33 using np.hstack, then data was divided into train and test
+Row 27-36, getting training data. Due to some value was wrapped to 2nd row, there are some data manipulation between 31-33 using np.hstack, then data was divided into train and test.  
+<img src="/images/blog55/first_train2.JPG">  
+Row 40-43, setting up a regressor.  
+Row 45-50, fit the regressor with train data and get train and test_mse.  Save these mse values into metadata.  
+Row 55-60,  dump the model to a file  and also save the metadata.   
+
+Inference.py  
+Data steps are similar, so I am going to skip it.  
+<img src="/images/blog55/first_inference.JPG"> 
+Row 41-44, load the trained model from file generated from training.    
+Row 46-47, using the model to predict and print out the prediction.     
+ 
+With the file in the folder, let us see how we use docker to run it.  
+In the Ubuntu shell, navigate where the folder contain the code,   
+<img src="/images/blog55/rebuilt.JPG"> 
+
+
+
+
+
+
+
 
 
 
