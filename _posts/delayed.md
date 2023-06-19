@@ -29,8 +29,43 @@ I want to achieve the following goals:
 To run docker in windows environment, you will need the following set up.  
 1. Install docker desktop, remember to also check the option to install Windows Subsystem for Linux (WSL2 ). This essentially allows you to have a Linux dev environment in Windows.  
 2. Install Ubuntu app from windows store to be able to use Linux shell to interact with docker desktop.  It is a common language in the container world.  
-3. In the docker desktop, configure Ubuntu to integrate with docker(WSL Integration). So you can use Ubuntu shell interact with docker.  
+3. In the docker desktop, configure Ubuntu to integrate with docker(WSL Integration, see below). So you can use Ubuntu shell interact with docker.  
 4. Install VS code and add extension WSL, so I can use the VS code to view Linux subsystem files and be able to make dockerfile or compose yaml file.
+
+<img src="/images/blog55/intergate_shell_with_docker.JPG">    
+
+Let us take baby steps.  
+
+The first step, I want to be able to replicate what Luigi did, but minor modifications are needed to make it work.   
+
+I will still use Luigi Patruno’s Boston Housing price data for this exploration. But since he published the blog, the dataset source has been changed, the original code is not working any more. So I will need to make changes to it.  
+
+In addition, Luigi used a Jupyter notebook image as his base image, this image is bulky (over 1gb ).  For some reason, I cannot launch a jupyter notebook by connecting to the container from the host even though this container runs without issue and I put in the token as suggested.  Therefore, I changed it to use python image instead.  I use python 3.8 image from docker hub (about 500 mb).  it might be ok to build from scratch such as Alpine.  But I leave it to the future.  
+
+The folder contains the following files.  
+
+<img src="/images/blog55/first_folder_structure.JPG">   
+
+This is the content of dockerfile, which contains  instruction to build an image as a blueprint for a container.  
+
+<img src="/images/blog55/first_dockerfile.JPG">   
+
+Row 1:  get image from docker hub  python:3.8  version  
+Row 4:  create folder under home, form home/wcao/model structure  
+Row 5-7:  create environment variables to be used in other files. Those are paths and file names  
+Row 10:  install packages which were not included in core library of python  
+Row 11: move all file from current folder   
+Row 13:  run python3 train.py while build the image  
+
+Train.py  
+<img src="/images/blog55/first_train.JPG">   
+Row 1-11, import necessary packages
+Row 17-21, using environment variables to form the model and metadata paths to be used later.
+Row 27-36, getting training data. Due to some value was wrapped to 2nd row, there are some data manipulation between 31-33 using np.hstack, then data was divided into train and test
+
+
+
+
 
 
 
