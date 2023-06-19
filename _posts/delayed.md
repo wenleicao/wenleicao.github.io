@@ -68,7 +68,7 @@ Row 55-60,  dump the model to a file  and also save the metadata.
 
 Inference.py  
 Data steps are similar, so I am going to skip it.  
-<img src="/images/blog55/first_inference.JPG"> 
+<img src="/images/blog55/first_inference.JPG">   
 Row 41-44, load the trained model from file generated from training.    
 Row 46-47, using the model to predict and print out the prediction.     
  
