@@ -147,6 +147,33 @@ From here, we know the mysql container’s name is code-mysql_db-1. we can get i
 Here we use docker exec to add commands to existing running containers.  –it  is a command when you want to get inside a container (i:interactive, t: tty). Code-mysql_db-1 is the container name,  mysql –p  is  run mysql command and –p means asking for password.
 After entering the password, we set it as secret in the compose file.  We get a mysql prompt.  (in real life we will need encode the pw, see example in this [blog](https://www.dataknowsall.com/postgres.html))  
 
+<img src="/images/blog55/create_table.JPG">   
+
+We used mysql database, and created a boston_housing_price table with columns.   
+Let us assume, there were 3 new data coming in and need us to predict.   
+
+<img src="/images/blog55/table_insert_value.JPG">     
+
+We can insert 3 records like so.  We check the values in the table. We can type exit, now we are out of the container.   We only use 3 records here, so we should only get three predictions.  
+
+Now let us score the data  
+
+<img src="/images/blog55/docker_score.JPG"> 
+
+Since the container is already running, I should use exec, it did give me three score values.  So we can successfully get prediction using docker compose. 
+
+Once it is done, we can use docker compose down to remove all containers. 
+
+It is convenient and easier to deploy anywhere with containers, as long as I have these file in a folder.  
+
+The next step, we can use docker swarm or K8s for orchestration, but it is out of the scope of this post. 
+
+thanks for follow along.  these are folder contain file you need if you want to repeat.
+
+Wenlei
+
+
+
 
 
 
