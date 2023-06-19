@@ -168,15 +168,6 @@ It is convenient and easier to deploy anywhere with containers, as long as I hav
 
 The next step, we can use docker swarm or K8s for orchestration, but it is out of the scope of this post. 
 
-thanks for follow along.  these are folder contain file you need if you want to repeat.
+thanks for following along.  Here is the [folder](/Files/blog55.zip) contain file you need if you want to repeat.
 
 Wenlei
-
-
-
-
-
-
-
-
-
