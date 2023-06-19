@@ -74,18 +74,63 @@ Row 46-47, using the model to predict and print out the prediction.
  
 With the file in the folder, let us see how we use docker to run it.  
 In the Ubuntu shell, navigate where the folder contain the code,   
-<img src="/images/blog55/rebuilt.JPG"> 
+<img src="/images/blog55/rebuilt.JPG">   
 
+Here I use the build command, giving the name python-ds as image name.  don’t forget the dot, which indicate build from the same folder,  i.e., using the dockerfile in the current folder to build.  
 
+Once built, I can run docker run command to instantiate a container based on the image.  
 
+<img src="/images/blog55/test_rebuit_using_training2.JPG"> 
 
+In the docker run command, we use cat command to show content of metdata.json, which is generated during the train.py run.  It prints out the two mse values as below, which indicate the training work as expected.   
 
+Next we will see if inference is working   
 
+<img src="/images/blog55/inference_working_with_new_image.JPG">   
 
+We can run inference.py and get all predictions (10% of original data).  So it works fine.  
 
+The first step worked as expected.    
+Let us add some challenges to our process.  In real life, oftentimes, we need to query databases to get new data for training and inference.  
 
+Let us get data from a database and here I use mysql to simulate where our source data is from. In dev, it is acceptable to have a db container. In the prod, however, it is suggested that we should use a managed cloud database, due to the phantom nature of containers. But it is easy to switch the connection. The process is quite similar.  
 
+The folder structure of the files. 
 
+<img src="/images/blog55/second_structure.JPG">  
+
+Since we have a container for data science, we also have another container for mysql.  Using docker-compose.yml is a good way to simplify the configuration process. It will create both containers within the same network.  
+
+Let us take a look what inside the docker-compose.yml  
+
+<img src="/images/blog55/second_docker_compose.JPG">   
+
+I have two services in this compose file.  
+Row 3-6, I created a data science service as ds_container.  I will build an image from the current folder (I will need to run commands from the current folder) and give the container name data_science_container.  
+Row 8-14, create mysql_db container from mysql image in docker hub.  We map host volume to mysql volume (volume helps persist data even if the container is destroyed). And some environment variables, such as database to use, and password.  
+
+<img src="/images/blog55/second_dockerfile.JPG">  
+
+I add one more command,  
+Row 11, in order to deal with database, I add sqlalchemy and mysql-connector-python package  
+Row 16, this will allow container stand by and not exit, since I will run other commands against the container   
+ 
+Train.py  did not change.  
+ 
+Inference.py:  I got data from sql query. So I replaced the data extraction part.  
+
+<img src="/images/blog55/second_inference.jpg">  
+
+Notice here I use sqlalchemy to create mysql_engine. Notice the special format of connection string.  
+
+Database+connector://user:password@host(defined in compose file)/database.  
+
+Using the connection, we can get a dataframe from read_sql.  Here we get data from boston_housing price table.  We have not created this yet. Once we stand up the container, we can create it inside the container.  
+
+See this blog for more on mysql connection  
+<https://planetscale.com/blog/using-mysql-with-sql-alchemy-hands-on-examples>
+
+Let us give it a shot.  
 
 
 
