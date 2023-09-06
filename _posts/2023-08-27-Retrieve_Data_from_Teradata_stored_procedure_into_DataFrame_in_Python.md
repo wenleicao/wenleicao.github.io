@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Retrieve Data from Teradata stored procedure into DataFrame in_Python 
+title: Retrieve Data from Teradata stored procedure into DataFrame in Python 
 ---
 
 Teradata has a smaller user base than others like Oracle and SQL Server, which results in less resource you can find online. In this post, I will share my research on how to use stored procedure to output data and retrieve it into a dataframe on the python end.  
