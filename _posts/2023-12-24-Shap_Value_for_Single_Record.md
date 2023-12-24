@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shap Value for Single Record
+title: Shap Value for Single Record in Model Prediction
 ---
 
 Feature importance helps us understand what features play more importance roles in a given model. After that, you can do feature selection, or you can use results to cross check with your business domain knowledge to validate the model.  
