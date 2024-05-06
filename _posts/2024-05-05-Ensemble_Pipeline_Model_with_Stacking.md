@@ -5,7 +5,7 @@ title: Ensemble Pipeline Model with Stacking
 
 One could try different machine learning algorithms for a given data science project. When you have a few different models at hand, one way to further improve the performance is to perform a model ensemble.  
 
-There are a few different ways to perform the model ensemble.  Sklearn has a good [write out] (https://scikit-learn.org/stable/modules/ensemble.html) for this. For example, random forest is an example of bagging, while Xgboost is using a boosting method. Besides that, you can also do voting and stacking to ensemble.  
+There are a few different ways to perform the model ensemble.  Sklearn has a good [write out](https://scikit-learn.org/stable/modules/ensemble.html) for this. For example, random forest is an example of bagging, while Xgboost is using a boosting method. Besides that, you can also do voting and stacking to ensemble.  
 
 Sklearn provides classes to help ensemble through voting and stacking.  You can check the following links. They also have the regressor variants if your problem is regression.  
 
