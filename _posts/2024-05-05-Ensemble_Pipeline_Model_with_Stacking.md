@@ -54,6 +54,6 @@ I was able to get the best params and use that for training and predicting the t
 
 I hope this post is helpful for you.  
 
-Thanks  
+Thank you for following along. 
 
 Wenlei
