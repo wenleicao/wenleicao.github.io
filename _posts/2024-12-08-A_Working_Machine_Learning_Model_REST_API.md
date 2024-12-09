@@ -87,7 +87,7 @@ then we put in request with parameters like so.
 <img src="/images/blog63/model_prediction1.JPG">
 
 try different set of parameters.
-<img src="/images/blog63/model_prediction2.JPG">
+<img src="/images/blog63/model_predicton2.JPG">
 
 As you can see, different parameters have different results. That indicate the API is fully functional.
 This is the first steps.  There are actually a lot things can improve.  The following blog post is on this topic in depth.
