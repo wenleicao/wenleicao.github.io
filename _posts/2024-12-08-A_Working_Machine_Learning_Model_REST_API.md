@@ -90,7 +90,7 @@ try different set of parameters.
 <img src="/images/blog63/model_predicton2.JPG">
 
 As you can see, different parameters have different results. That indicate the API is fully functional.
-This is the first steps.  There are actually a lot things can improve.  The following blog post is on this topic in depth.
+This is the first steps.  There are actually a lot things can improve.  The following blog post is on this topic in depth.  
 <https://auth0.com/blog/developing-restful-apis-with-python-and-flask/>  
 
 I hope this post can help you better understand flask. You can find all related file in this zip file [here](/Files/flask.zip). 
