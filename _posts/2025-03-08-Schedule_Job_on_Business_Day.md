@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Schedule Job on Business Day?
+title: Schedule a Job on the Business Day?
 ---
 
 Recently, we are operationalizing a ML project, which requires us to run model prediction on the first business day of each month. These requirements are from accounting because they want to make sure previous month data is complete and there will be someone to help on business day should something happen.
