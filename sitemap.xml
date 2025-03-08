@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url><loc>https://wenleicao.github.io</loc></url>
 <url><loc>https://wenleicao.github.io/style.css</loc></url>
+<url><loc>https://wenleicao.github.io/Schedule_Job_on_Business_Day/</loc></url>
 <url><loc>https://wenleicao.github.io/How-to-Reveal-the-Missing-Customers-in-Tabular-Model-or-Power-BI-with-DAX-Set-Operation/</loc></url>
 <url><loc>https://wenleicao.github.io/Leverage_Metadata_in_BIML/</loc></url>
 <url><loc>https://wenleicao.github.io/Troubleshoot_the_DAX_issue_Quickly_with_Profiler_and_beyond/</loc></url>
@@ -90,6 +91,7 @@
 <url><loc>https://wenleicao.github.io/Files/Handle_different_type_data4.ipynb</loc></url>
 <url><loc>https://wenleicao.github.io/Files/Womens</loc></url>
 <url><loc>https://wenleicao.github.io/Files/blog45.pbix</loc></url>
+<url><loc>https://wenleicao.github.io/Files/blog64.ps1</loc></url>
 <url><loc>https://wenleicao.github.io/Files/regex_test.ipynb</loc></url>
 <url><loc>https://wenleicao.github.io/Files/student_class_table_script.sql</loc></url>
 <url><loc>https://wenleicao.github.io/Files/blog9_code.sql</loc></url>
