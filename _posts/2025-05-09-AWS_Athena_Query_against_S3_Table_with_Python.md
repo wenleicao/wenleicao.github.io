@@ -40,9 +40,9 @@ Ultimately, I have combined all the functions so that once a query is passed, th
 <img src="/images/blog65/combine_function_together.png"> 
 
 I am glad it finally works out although there are some difficulties. 
-If you would like to follow along. The python file is [here](/Files/_amazonathena.py)
+If you would like to follow along. The python file is [here](/Files/_amazonathena.py)  
 
-thanks 
+thanks   
 Wenlei
 
 
