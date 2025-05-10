@@ -22,16 +22,16 @@ The steps involved are:
 * Read the S3 file into a Pandas DataFrame (refer to [this](https://stackoverflow.com/questions/37703634/how-to-import-a-text-file-on-aws-s3-into-pandas-without-writing-to-disk) for guidance)
 
 For querying S3 tables:  
-please note: you need to create boto3 client like you do somewhere else.  Here I just use client(env) to represent that steps.
-1 You still need to obtain the execution ID, but you must include the catalog name if your environment has multiple source layers (e.g., different catalogs for production and development environments).  
-2 Unlike regular Athena tables, you do not need an output location for athena query.  Please note, you need to replace your database, catalog info. I replaced those for protecting privacy.
+please note: you need to create boto3 client like you do somewhere else.  Here I just use client(env) to represent that steps.  
+1. You still need to obtain the execution ID, but you must include the catalog name if your environment has multiple source layers (e.g., different catalogs for production and development environments).  
+2. Unlike regular Athena tables, you do not need an output location for athena query.  Please note, you need to replace your database, catalog info. I replaced those for protecting privacy.
 <img src="/images/blog65/get_execution_id.png">  
-3 Retrieving results from an S3 table is different; it does not allow more than 999 rows per retrieval. To overcome this, use a while loop to gather all results. I isolate this part of code as one function to make code less complicated.  
-4 The query results from S3 tables are output in varchar format by default. Metadata, including column names and data types, is available in the same response and stored as variables.
+3. Retrieving results from an S3 table is different; it does not allow more than 999 rows per retrieval. To overcome this, use a while loop to gather all results. I isolate this part of code as one function to make code less complicated.  
+4. The query results from S3 tables are output in varchar format by default. Metadata, including column names and data types, is available in the same response and stored as variables.
 <img src="/images/blog65/loop_though_results.png">    
-5 In the get_result function, the process is similar to querying regular Athena tables, We need to wait till SUCCESS to call previous functon to get results.  
+5. In the get_result function, the process is similar to querying regular Athena tables, We need to wait till SUCCESS to call previous functon to get results.  
 <img src="/images/blog65/wait_util_result_ready.png"> 
-6 Lastly, I converted the results into a Pandas DataFrame by passing the data and metadata. 
+6. Lastly, I converted the results into a Pandas DataFrame by passing the data and metadata. 
 <img src="/images/blog65/convert_to_df.png">  
 I tried to automate date type conversion, but it turns out more difficult than I thought. The reason is Hive based data type and C based data type has different range. See the typical error it shows. 
 <img src="/images/blog65/hive_to_python.PNG">   
