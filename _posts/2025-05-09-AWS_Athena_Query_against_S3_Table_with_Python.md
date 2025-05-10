@@ -26,7 +26,7 @@ please note: you need to create boto3 client like you do somewhere else.  Here I
 1. You still need to obtain the execution ID, but you must include the catalog name if your environment has multiple source layers (e.g., different catalogs for production and development environments).  
 2. Unlike regular Athena tables, you do not need an output location for athena query.  Please note, you need to replace your database, catalog info. I replaced those for protecting privacy.
 <img src="/images/blog65/get_execution_id.png">  
-3. Retrieving results from an S3 table is different; it does not allow more than 999 rows per retrieval. To overcome this, use a while loop to gather all results. I isolate this part of code as one function to make code less complicated.  
+3. Retrieving results from an S3 table is different; it does not allow more than 999 rows per retrieval. To overcome this, use a while loop to gather all results. I isolate this part of code as one function to make code less complicated.    
 4. The query results from S3 tables are output in varchar format by default. Metadata, including column names and data types, is available in the same response and stored as variables.
 <img src="/images/blog65/loop_though_results.png">    
 5. In the get_result function, the process is similar to querying regular Athena tables, We need to wait till SUCCESS to call previous functon to get results.  
