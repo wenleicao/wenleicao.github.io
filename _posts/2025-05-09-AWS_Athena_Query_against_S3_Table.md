@@ -34,7 +34,7 @@ please note: you need to create boto3 client like you do somewhere else.  Here I
 6 Lastly, I converted the results into a Pandas DataFrame by passing the data and metadata. 
 <img src="/images/blog65/convert_to_df.png">  
 I tried to automate date type conversion, but it turns out more difficult than I thought. The reason is Hive based data type and C based data type has different range. See the typical error it shows. 
-<img src="/images/blog65/hive_to_python.PNG"> 
+<img src="/images/blog65/hive_to_python.PNG">   
 Therefore, I think data type conversion at post data extraction might be a better choice. Also for decimal result, it will only keep 2 decimal points by default. This setting cannot be changed either. Not sure why AWS is so rigid about this. Maybe it is a growing pain. But it might impact high accuracy calculations.   
 Ultimately, I have combined all the functions so that once a query is passed, the result is returned as a DataFrame.  
 <img src="/images/blog65/combine_function_together.png"> 
