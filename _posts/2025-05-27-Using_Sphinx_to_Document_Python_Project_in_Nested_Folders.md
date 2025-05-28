@@ -26,11 +26,12 @@ There is lots of confusion around this. I have tried almost all solutions provid
 The only working solution is setting the docs folder outside projects folder in my hands. That will create docs for not only project1, project2, as well as all folders under the projects. So don’t overthink about the path. Sphinx already takes care of nested folder structure for you. Would not be better if they tell you in their own documentation?  
 
 This is the acutal folder structure.  
-<img src="/images/blog66/folder_structure2.png">     
+<img src="/images/blog66/folder_structure2.PNG">     
 
 This is the html files generated.  
 <img src="/images/blog66/output_doc_structure.PNG">   
 
+I block the project name to protect privacy. shoud not affect your understanding.
 Hope this helps others.   
 
 Wenlei
