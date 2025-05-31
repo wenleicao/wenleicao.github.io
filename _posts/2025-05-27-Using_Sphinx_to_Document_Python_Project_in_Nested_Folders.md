@@ -5,7 +5,7 @@ title: Using Sphinx to Document Python Project in Nested Folders
 
 I like creative and smart solutions, when it comes to task preference. Documentation is usually my least favorite type of job. What if you were told that there is a package to help you do documentation? Like you, I cannot wait to give it a shot.   
 
-Sphinx is a powerful documentation tool for python users. Unfortunately, their own documentation does not seem to help me sort out the issues I come across.  
+Sphinx is a powerful documentation tool for python users. [This post](https://towardsdatascience.com/documenting-python-code-with-sphinx-554e1d6c4f6d/) will give you a quick start on that.  But my python projects is more invovled than the simple example. Unfortunately, Sphinx documentation does not seem to help me sort out the issues I come across.  
 
 I have to read a lot of online posts and blogs, solve the puzzle by trial and error. This is what I learned along the way.    
 
@@ -31,7 +31,7 @@ This is the acutal folder structure.
 This is the html files generated.  
 <img src="/images/blog66/output_doc_structure.PNG">   
 
-I block the project name to protect privacy. shoud not affect your understanding.  
+I block the project name to protect privacy. shoud not affect your understanding.   
 Hope this helps others.   
 
 Wenlei
