@@ -31,7 +31,8 @@ This is the acutal folder structure.
 This is the html files generated.  
 <img src="/images/blog66/output_doc_structure.PNG">   
 
-I block the project name to protect privacy. shoud not affect your understanding.   
+I block the project name to protect privacy. shoud not affect your understanding.     
+My conf file for this documentation project is like [this](/Files/conf.py)
 Hope this helps others.   
 
 Wenlei
