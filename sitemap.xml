@@ -23,6 +23,11 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://wenleicao.github.io/Sklearn_Pipeline_Deep_Dive/</loc>
+  <lastmod>2025-08-06T01:20:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://wenleicao.github.io/AWS_Athena_Query_against_S3_Table_with_Python/</loc>
   <lastmod>2025-08-06T01:20:13+00:00</lastmod>
   <priority>0.80</priority>
@@ -352,6 +357,7 @@
   <lastmod>2025-08-06T01:20:13+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 
 
 </urlset>
