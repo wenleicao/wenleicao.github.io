@@ -51,14 +51,34 @@ The error says “object has no attribute lower”, which is misleading.  Becaus
 
 I further combined with other steps in the txt_pipeline, including the selectkbest and the tfidf transformer.  Notice here, not all transformers need y. but SelectKBest using chi method will require it. I provide a fake target here (in real life, provide your real target here :) ).  After that, I combined all three pipelines without issue. This NLP process is using np.array. Now, what happens if we set_output as pandas.  
 
+<img src="/images/blog67/9using_pandas.png">   
 
+There are a couple of places that need to be fixed. But I don’t think it's worth the effort. Especially for NLP, it only works with 1D, if you are using pandas output, by nature, it will be 2D.  Therefore, my suggestion is just use default output if you are working on an NLP pipeline.  So the answer for the previous question is that it does not always work with pandas output.  
 
+Given a pipeline which structure as follows.  
 
+<img src="/images/blog67/10pipe_structure.png">
 
+How do you get the final output feature name?  
+You will need to find the path to get there.  The get_params () function is your friend.  Notice pipeline use named_steps, transformer use  named_transformer_.   Once you find out the object path,  you can use get_feature_names_out function to collect feature names.  
 
+<img src="/images/blog67/11get_params.png">  
+<img src="/images/blog67/11get_params2.png">  
 
+Sometimes, things could be more complex.  For example, I try to dynamically choose features while performance tuning a model.   Now, I would like the text feature to always be selected, but other categorical features can be optional.   
+The tricky part is both text feature and categorical feature are object dtypes. So you cannot use make_column_selector to choose. One option is you can rename the column, for example, adding txt_ prefix to text features, add cat_ to categorical features and then use regex pattern to do selection. But it seems cumbersome to change each column’s name. Do we have a better way?  
+Since we cannot tell them by data type. Can we select text features into one group and other features into another group, process it and then merge it afterwards.  We will need to use the feature union method to do it.  In order to use feature union, you will need to select columns first, which column transformer does not need to do that step. That is the difference between them.  Here I have created a custom transformer to do that.   
 
+<img src="/images/blog67/12custom_column_select_transformer.png">   
+<img src="/images/blog67/13_before_union.png">   
 
+So I created a  txt_pipeline and a non_txt_pipeline first. Because they are separate, you can now change the cat_column to use make_column_selector (include_dtype = 'object').  It will take any object column.  
+Finally, I use make union and make pipeline to create a full pipeline and it works!!  
 
+<img src="/images/blog67/14_full_pipeline.png">  
 
+It is a long post.  Hope you get something useful.  
+Happy Summer!  
+Wait, did I almost forget? You can download juypter notebook [here](/Files/pipeline_test.ipynb) 
 
+Wenlei
