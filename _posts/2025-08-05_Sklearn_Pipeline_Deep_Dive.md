@@ -37,7 +37,27 @@ Most times, people define the column list for each pipeline like the last exampl
     a.       Regex Pattern  
     b.      Include dtypes  
     c.       Exclude dtypes  
-These will pretty much cover what you need, but I will give you an example later that I still have issues with these options. You will have to think out of the box and solve the issue. That is part of the learning experience, isn’t it?   
+These will pretty much cover what you need, but I will give you an example later that I still have issues with these options. You will have to think out of the box and solve the issue. That is part of the learning experience, isn’t it?
+
+You might be curious that I did not add the textual column in. Textual columns are something special. If you build the same way like cat_pipeline, you will likely have errors.  
+
+<img src="/images/blog67/5txt_pipeline_error.png">   
+<img src="/images/blog67/6analyze_error.png">  
+
+The error says “object has no attribute lower”, which is misleading.  Because the SimpleImputer can process without issue, the output is a 2D array (see 2 brackets). The next transformer is CountVectorizer, which requires 1D structure.  Here, I did an experiment.  I first save the previous step in a variable, then make the array into 1D using the ravel function. It works after that. Therefore, all we need to do is convert the previous transformer into 1D and we can create a wrapper like so.   
+
+<img src="/images/blog67/7oneDwrapper.png">    
+<img src="/images/blog67/8combineOther.png">  
+
+I further combined with other steps in the txt_pipeline, including the selectkbest and the tfidf transformer.  Notice here, not all transformers need y. but SelectKBest using chi method will require it. I provide a fake target here (in real life, provide your real target here :) ).  After that, I combined all three pipelines without issue. This NLP process is using np.array. Now, what happens if we set_output as pandas.  
+
+
+
+
+
+
+
+
 
 
 
