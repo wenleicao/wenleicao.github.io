@@ -14,4 +14,31 @@ In this post, I want to deep dive in the Sklearn pipeline.  I will try to answer
 
 Let us first create a MWE.  I imported all packages necessary and created a dataset containing 4 columns, two categorical, 1 numerical, 1 textual columns.  Here I forgot to create a target. The values might be ['president', 'celebrity', 'grass root'].  That might be a data scientist’s favorite.  Today, we are mainly focusing on the pipeline. I will replace those with an arbitrary list when I need a target down the road.  Please note here, I don’t set output = 'pandas'.  So, the transformer will output np.array by default.
  
-Oftentimes than not, you will do some post extraction processes.  That could be something you forget to do in previous steps. Or you could adjust something ad hoc.  Here, I just created a function transformer to add 1 to the age.  I will design the next step to use the age column by name. 
+Oftentimes than not, you will do some post extraction processes.  That could be something you forget to do in previous steps. Or you could adjust something ad hoc.  Here, I just created a function transformer to add 1 to the age.  I will design the next step to use the age column by name.   
+
+<img src="/images/blog67/2function_transformer.png">  
+
+I use the FunctionTransformer to convert the update_age function to a Sklearn transformer.  It can fit_transform the dataframe I created previously and output a **dataframe**.  Let us see if the next transformer can use this by column name.   
+
+<img src="/images/blog67/3combined_transformer.png">  
+
+I first defined the num_columns, cat_columns and txt_columns.  Then I created a pipeline for each.  Finally, I combined the num_columns and the cat_columns in the column transformer, where they went through different pathways.   I then use make_pipeline to combine the function transformer with the column transformer.  For sanity check, I first run the num_pipeline with the age column, it works.  Now, I can run the whole pipeline using the original dataframe without specifying the column name.   
+
+This verified that not all transformers will output the numpy array.  The exception includes custom function transformers, or you define a custom transformer whose output is a data frame.  Sklearn transformers will output np.array like the cell 18 output. This is actually beneficial, because your custom transformers still keep column names for the next step to be used.  
+
+<img src="/images/blog67/4column_select_method.png">  
+
+Most times, people define the column list for each pipeline like the last example. But when you have a large number of columns or your column list is dynamic such as you try to tune the model by choosing different features.  You will likely use other column selection methods. There are mainly two types of ways you can do this.  
+1.       Use column index and its variants  
+    a.        Column index  
+    b.      Slice function to get column index, this is good if you know column range  
+    c.       Boolean list, you can use a function to create a mask, if there is logic  
+2.       Use make_column_selector  
+    a.       Regex Pattern  
+    b.      Include dtypes  
+    c.       Exclude dtypes  
+These will pretty much cover what you need, but I will give you an example later that I still have issues with these options. You will have to think out of the box and solve the issue. That is part of the learning experience, isn’t it?   
+
+
+
+
