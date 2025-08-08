@@ -60,7 +60,7 @@ Given a pipeline which structure as follows.
 <img src="/images/blog67/10pipe_structure.png">
 
 How do you get the final output feature name?  
-You will need to find the path to get there.  The get_params () function is your friend.  Notice pipeline use named_steps, transformer use  named_transformer_.   Once you find out the object path,  you can use get_feature_names_out function to collect feature names.  
+You will need to find the path to get there.  The get_params () function is your friend.  Notice pipeline use named_steps, transformer use  named_transformer_.   Once you find out the object path,  you can use get_feature_names_out function to collect feature names. Therefore, you don't have to convert it to pandas to get feature name. Since many features have converted into multiple columns due to one hot encoding, I suggest to use [permutation feature importance](https://scikit-learn.org/stable/modules/permutation_importance.html) to get feature importance in this case.  
 
 <img src="/images/blog67/11get_params.png">  
 <img src="/images/blog67/11get_params2.png">  
