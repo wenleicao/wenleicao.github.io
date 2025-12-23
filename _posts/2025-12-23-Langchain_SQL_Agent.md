@@ -81,7 +81,7 @@ Then I use this database to ask the same question.
 This time, it was running into an out of quota error. Likely, it did not understand PinYin and keep send request to LLM and run out of quota. 
 
 My conclusion from this experiments is as follows. 
-I used to be skeptical about AI coding capability since I saw results from google search, half of time which crossed with other topic or scenario (this is getting better though).  But this SQL agent does a decent job at the junior level SQL developer.  On the other hand, it heavily relys on the metadata. If LLM does not understand your metadata, it cannot come up with correct SQL.  Therefore, it is likely data warehouse works better than transactional database. Or Langchain needs to have a way to pass in the data dictionary so that LLM can decode the table and column name properly with data dictionary help. 
+I used to be skeptical about AI coding capability since I saw results from google search, half of time which crossed with other topic or scenario (this is getting better though).  But this SQL agent does a decent job at the junior level SQL developer.  On the other hand, it heavily relys on the metadata. If LLM does not understand your metadata, it cannot come up with correct SQL.  Therefore, it is likely data warehouse works better than transactional database. Or Langchain needs to have a way to pass in the data dictionary so that LLM can decode the table and column name properly with data dictionary's help. 
 
 thanks for following along. Notebook is [here](/Files/langchain_gemini_sql_agent.ipynb) 
 
