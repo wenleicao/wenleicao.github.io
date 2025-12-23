@@ -60,7 +60,7 @@ First, I let it pick the most expensive product. You can go through the log and 
 
 
 Next, I asked a more difficult question which involved more than 1 table.
-<img src="/images/blog69/6simplesql2.png">   
+<img src="/images/blog69/7medium.png">   
 
 To my surprise, this sql agent handled that very well, you can find it got data by joining between different tables.  That is awesome. 
 
