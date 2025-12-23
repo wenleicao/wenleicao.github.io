@@ -43,16 +43,48 @@ A simple query to test if we can join three tables together to show data in a me
   
 Next step, I leverage langchain package which has function wrappers to interact with databases.  Behind the scenes, Langchain can use the functions to  recognize database type as Sqlite, table list, and sample tables.  
 
-<img src="/images/blog69/4_langchain_setup_withdb.png">  
+<img src="/images/blog69/4_langchain_setup_withdb.png">   
 
 Tools contain a  few functions to create SQL and validate SQL, so that is good langchain takes care of those potential SQL grammar issues.  
 
+<img src="/images/blog69/5_create_agent.png">   
+
+Next, I created a system prompt to gave a ground rule, inside promptI  passed in the SQL dialect as sqlite, also passed in the large language model and tools to it.  
+ 
+We have a SQL agent now. Let us give some challenge to see if it can handle. 
+
+<img src="/images/blog69/6simplesql.png">    
+<img src="/images/blog69/6simplesql2.png">  
+
+First, I let it pick the most expensive product. You can go through the log and see how it did it.  First it used a tool to list tables, then it found the product table. Next, it checked the columns in the product table.  Finally, It found that laptops are the most expensive product.   
 
 
+Next, I asked a more difficult question which involved more than 1 table.
+<img src="/images/blog69/6simplesql2.png">   
 
+To my surprise, this sql agent handled that very well, you can find it got data by joining between different tables.  That is awesome. 
 
+<img src="/images/blog69/8difficulatsql.png">
 
+Now, I further increase the difficulties, by asking to get the second highest product by sale amount.  As a human, I usually use windows functions, like row_number or rank function to get rank first and filter by rank number.  AI, however, does it differently. It uses offset.  But the results are the same.  So, I am thrilled that this SQL agent really does the work.  
 
+Finally, as a person working with numerous databases, I know real life databases sometimes are not straightforward like the toy database I presented here. A lot of time, you need a data dictionary to understand the meaning of a given table and columns. A lot of abbreviations were used for table and column names.  Sometimes, database designers even obfuscate the table or column name for security reasons.  I want to know if I make table and column names hard to understand, can sql agent handle that?  
 
+To do that, I created a separate Sqlite database and instead of using English name, I used Chinese PinYin. I want to see if LLM is using column name to understand what column is for or using the column value to determine what the column is for.
 
+<img src="/images/blog69/9database_withpinyin.png">  
 
+Then I use this database to ask the same question. 
+
+<img src="/images/blog69/error2.png">    
+
+This time, it was running into an out of quota error. Likely, it did not understand PinYin and keep send request to LLM and run out of quota. 
+
+My conclusion from this experiments is as follows. 
+I used to be skeptical about AI coding capability since I saw results from google search, half of time which crossed with other topic or scenario (this is getting better though).  But this SQL agent does a decent job at the junior level SQL developer.  On the other hand, it heavily relys on the metadata. If LLM does not understand your metadata, it cannot come up with correct SQL.  Therefore, it is likely data warehouse works better than transactional database. Or Langchain needs to have a way to pass in the data dictionary so that LLM can decode the table and column name properly with data dictionary help. 
+
+thanks for following along. Notebook is [here](/Files/langchain_gemini_sql_agent.ipynb) 
+
+Merry Christmas and Happy New Year!
+
+Wenlei
