@@ -41,6 +41,31 @@ Another feature I often rely on in business intelligence tools is the ability to
 
 Streamlit does offer a “Drill Up / Drill Down” example in its documentation, but it’s not quite the same as the multi‑level drill functionality found in traditional reporting software. The example essentially adds an “All” option, which is helpful, but it doesn’t support true hierarchical navigation across multiple granularities.  
 
+I found one of Streamlit extension, st_aggrid, do a decent job on this. One example online is to aggrgate regional sale. 
+<img src="/images/blog70/3drilldown_code.png"> 
+
+you can see that the output of region can be expand.  
+<img src="/images/blog70/drilldown3.png"> 
+
+This is one level drill down, can I add one more to form a navigation path?
+I add another level on city.  
+<img src="/images/blog70/4drilldown_code.png"> 
+
+You can see that city also show drill down.  
+<img src="/images/blog70/4drilldown_result.png"> 
+
+In summary, Streamlit provides an incredibly easy interface for quickly prototyping ideas and showcasing results. It may be a bit nitpicky to expect it to match every feature of full‑scale BI or commercial reporting tools, but with the right extensions—or a bit of custom code—it becomes surprisingly powerful. With some creativity, Streamlit can deliver results that are comparable to many commercial solutions while remaining lightweight, flexible, and developer‑friendly.  
+
+Thanks for visting my blog.  Here you can find all [code](/Files/streamlit_blog.py) related with this post. 
+
+Wenlei
+
+
+
+
+
+
+
 
 
 
